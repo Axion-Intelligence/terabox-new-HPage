@@ -720,6 +720,99 @@ body {
     display: none;
 }
 
+
+/* 将以下代码添加到你的 styles.css 文件中的 Business Section 部分 */
+
+/* Business Link Styling - 在 Business Section 样式之后添加 */
+.business-link {
+    display: inline-block;
+    background: linear-gradient(45deg, #9FD500, #7FB800);
+    color: #000000;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 2px 10px rgba(159, 213, 0, 0.2);
+    /* 确保链接在卡片中正确定位 */
+    width: fit-content;
+    align-self: flex-start;
+}
+
+.business-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(159, 213, 0, 0.4);
+    background: linear-gradient(45deg, #7FB800, #9FD500);
+    color: #000000;
+    text-decoration: none;
+}
+
+.business-link:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 15px rgba(159, 213, 0, 0.3);
+}
+
+.business-link:visited {
+    color: #000000;
+}
+
+.business-link:focus {
+    outline: 2px solid #9FD500;
+    outline-offset: 2px;
+}
+
+/* 更新现有的 business-card 样式以确保链接正确定位 */
+.business-card {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid #9FD500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(159, 213, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 确保内容分布 */
+}
+
+/* 确保服务标签和链接之间有适当间距 */
+.business-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* 响应式设计调整 */
+@media (max-width: 768px) {
+    .business-link {
+        padding: 10px 20px;
+        font-size: 13px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .business-card {
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .business-link {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .business-cards {
