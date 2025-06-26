@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT・スマートシステム事業 - TERABOX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="business-pages.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">TERABOX</a>
+            <ul class="nav-links">
+                <li><a href="index.html#news" data-lang-key="nav-news">お知らせ</a></li>
+                <li><a href="index.html#company" data-lang-key="nav-company">会社概要</a></li>
+                <li><a href="index.html#message" data-lang-key="nav-message">代表挨拶</a></li>
+                <li><a href="index.html#business" data-lang-key="nav-business">事業内容</a></li>
+                <li><a href="index.html#recruit" data-lang-key="nav-recruit">採用情報</a></li>
+                <li><a href="index.html#access" data-lang-key="nav-access">アクセス</a></li>
+                <li><a href="index.html#contact" data-lang-key="nav-contact">お問い合わせ</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="ja" title="日本語">
+                    <img src="images/japanese.png" alt="日本語" class="flag-image">
+                </button>
+                <button class="lang-btn" data-lang="en" title="English">
+                    <img src="images/english.png" alt="English" class="flag-image">
+                </button>
+                <button class="lang-btn" data-lang="zh" title="中文">
+                    <img src="images/chinese.png" alt="中文" class="flag-image">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="business-hero">
+        <div class="container">
+            <div class="business-hero-content">
+                <div class="business-icon-large">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h1 class="business-hero-title">IoT・スマートシステム事業</h1>
+                <p class="business-hero-subtitle">IoT & Smart Systems</p>
+                <p class="business-hero-description">
+                    IoT技術を活用したスマートシステムで、リアルタイム監視・管理・最適化を実現します。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview">
+        <div class="container">
+            <h2 class="section-title">サービス概要</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>電子棚札システム</h3>
+                    <p>リアルタイムで価格更新が可能な電子棚札により、小売業務の効率化と価格管理の自動化を実現します。</p>
+                    <ul class="service-features">
+                        <li>リアルタイム価格更新</li>
+                        <li>在庫連動表示</li>
+                        <li>多店舗一括管理</li>
+                        <li>省電力設計</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>スマート検針システム</h3>
+                    <p>電気・ガス・水道の使用量を自動で検針し、クラウド経由でリアルタイムデータ管理を行います。</p>
+                    <ul class="service-features">
+                        <li>自動検針機能</li>
+                        <li>異常使用量検知</li>
+                        <li>クラウドデータ管理</li>
+                        <li>省エネ分析レポート</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>電子スタンプカード</h3>
+                    <p>従来の紙のスタンプカードをデジタル化し、顧客管理とマーケティング機能を統合したシステムです。</p>
+                    <ul class="service-features">
+                        <li>NFCタッチ決済</li>
+                        <li>ポイント自動付与</li>
+                        <li>顧客行動分析</li>
+                        <li>キャンペーン機能</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>スマートホームシステム</h3>
+                    <p>家電機器の統合制御、セキュリティ管理、エネルギー最適化を実現するトータルソリューションです。</p>
+                    <ul class="service-features">
+                        <li>音声制御対応</li>
+                        <li>学習型自動制御</li>
+                        <li>外部連携API</li>
+                        <li>セキュリティ監視</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IoT Architecture -->
+    <section class="architecture-section">
+        <div class="container">
+            <h2 class="section-title">IoTアーキテクチャ</h2>
+            <div class="architecture-diagram">
+                <div class="arch-layer">
+                    <h3>デバイス層</h3>
+                    <div class="arch-items">
+                        <div class="arch-item">
+                            <i class="fas fa-microchip"></i>
+                            <span>センサー</span>
+                        </div>
+                        <div class="arch-item">
+                            <i class="fas fa-wifi"></i>
+                            <span>通信モジュール</span>
+                        </div>
+                        <div class="arch-item">
+                            <i class="fas fa-battery-half"></i>
+                            <span>電源管理</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="arch-layer">
+                    <h3>通信層</h3>
+                    <div class="arch-items">
+                        <div class="arch-item">
+                            <i class="fas fa-signal"></i>
+                            <span>4G/5G</span>
+                        </div>
+                        <div class="arch-item">
+                            <i class="fas fa-wifi"></i>
+                            <span>Wi-Fi</span>
+                        </div>
+                        <div class="arch-item">
+                            <i class="fas fa-bluetooth"></i>
+                            <span>Bluetooth</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="arch-layer">
+                    <h3>データ処理層</h3>
+                    <div class="arch-items">
+                        <div class="arch-item">
+                            <i class="fas fa-cloud"></i>
+                            <span>クラウド処理</span>
+                        </div>
+                        <div class="arch-item">
+                            <i class="fas fa-database"></i>
+                            <span>データベース</span>
+                        </div>
+                        <div class="arch-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>分析エンジン</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="arch-layer">
+                    <h3>アプリケーション層</h3>
+                    <div class="arch-items">
+                        <div class="arch-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>モバイルアプリ</span>
+                        </div>
+                        <div class="arch-item">
+                            <i class="fas fa-desktop"></i>
+                            <span>Webダッシュボード</span>
+                        </div>
+                        <div class="arch-item">
+                            <i class="fas fa-bell"></i>
+                            <span>通知システム</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Features -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">技術的特徴</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>高セキュリティ</h3>
+                    <p>エンドツーエンド暗号化とデバイス認証により、データの安全性を確保します。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3>スケーラビリティ</h3>
+                    <p>クラウドネイティブ設計により、デバイス数の増加に柔軟に対応可能です。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>リアルタイム処理</h3>
+                    <p>エッジコンピューティングにより低遅延でのデータ処理を実現します。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                    <h3>省電力設計</h3>
+                    <p>最適化されたプロトコルとハードウェア設計で長期間動作を実現します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies">
+        <div class="container">
+            <h2 class="section-title">導入事例</h2>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-image">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="case-content">
+                        <h3>大手スーパーマーケット様</h3>
+                        <h4>電子棚札システム導入</h4>
+                        <p>全店舗に電子棚札を導入し、価格変更作業時間を80%削減。リアルタイム在庫連動により品切れ損失も大幅改善。</p>
+                        <div class="case-results">
+                            <span class="result-item">作業時間80%削減</span>
+                            <span class="result-item">品切れ損失改善</span>
+                            <span class="result-item">価格精度向上</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-image">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="case-content">
+                        <h3>電力会社様</h3>
+                        <h4>スマート検針システム</h4>
+                        <p>従来の人的検針から自動検針への移行により、検針コストを60%削減。異常使用検知により設備トラブルの早期発見も実現。</p>
+                        <div class="case-results">
+                            <span class="result-item">検針コスト60%削減</span>
+                            <span class="result-item">異常検知機能</span>
+                            <span class="result-item">データ精度向上</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-image">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <div class="case-content">
+                        <h3>カフェチェーン様</h3>
+                        <h4>電子スタンプカード</h4>
+                        <p>紙のスタンプカードから電子化により、顧客データ分析が可能に。リピート率が25%向上し、売上増加を実現。</p>
+                        <div class="case-results">
+                            <span class="result-item">リピート率25%向上</span>
+                            <span class="result-item">顧客分析可能</span>
+                            <span class="result-item">運用コスト削減</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>IoT・スマートシステムに関するお問い合わせ</h2>
+                <p>お客様の業務に最適なIoTソリューションをご提案いたします。導入効果やコストについてもお気軽にご相談ください。</p>
+                <a href="index.html#contact" class="cta-button">お問い合わせ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <nav class="footer-nav">
+                <a href="index.html#news">お知らせ</a>
+                <a href="index.html#company">会社概要</a>
+                <a href="index.html#message">代表挨拶</a>
+                <a href="index.html#business">事業内容</a>
+                <a href="index.html#recruit">採用情報</a>
+                <a href="index.html#access">アクセス</a>
+                <a href="index.html#contact">お問い合わせ</a>
+            </nav>
+            <div class="copyright">
+                TERABOX Copyright.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
