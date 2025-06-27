@@ -1,0 +1,399 @@
+/* News Section */
+.news-section {
+    padding: 100px 0;
+    background: #111111;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.news-card {
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s;
+    border: 1px solid rgba(159, 213, 0, 0.1);
+    position: relative;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: #9FD500;
+}
+
+.news-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background-color: #9FD500;
+    transition: height 0.3s;
+}
+
+.news-card:hover::before {
+    height: 100%;
+}
+
+.news-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(45deg, #333, #555);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9FD500;
+    font-size: 40px;
+}
+
+.news-content {
+    padding: 25px;
+}
+
+.news-title {
+    color: #9FD500;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.news-text {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.news-link {
+    color: #9FD500;
+    text-decoration: underline;
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+
+.news-link:hover {
+    color: #7FB800;
+}
+
+/* Company Section */
+.company-section {
+    padding: 100px 0;
+    background: #0a0a0a;
+}
+
+.company-info {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 8px;
+    margin-top: 50px;
+    border: 1px solid rgba(159, 213, 0, 0.1);
+}
+
+.company-subtitle {
+    color: #9FD500;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.company-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.company-item {
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    transition: all 0.3s;
+}
+
+.company-item:hover {
+    border-bottom-color: #9FD500;
+}
+
+.company-label {
+    color: #9FD500;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.company-value {
+    color: #cccccc;
+    line-height: 1.6;
+    font-size: 17.5px;
+}
+
+/* Message Section */
+.message-section {
+    padding: 100px 0;
+    background: #111111;
+}
+
+.message-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 50px;
+    align-items: start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.ceo-info {
+    position: sticky;
+    top: 120px;
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(159, 213, 0, 0.1);
+    text-align: center;
+}
+
+.ceo-photo {
+    width: 288px;
+    height: 384px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(159, 213, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.ceo-photo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(159, 213, 0, 0.2);
+    border-color: #9FD500;
+}
+
+.ceo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.ceo-photo:hover .ceo-image {
+    transform: scale(1.05);
+}
+
+.ceo-name {
+    color: #9FD500;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.ceo-title {
+    color: #999999;
+    font-size: 17.5px;
+}
+
+.message-content {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 8px;
+    border-left: 4px solid #9FD500;
+    border: 1px solid rgba(159, 213, 0, 0.1);
+}
+
+.message-text {
+    color: #cccccc;
+    line-height: 1.8;
+    font-size: 16.75px;
+}
+
+.message-text p {
+    margin-bottom: 20px;
+}
+
+.message-greeting {
+    text-align: right;
+    color: #9FD500;
+    font-size: 16.75px;
+}
+
+.message-signature {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.signature-closing {
+    color: #9FD500;
+    margin-bottom: 10px;
+}
+
+.signature-name {
+    color: #9FD500;
+    font-weight: bold;
+}
+
+/* Mission & Vision Section */
+.mission-vision {
+    padding: 100px 0;
+    background: #0a0a0a;
+}
+
+.mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.mv-card {
+    padding: 40px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    border: 1px solid rgba(159, 213, 0, 0.1);
+}
+
+.mv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: #9FD500;
+}
+
+.mission-card {
+    background: linear-gradient(135deg, #1a3a3a, #2a4a4a);
+}
+
+.vision-card {
+    background: linear-gradient(135deg, #3a3a1a, #4a4a2a);
+}
+
+.mv-title {
+    font-size: 24px;
+    color: #9FD500;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.mv-text {
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+/* Access and Contact sections */
+.access-section {
+    padding: 100px 0;
+    background: #0a0a0a;
+}
+
+.access-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+    margin-top: 50px;
+}
+
+.access-info {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(159, 213, 0, 0.1);
+}
+
+.access-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.access-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.access-label {
+    color: #9FD500;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.access-value {
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.map-placeholder {
+    background: #1a1a1a;
+    border: 1px solid rgba(159, 213, 0, 0.1);
+    border-radius: 8px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.map-text {
+    color: #9FD500;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-section {
+    padding: 100px 0;
+    background: #111111;
+    text-align: center;
+}
+
+.contact-description {
+    color: #cccccc;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Responsive Design for Content Sections */
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .company-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .message-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .ceo-info {
+        position: static;
+        width: fit-content;
+        margin: 0 auto;
+    }
+    
+    .ceo-photo {
+        width: 240px;
+        height: 320px;
+    }
+    
+    .mv-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .access-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}

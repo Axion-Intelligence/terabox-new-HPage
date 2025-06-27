@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="组_5403" data-name="组 5403" transform="translate(-5.573 -7.573)">
+    <rect id="矩形_10" data-name="矩形 10" class="cls-1" width="4" height="4" rx="1" transform="translate(5.573 7.573)"/>
+    <rect id="矩形_15" data-name="矩形 15" class="cls-1" width="4" height="4" rx="1" transform="translate(5.573 15.573)"/>
+    <rect id="矩形_18" data-name="矩形 18" class="cls-1" width="4" height="4" rx="1" transform="translate(5.573 23.573)"/>
+    <rect id="矩形_11" data-name="矩形 11" class="cls-1" width="4" height="4" rx="1" transform="translate(13.573 7.573)"/>
+    <rect id="矩形_14" data-name="矩形 14" class="cls-1" width="4" height="4" rx="1" transform="translate(13.573 15.573)"/>
+    <rect id="矩形_17" data-name="矩形 17" class="cls-1" width="4" height="4" rx="1" transform="translate(13.573 23.573)"/>
+    <rect id="矩形_12" data-name="矩形 12" class="cls-1" width="4" height="4" rx="1" transform="translate(21.573 7.573)"/>
+    <rect id="矩形_13" data-name="矩形 13" class="cls-1" width="4" height="4" rx="1" transform="translate(21.573 15.573)"/>
+    <rect id="矩形_16" data-name="矩形 16" class="cls-1" width="4" height="4" rx="1" transform="translate(21.573 23.573)"/>
+  </g>
+</svg>

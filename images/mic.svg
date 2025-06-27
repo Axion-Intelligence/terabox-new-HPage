@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.203" height="20.633" viewBox="0 0 15.203 20.633">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #90af00;
+      }
+    </style>
+  </defs>
+  <path id="Icon_material-keyboard-voice" data-name="Icon material-keyboard-voice" class="cls-1" d="M11.768,15.532a3.244,3.244,0,0,0,3.247-3.258l.011-6.516a3.258,3.258,0,0,0-6.516,0v6.516A3.254,3.254,0,0,0,11.768,15.532Zm5.756-3.258a5.635,5.635,0,0,1-5.756,5.538,5.635,5.635,0,0,1-5.756-5.538H4.167a7.575,7.575,0,0,0,6.516,7.3v3.562h2.172V19.571a7.567,7.567,0,0,0,6.516-7.3Z" transform="translate(-4.167 -2.5)"/>
+</svg>

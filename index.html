@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TERABOX - AI Solution Technology</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+     <!-- 分割后的CSS文件引用 -->
+    <link rel="stylesheet" href="css/base-styles.css">
+    <link rel="stylesheet" href="css/header-hero-styles.css">
+    <link rel="stylesheet" href="css/content-sections-styles.css">
+    <link rel="stylesheet" href="css/business-styles.css">
+    <link rel="stylesheet" href="css/recruit-forms-styles.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <nav class="nav">
-            <a href="#" class="logo">TERABOX</a>
+            <a href="#" class="logo">
+    <img src="images/logo.svg" alt="Terabox Logo" class="logo-icon">
+    TERABOX
+</a>
             <ul class="nav-links">
                 <li><a href="#news" data-lang-key="nav-news">お知らせ</a></li>
                 <li><a href="#company" data-lang-key="nav-company">会社概要</a></li>
@@ -605,6 +613,10 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript Files -->
+	<!-- 先加载语言切换功能 -->
+	<script src="js/language-switcher.js"></script>
+	<!-- 然后加载主要的脚本文件（需要移除语言切换相关代码） -->
+	<script src="js/script.js"></script>
 </body>
 </html>
