@@ -250,8 +250,8 @@
 /* SVG装饰元素 */
 .hero-text .logo-decoration {
     position: absolute;
-    top: 25px;
-    left: 25px;
+    top: 90px;
+    left: 100px;
     width: 75px;
     height: 75px;
     background-image: url('images/logo.svg');
