@@ -355,9 +355,127 @@ function initParallaxEffect() {
     });
 }
 
+// 视频循环播放功能 - 添加到script.js文件中
+function initVideoLoop() {
+    const video = document.querySelector('.hero-video');
+    
+    if (video) {
+        // 确保视频属性正确设置
+        video.muted = true;
+        video.loop = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        
+        console.log('Video element found, initializing loop functionality...');
+        
+        // 监听ended事件，手动重新播放（防止loop属性失效）
+        video.addEventListener('ended', function() {
+            console.log('Video ended, restarting...');
+            video.currentTime = 0;
+            video.play().catch(e => console.log('Manual restart failed:', e));
+        });
+        
+        // 确保视频加载完成后开始播放
+        video.addEventListener('loadeddata', function() {
+            console.log('Video loaded, starting playback...');
+            video.play().catch(e => console.log('Initial play failed:', e));
+        });
+        
+        // 监听canplaythrough事件
+        video.addEventListener('canplaythrough', function() {
+            console.log('Video can play through, ensuring playback...');
+            if (video.paused) {
+                video.play().catch(e => console.log('Canplaythrough play failed:', e));
+            }
+        });
+        
+        // 处理页面可见性变化（标签页切换时）
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden && video.paused) {
+                console.log('Page visible again, resuming video...');
+                video.play().catch(e => console.log('Visibility resume failed:', e));
+            }
+        });
+        
+        // 定期检查视频状态，确保持续播放
+        setInterval(function() {
+            if (video.paused && !video.ended && video.readyState >= 3) {
+                console.log('Video paused unexpectedly, resuming...');
+                video.play().catch(e => console.log('Resume play failed:', e));
+            }
+        }, 3000);
+        
+        // 处理视频错误
+        video.addEventListener('error', function(e) {
+            console.error('Video error:', e);
+            // 显示fallback内容
+            const fallback = document.querySelector('.video-fallback');
+            if (fallback) {
+                fallback.style.display = 'flex';
+                video.style.display = 'none';
+            }
+        });
+        
+        // 在用户首次交互后确保视频播放（解决自动播放限制）
+        function ensureVideoPlaying() {
+            if (video.paused && video.readyState >= 3) {
+                console.log('User interaction detected, ensuring video plays...');
+                video.play().catch(e => console.log('User interaction play failed:', e));
+            }
+        }
+        
+        // 监听用户交互事件
+        ['click', 'scroll', 'keydown', 'touchstart'].forEach(event => {
+            document.addEventListener(event, ensureVideoPlaying, { once: true });
+        });
+        
+        // 当视频即将结束时，预准备重新播放
+        video.addEventListener('timeupdate', function() {
+            if (video.duration > 0) {
+                const timeRemaining = video.duration - video.currentTime;
+                // 在视频结束前1秒准备重新播放
+                if (timeRemaining < 1 && timeRemaining > 0.5) {
+                    console.log('Video almost ended, preparing to loop...');
+                }
+            }
+        });
+        
+        // 强制循环：当视频接近结束时无缝重新开始
+        video.addEventListener('timeupdate', function() {
+            if (video.duration > 0) {
+                const timeRemaining = video.duration - video.currentTime;
+                // 在最后0.1秒时重新开始
+                if (timeRemaining < 0.1) {
+                    video.currentTime = 0;
+                }
+            }
+        });
+        
+        // 处理网络状态变化
+        window.addEventListener('online', function() {
+            if (video.paused) {
+                console.log('Network back online, resuming video...');
+                video.play().catch(e => console.log('Network resume failed:', e));
+            }
+        });
+        
+        // 处理窗口焦点变化
+        window.addEventListener('focus', function() {
+            if (video.paused) {
+                console.log('Window focused, resuming video...');
+                video.play().catch(e => console.log('Focus resume failed:', e));
+            }
+        });
+        
+    } else {
+        console.warn('Hero video element not found!');
+    }
+}
+
 // Initialize all functionality
 document.addEventListener('DOMContentLoaded', function() {
     initLoadingAnimation();
+	initVideoLoop(); // 添加这一行
     initSmoothScrolling();
     initScrollAnimations();
     initHeaderScrollEffect();
