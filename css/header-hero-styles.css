@@ -197,7 +197,7 @@
 
 .hero-text {
     position: relative;
-    background: linear-gradient(135deg, 
+    background: linear-gradient(45deg, 
         #B8E500 0%, 
         #9FD500 15%, 
         #8BC800 30%, 
@@ -250,8 +250,8 @@
 /* SVG装饰元素 */
 .hero-text .logo-decoration {
     position: absolute;
-    top: 90px;
-    left: 100px;
+    top: 25px;
+    left: 25px;
     width: 75px;
     height: 75px;
     background-image: url('images/logo.svg');
@@ -265,8 +265,8 @@
 
 .hero-text .hand-decoration {
     position: absolute;
-    bottom: 25px;
-    right: 25px;
+    bottom: 90px;
+    right: 100px;
     width: 100px;
     height: 100px;
     background-image: url('images/hand.svg');
