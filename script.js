@@ -1,497 +1,7 @@
 // Complete trilingual translations for TERABOX website
-const translations = {
-    ja: {
-        // Navigation
-        'nav-news': 'お知らせ',
-        'nav-company': '会社概要',
-        'nav-message': '代表挨拶',
-        'nav-business': '事業内容',
-        'nav-recruit': '採用情報',
-        'nav-access': 'アクセス',
-        'nav-contact': 'お問い合わせ',
-        
-        // Hero Section
-        'hero-title': 'WELCOME TO<br>Terabox',
-        'hero-subtitle': 'AI Solution<br>Technology',
-        'hero-description': '想無ぜぱてり韓地ごあぐぼ件表治ク<br>たン庫供ひほド社89関よゅょ南路ミ<br>セオテ年望ツ速講21幻ちんぴげ。私',
-        'hero-cta': '詳細を見る',
-        
-        // News Section
-        'news-title': 'お知らせ',
-        'news-subtitle': '最新のニュースと情報をお届けします',
-        'news-item-title': 'Terabox',
-        'news-item-text': '想無ぜぱてり韓地ごあぐぼ件表治クたン庫供ひほド社89関よゅょ南路ミセオテ年望ツ速講21幻ちんぴげ。',
-        
-        // Company Section
-        'company-title': '会社概要',
-        'company-subtitle': 'Company Information',
-        'company-headquarters': '本社',
-        'company-name-label': '名　称',
-        'company-name-value': 'テラボックス株式会社',
-        'company-address-label': '所在地',
-        'company-address-value': '〒104-0045 東京都中央区築地6丁目17-4<br>リードシー築地ビル 4F',
-        'company-tel-label': 'TEL',
-        'company-tel-value': '03-5542-7798',
-        'company-email-label': 'E-mail',
-        'company-email-value': 'info@terabox.jp',
-        'company-established-label': '設立日',
-        'company-established-value': '平成28年4月',
-        'company-capital-label': '資本金',
-        'company-capital-value': '2000万円',
-        'company-ceo-label': '代表者',
-        'company-ceo-value': '荊　威',
-        'company-lawyer-label': '顧問弁護士',
-        'company-lawyer-value': '飯田綜合法律事務所',
-        
-        // Message Section
-        'message-title': '代表挨拶',
-        'message-subtitle': 'Message from CEO',
-        'ceo-photo-placeholder': '代表者写真<br>プレースホルダー',
-        'ceo-name': '荊　威',
-        'ceo-title': '代表取締役',
-        'message-greeting': '拝啓',
-        'message-p1': '貴社ますますご清栄のこととお慶び申し上げます。',
-        'message-p2': 'このたびテラボックスは、日系企業で長く働きながら日本のビジネスを身に付けた経験豊富な精鋭メンバーの結集により設立させていただきました。今後とも、お客様から信頼されるビジネスパートナーとして真摯に業務に取り組んで参ります。',
-        'message-p3': '昨今では外国系のIT企業は乱立気味であり、ともすれば人材を奪い合うような状況に陥りがちな市況でもある中、弊社の創業メンバーは逆転の発想と長い業界経験を活かし、互いに協力関係を築き合えるパートナーネットワークの仕組みを構築いたしました。',
-        'message-p4': '優秀なビジネスパートナーとの緊密な連携により、お客様の様々なニーズに対応できる体制を整えております。',
-        'message-p5': '弊社の主な事業範囲としては、AIソリューション事業、IoT・スマートシステム事業、Blockchain & Web3事業、エンタープライズソリューション事業、エンジニアリング事業、人材事業の六つの柱を軸に事業展開しております。また、特に金融・保険業界の経験者が多数在籍していることから、セキュリティに対する高い意識と豊富な知識も保有しております。',
-        'message-p6': '今後とも弊社ならびに弊社ネットワークの経験値と知見を結集し、貴社のご要望に柔軟に対応して参ります。また、それに対応するための十分以上の知力と体力を備えていると自負致しております。貴社のご期待に応えるべく全力を尽くす所存でございますので、何卒ご検討の程宜しくお願い申し上げます。',
-        'message-closing': '敬具',
-        'message-company': 'テラボックス株式会社',
-        'message-signature': '代表取締役　荊威',
-        
-        // Mission/Vision Section
-        'mission-title': '私たちのミッション',
-        'mission-subtitle': 'Our Mission',
-        'mission-text': '想無ぜぱてり韓地ごあぐぼ件表治クたン庫供ひほド社89関よゅょ南路ミセオテ年望ツ速講21幻ちんぴげ。私官勝雪リユ師野はそば告者トやめー航質ねフ秀劇マラミ業季ぞびや報思ぐレぼる光止ルぽざス道97入むずま図氏ツ恩氏ロ用来ッ前東ウオヨア経未オユテ面5長エ協身ね。',
-        'vision-title': '私たちのビジョン',
-        'vision-subtitle': 'Our Vision',
-        'vision-text': '想無ぜぱてり韓地ごあぐぼ件表治クたン庫供ひほド社89関よゅょ南路ミセオテ年望ツ速講21幻ちんぴげ。私官勝雪リユ師野はそば告者トやめー航質ねフ秀劇マラミ業季ぞびや報思ぐレぼる光止ルぽざス道97入むずま図氏ツ恩氏ロ用来ッ前東ウオヨア経未オユテ面5長エ協身ね。',
-        
-        // Business Section
-        'business-title': '事業内容',
-        'business-subtitle': 'Our Business Solutions',
-        'business-ai-title': 'AI ソリューション開発',
-        'business-ai-text': '機械学習とディープラーニング技術を活用した、カスタムAIソリューションの開発・導入支援を行います。お客様の業務課題に合わせた最適なAIシステムを提供いたします。',
-        'business-ai-tags': '機械学習 | ディープラーニング | 自然言語処理',
-        'business-data-title': 'データ分析・コンサルティング',
-        'business-data-text': '蓄積されたデータから価値ある洞察を抽出し、ビジネス成長に活用するためのデータ分析サービスと戦略コンサルティングを提供します。',
-        'business-data-tags': 'ビッグデータ | 予測分析 | ビジネスインテリジェンス',
-        'business-system-title': 'システム開発・運用',
-        'business-system-text': '最新のクラウド技術とAI技術を組み合わせた、スケーラブルで効率的なシステムの設計・開発・運用保守サービスを提供します。',
-        'business-system-tags': 'クラウド | DevOps | システム運用',
-        
-        // Recruit Section
-        'recruit-title': '採用情報',
-        'recruit-subtitle': 'Join Our Team',
-        'recruit-requirements-title': '募集要項（新卒・中途）',
-        'recruit-position-label': '募集職種',
-        'recruit-position-value': '①ITエンジニア　②総合職',
-        'recruit-hours-label': '勤務時間',
-        'recruit-hours-value': '9:00～18:00（休憩1時間）　土日祝日休み　年次有給休暇の計画的付与あり',
-        'recruit-hours-note': '※勤務時間・休みは職種や部署によって異なる場合があります。相談可。',
-        'recruit-allowance-label': '諸手当',
-        'recruit-allowance-value': '通勤手当、家族手当、勤続手当、役職手当等あり',
-        'recruit-salary-label': '給与',
-        'recruit-salary-new': '新卒',
-        'recruit-salary-mid': '中途採用',
-        'recruit-salary-mid-range': '年収400～1,000万円',
-        'recruit-raise-label': '昇給・昇格',
-        'recruit-raise-value': '半期毎評定あり',
-        'recruit-trial-label': '試用・研修期間について',
-        'recruit-trial-value': '３ヶ月',
-        'recruit-vacation-label': '休暇',
-        'recruit-vacation-value': '週休2日制　リフレッシュ休暇',
-        'recruit-training-label': '研修制度',
-        'recruit-training-value': '能力開発体系に基づく研修<br>テクニカルスキル研修<br>eラーニング研修　OJT',
-        'recruit-positions-title': '中途採用職種',
-        
-        // Access Section
-        'access-title': 'アクセス',
-        'access-subtitle': 'How to reach us',
-        'access-company-label': '会社名',
-        'access-company-value': '株式会社Terabox',
-        'access-address-label': '住所',
-        'access-address-value': '〒100-0001<br>東京都千代田区千代田1-1-1<br>Teraboxビル 10F',
-        'access-station-label': '最寄り駅',
-        'access-station-value': 'JR東京駅 徒歩5分<br>地下鉄大手町駅 徒歩3分',
-        'access-phone-label': '電話番号',
-        'access-phone-value': '03-1234-5678',
-        'access-fax-label': 'FAX番号',
-        'access-fax-value': '03-1234-5679',
-        'access-hours-label': '営業時間',
-        'access-hours-value': '平日 9:00 - 18:00<br>(土日祝日は休業)',
-        'access-map-text': 'Google Maps',
-        
-        // Contact Section
-        'contact-title': 'お問い合わせ',
-        'contact-subtitle': 'Contact Us',
-        'contact-description': '想無ぜぱてり韓地ごあぐぼ件表治クたン庫供ひほド社89関よゅょ南路ミセオテ年望ツ速講21幻ちんぴげ。',
-        'contact-cta': '詳細を見る',
-        
-        // Footer
-        'footer-copyright': 'TERABOX Copyright.'
-    },
-    
-    en: {
-        // Navigation
-        'nav-news': 'News',
-        'nav-company': 'Company',
-        'nav-message': 'CEO Message',
-        'nav-business': 'Business',
-        'nav-recruit': 'Careers',
-        'nav-access': 'Access',
-        'nav-contact': 'Contact',
-        
-        // Hero Section
-        'hero-title': 'WELCOME TO<br>Terabox',
-        'hero-subtitle': 'AI Solution<br>Technology',
-        'hero-description': 'Leading the future with innovative AI solutions.<br>We provide cutting-edge technology services<br>to transform your business digitally.',
-        'hero-cta': 'Learn More',
-        
-        // News Section
-        'news-title': 'News & Updates',
-        'news-subtitle': 'Stay informed with our latest news and announcements',
-        'news-item-title': 'Terabox News',
-        'news-item-text': 'Latest updates on our AI solution development and technology innovations in the digital transformation space.',
-        
-        // Company Section
-        'company-title': 'Company Overview',
-        'company-subtitle': '会社情報',
-        'company-headquarters': 'Headquarters',
-        'company-name-label': 'Company Name',
-        'company-name-value': 'Terabox Co., Ltd.',
-        'company-address-label': 'Address',
-        'company-address-value': '〒104-0045 Tokyo, Chuo City, Tsukiji 6-17-4<br>Reed Sea Tsukiji Building 4F',
-        'company-tel-label': 'TEL',
-        'company-tel-value': '03-5542-7798',
-        'company-email-label': 'E-mail',
-        'company-email-value': 'info@terabox.jp',
-        'company-established-label': 'Established',
-        'company-established-value': 'April 2016',
-        'company-capital-label': 'Capital',
-        'company-capital-value': '20 Million Yen',
-        'company-ceo-label': 'Representative',
-        'company-ceo-value': 'Jing Wei',
-        'company-lawyer-label': 'Legal Advisor',
-        'company-lawyer-value': 'Iida Sogo Law Office',
-        
-        // Message Section
-        'message-title': 'Message from CEO',
-        'message-subtitle': '代表挨拶',
-        'ceo-photo-placeholder': 'CEO Photo<br>Placeholder',
-        'ceo-name': 'Jing Wei',
-        'ceo-title': 'President & CEO',
-        'message-greeting': 'Dear Valued Partners,',
-        'message-p1': 'We are pleased to see your company continues to prosper.',
-        'message-p2': 'Terabox was established through the collaboration of experienced elite members who have long worked in Japanese companies and acquired deep knowledge of Japanese business practices. We will continue to work diligently as a trusted business partner for our customers.',
-        'message-p3': 'In recent years, foreign IT companies have become increasingly prevalent, and the market tends to fall into a situation where companies compete for talent. Our founding members have leveraged their reverse thinking and extensive industry experience to build a partner network system that enables mutual cooperation.',
-        'message-p4': 'Through close collaboration with excellent business partners, we have established a system that can respond to various customer needs.',
-        'message-p5': 'Our main business scope is based on three pillars: Engineering business, Solution business, and IT Service business. In addition, since we have many experienced professionals from the financial and insurance industries, we possess high security awareness and extensive knowledge.',
-        'message-p6': 'We will continue to combine the experience and knowledge of our company and our network to flexibly respond to your requirements. We are confident that we have more than sufficient intelligence and physical strength to handle this. We will do our best to meet your expectations, so we ask for your kind consideration.',
-        'message-closing': 'Sincerely,',
-        'message-company': 'Terabox Co., Ltd.',
-        'message-signature': 'President & CEO, Jing Wei',
-        
-        // Mission/Vision Section
-        'mission-title': 'Our Mission',
-        'mission-subtitle': '私たちのミッション',
-        'mission-text': 'To revolutionize business operations through innovative AI solutions, empowering organizations to achieve unprecedented efficiency and growth in the digital age.',
-        'vision-title': 'Our Vision',
-        'vision-subtitle': '私たちのビジョン',
-        'vision-text': 'To become the leading AI technology partner in Asia, driving digital transformation and creating sustainable value for businesses across all industries.',
-        
-        // Business Section
-        'business-title': 'Our Business',
-        'business-subtitle': '事業内容',
-        'business-ai-title': 'AI Solution Development',
-        'business-ai-text': 'We develop and implement custom AI solutions utilizing machine learning and deep learning technologies. We provide optimal AI systems tailored to our clients\' business challenges.',
-        'business-ai-tags': 'Machine Learning | Deep Learning | Natural Language Processing',
-        'business-data-title': 'Data Analytics & Consulting',
-        'business-data-text': 'We provide data analysis services and strategic consulting to extract valuable insights from accumulated data and utilize them for business growth.',
-        'business-data-tags': 'Big Data | Predictive Analytics | Business Intelligence',
-        'business-system-title': 'System Development & Operations',
-        'business-system-text': 'We provide scalable and efficient system design, development, and operational maintenance services that combine the latest cloud and AI technologies.',
-        'business-system-tags': 'Cloud | DevOps | System Operations',
-        
-        // Recruit Section
-        'recruit-title': 'Careers',
-        'recruit-subtitle': '採用情報',
-        'recruit-requirements-title': 'Job Requirements (New Graduates & Mid-Career)',
-        'recruit-position-label': 'Positions',
-        'recruit-position-value': '①IT Engineer　②General Position',
-        'recruit-hours-label': 'Working Hours',
-        'recruit-hours-value': '9:00-18:00 (1 hour break) Weekends and holidays off, planned annual leave available',
-        'recruit-hours-note': '※Working hours and holidays may vary by position or department. Negotiable.',
-        'recruit-allowance-label': 'Allowances',
-        'recruit-allowance-value': 'Transportation, family, service years, position allowances available',
-        'recruit-salary-label': 'Salary',
-        'recruit-salary-new': 'New Graduates',
-        'recruit-salary-mid': 'Mid-Career',
-        'recruit-salary-mid-range': 'Annual salary 4-10 million yen',
-        'recruit-raise-label': 'Promotion & Raises',
-        'recruit-raise-value': 'Semi-annual evaluations',
-        'recruit-trial-label': 'Trial/Training Period',
-        'recruit-trial-value': '3 months',
-        'recruit-vacation-label': 'Holidays',
-        'recruit-vacation-value': '5-day work week, refresh leave',
-        'recruit-training-label': 'Training System',
-        'recruit-training-value': 'Capability development training<br>Technical skills training<br>E-learning, OJT',
-        'recruit-positions-title': 'Mid-Career Positions',
-        
-        // Access Section
-        'access-title': 'Access',
-        'access-subtitle': 'アクセス情報',
-        'access-company-label': 'Company Name',
-        'access-company-value': 'Terabox Co., Ltd.',
-        'access-address-label': 'Address',
-        'access-address-value': '〒100-0001<br>1-1-1 Chiyoda, Chiyoda City, Tokyo<br>Terabox Building 10F',
-        'access-station-label': 'Nearest Station',
-        'access-station-value': 'JR Tokyo Station 5min walk<br>Otemachi Station 3min walk',
-        'access-phone-label': 'Phone',
-        'access-phone-value': '03-1234-5678',
-        'access-fax-label': 'FAX',
-        'access-fax-value': '03-1234-5679',
-        'access-hours-label': 'Business Hours',
-        'access-hours-value': 'Weekdays 9:00 - 18:00<br>(Closed on weekends and holidays)',
-        'access-map-text': 'Google Maps',
-        
-        // Contact Section
-        'contact-title': 'Contact Us',
-        'contact-subtitle': 'お問い合わせ',
-        'contact-description': 'Get in touch with us to learn more about our AI solutions and how we can help transform your business.',
-        'contact-cta': 'Get Started',
-        
-        // Footer
-        'footer-copyright': 'TERABOX Copyright.'
-    },
-    
-    zh: {
-        // Navigation
-        'nav-news': '新闻动态',
-        'nav-company': '公司概况',
-        'nav-message': '总裁致辞',
-        'nav-business': '业务内容',
-        'nav-recruit': '招聘信息',
-        'nav-access': '交通指南',
-        'nav-contact': '联系我们',
-        
-        // Hero Section
-        'hero-title': '欢迎来到<br>Terabox',
-        'hero-subtitle': 'AI解决方案<br>技术公司',
-        'hero-description': '引领未来的创新AI解决方案。<br>我们提供尖端技术服务，<br>助力您的企业数字化转型。',
-        'hero-cta': '了解更多',
-        
-        // News Section
-        'news-title': '新闻动态',
-        'news-subtitle': '获取我们最新的新闻和公告信息',
-        'news-item-title': 'Terabox新闻',
-        'news-item-text': '关于我们AI解决方案开发和数字化转型领域技术创新的最新动态。',
-        
-        // Company Section
-        'company-title': '公司概况',
-        'company-subtitle': 'Company Information',
-        'company-headquarters': '总部',
-        'company-name-label': '公司名称',
-        'company-name-value': 'Terabox株式会社',
-        'company-address-label': '地址',
-        'company-address-value': '〒104-0045 东京都中央区築地6丁目17-4<br>リードシー築地大厦 4F',
-        'company-tel-label': '电话',
-        'company-tel-value': '03-5542-7798',
-        'company-email-label': '邮箱',
-        'company-email-value': 'info@terabox.jp',
-        'company-established-label': '成立日期',
-        'company-established-value': '2016年4月',
-        'company-capital-label': '注册资本',
-        'company-capital-value': '2000万日元',
-        'company-ceo-label': '法人代表',
-        'company-ceo-value': '荆威',
-        'company-lawyer-label': '法律顾问',
-        'company-lawyer-value': '飯田綜合法律事务所',
-        
-        // Message Section
-        'message-title': '总裁致辞',
-        'message-subtitle': 'Message from CEO',
-        'ceo-photo-placeholder': '总裁照片<br>占位符',
-        'ceo-name': '荆威',
-        'ceo-title': '代表董事',
-        'message-greeting': '尊敬的合作伙伴：',
-        'message-p1': '很高兴看到贵公司日益繁荣发展。',
-        'message-p2': 'Terabox是由在日本企业长期工作并掌握了日本商务知识的经验丰富的精英成员合作成立的。我们将继续作为客户信赖的商业伙伴，真诚地开展业务。',
-        'message-p3': '近年来，外资IT企业呈现乱立态势，市场往往陷入人才争夺的局面。我们的创始成员运用逆向思维和丰富的行业经验，构建了能够相互建立合作关系的合作伙伴网络机制。',
-        'message-p4': '通过与优秀商业伙伴的紧密合作，我们建立了能够满足客户各种需求的体制。',
-        'message-p5': '我们的主要业务范围以工程业务、解决方案业务、IT服务业务为三大支柱。此外，由于有众多金融保险行业的经验者在籍，我们也拥有对安全的高度意识和丰富知识。',
-        'message-p6': '今后我们将继续结合公司及公司网络的经验值和见解，灵活应对贵公司的要求。我们相信具备了应对这些要求的充分智力和体力。我们将全力以赴满足贵公司的期待，恳请予以考虑。',
-        'message-closing': '此致敬礼',
-        'message-company': 'Terabox株式会社',
-        'message-signature': '代表董事 荆威',
-        
-        // Mission/Vision Section
-        'mission-title': '我们的使命',
-        'mission-subtitle': 'Our Mission',
-        'mission-text': '通过创新的AI解决方案革命性地改变商业运营，赋能组织在数字时代实现前所未有的效率和增长。',
-        'vision-title': '我们的愿景',
-        'vision-subtitle': 'Our Vision',
-        'vision-text': '成为亚洲领先的AI技术合作伙伴，推动数字化转型，为各行各业的企业创造可持续价值。',
-        
-        // Business Section
-        'business-title': '业务内容',
-        'business-subtitle': 'Our Business Solutions',
-        'business-ai-title': 'AI解决方案开发',
-        'business-ai-text': '我们利用机器学习和深度学习技术开发和实施定制AI解决方案。我们提供针对客户业务挑战的最优AI系统。',
-        'business-ai-tags': '机器学习 | 深度学习 | 自然语言处理',
-        'business-data-title': '数据分析与咨询',
-        'business-data-text': '我们提供数据分析服务和战略咨询，从积累的数据中提取有价值的洞察，并将其用于业务增长。',
-        'business-data-tags': '大数据 | 预测分析 | 商业智能',
-        'business-system-title': '系统开发与运营',
-        'business-system-text': '我们提供结合最新云技术和AI技术的可扩展高效系统设计、开发和运营维护服务。',
-        'business-system-tags': '云计算 | DevOps | 系统运营',
-        
-        // Recruit Section
-        'recruit-title': '招聘信息',
-        'recruit-subtitle': 'Join Our Team',
-        'recruit-requirements-title': '招聘要求（应届生·社会人士）',
-        'recruit-position-label': '招聘职位',
-        'recruit-position-value': '①IT工程师　②综合职位',
-        'recruit-hours-label': '工作时间',
-        'recruit-hours-value': '9:00～18:00（休息1小时）周末节假日休息　年假计划性安排',
-        'recruit-hours-note': '※工作时间和休假可能因职位或部门而异。可协商。',
-        'recruit-allowance-label': '各种补助',
-        'recruit-allowance-value': '交通补助、家庭补助、勤续补助、职位补助等',
-        'recruit-salary-label': '薪资',
-        'recruit-salary-new': '应届生',
-        'recruit-salary-mid': '社会招聘',
-        'recruit-salary-mid-range': '年收入400～1000万日元',
-        'recruit-raise-label': '升职加薪',
-        'recruit-raise-value': '半年一次评定',
-        'recruit-trial-label': '试用培训期间',
-        'recruit-trial-value': '3个月',
-        'recruit-vacation-label': '休假',
-        'recruit-vacation-value': '周休2日制　有调养假',
-        'recruit-training-label': '培训制度',
-        'recruit-training-value': '基于能力开发体系的培训<br>技术技能培训<br>在线培训　OJT',
-        'recruit-positions-title': '社会招聘职位',
-        
-        // Access Section
-        'access-title': '交通指南',
-        'access-subtitle': 'How to reach us',
-        'access-company-label': '公司名称',
-        'access-company-value': 'Terabox株式会社',
-        'access-address-label': '地址',
-        'access-address-value': '〒100-0001<br>东京都千代田区千代田1-1-1<br>Terabox大厦 10F',
-        'access-station-label': '最近车站',
-        'access-station-value': 'JR东京站 步行5分钟<br>地铁大手町站 步行3分钟',
-        'access-phone-label': '电话号码',
-        'access-phone-value': '03-1234-5678',
-        'access-fax-label': '传真号码',
-        'access-fax-value': '03-1234-5679',
-        'access-hours-label': '营业时间',
-        'access-hours-value': '工作日 9:00 - 18:00<br>(周末节假日休业)',
-        'access-map-text': 'Google Maps',
-        
-        // Contact Section
-        'contact-title': '联系我们',
-        'contact-subtitle': 'Contact Us',
-        'contact-description': '联系我们，了解更多关于我们的AI解决方案，以及我们如何帮助您的企业实现转型。',
-        'contact-cta': '开始咨询',
-        
-        // Footer
-        'footer-copyright': 'TERABOX Copyright.'
-    }
-};
 
-// Language switching functionality
-function switchLanguage(lang) {
-    // Update all elements with data-lang-key attribute
-    document.querySelectorAll('[data-lang-key]').forEach(element => {
-        const key = element.getAttribute('data-lang-key');
-        if (translations[lang] && translations[lang][key]) {
-            element.innerHTML = translations[lang][key];
-        }
-    });
 
-    // Update active language button
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
 
-    // Store selected language
-    localStorage.setItem('terabox-language', lang);
-
-    // Add visual feedback
-    const langText = {
-        'ja': '日本語に切り替えました',
-        'en': 'Switched to English',
-        'zh': '已切换到中文'
-    };
-
-    showLanguageNotification(langText[lang]);
-}
-
-// Show language switch notification
-function showLanguageNotification(message) {
-    // Remove existing notification
-    const existing = document.querySelector('.lang-notification');
-    if (existing) {
-        existing.remove();
-    }
-
-    const notification = document.createElement('div');
-    notification.className = 'lang-notification';
-    notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        background: linear-gradient(45deg, #9FD500, #7FB800);
-        color: #000;
-        padding: 12px 20px;
-        border-radius: 6px;
-        font-weight: bold;
-        z-index: 10000;
-        animation: slideInFade 3s ease-out forwards;
-        box-shadow: 0 4px 15px rgba(159, 213, 0, 0.3);
-    `;
-
-    document.body.appendChild(notification);
-
-    // Add animation styles
-    if (!document.querySelector('#lang-notification-styles')) {
-        const style = document.createElement('style');
-        style.id = 'lang-notification-styles';
-        style.textContent = `
-            @keyframes slideInFade {
-                0% { transform: translateX(100%); opacity: 0; }
-                15% { transform: translateX(0); opacity: 1; }
-                85% { transform: translateX(0); opacity: 1; }
-                100% { transform: translateX(100%); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.remove();
-        }
-    }, 3000);
-}
-
-// Initialize language switching
-function initLanguageSwitching() {
-    // Load saved language or default to Japanese
-    const savedLang = localStorage.getItem('terabox-language') || 'ja';
-    switchLanguage(savedLang);
-
-    // Add event listeners to language buttons
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const lang = this.getAttribute('data-lang');
-            switchLanguage(lang);
-        });
-    });
-}
 
 // Enhanced particle creation
 function createParticles() {
@@ -845,10 +355,127 @@ function initParallaxEffect() {
     });
 }
 
+// 视频循环播放功能 - 添加到script.js文件中
+function initVideoLoop() {
+    const video = document.querySelector('.hero-video');
+    
+    if (video) {
+        // 确保视频属性正确设置
+        video.muted = true;
+        video.loop = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        
+        console.log('Video element found, initializing loop functionality...');
+        
+        // 监听ended事件，手动重新播放（防止loop属性失效）
+        video.addEventListener('ended', function() {
+            console.log('Video ended, restarting...');
+            video.currentTime = 0;
+            video.play().catch(e => console.log('Manual restart failed:', e));
+        });
+        
+        // 确保视频加载完成后开始播放
+        video.addEventListener('loadeddata', function() {
+            console.log('Video loaded, starting playback...');
+            video.play().catch(e => console.log('Initial play failed:', e));
+        });
+        
+        // 监听canplaythrough事件
+        video.addEventListener('canplaythrough', function() {
+            console.log('Video can play through, ensuring playback...');
+            if (video.paused) {
+                video.play().catch(e => console.log('Canplaythrough play failed:', e));
+            }
+        });
+        
+        // 处理页面可见性变化（标签页切换时）
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden && video.paused) {
+                console.log('Page visible again, resuming video...');
+                video.play().catch(e => console.log('Visibility resume failed:', e));
+            }
+        });
+        
+        // 定期检查视频状态，确保持续播放
+        setInterval(function() {
+            if (video.paused && !video.ended && video.readyState >= 3) {
+                console.log('Video paused unexpectedly, resuming...');
+                video.play().catch(e => console.log('Resume play failed:', e));
+            }
+        }, 3000);
+        
+        // 处理视频错误
+        video.addEventListener('error', function(e) {
+            console.error('Video error:', e);
+            // 显示fallback内容
+            const fallback = document.querySelector('.video-fallback');
+            if (fallback) {
+                fallback.style.display = 'flex';
+                video.style.display = 'none';
+            }
+        });
+        
+        // 在用户首次交互后确保视频播放（解决自动播放限制）
+        function ensureVideoPlaying() {
+            if (video.paused && video.readyState >= 3) {
+                console.log('User interaction detected, ensuring video plays...');
+                video.play().catch(e => console.log('User interaction play failed:', e));
+            }
+        }
+        
+        // 监听用户交互事件
+        ['click', 'scroll', 'keydown', 'touchstart'].forEach(event => {
+            document.addEventListener(event, ensureVideoPlaying, { once: true });
+        });
+        
+        // 当视频即将结束时，预准备重新播放
+        video.addEventListener('timeupdate', function() {
+            if (video.duration > 0) {
+                const timeRemaining = video.duration - video.currentTime;
+                // 在视频结束前1秒准备重新播放
+                if (timeRemaining < 1 && timeRemaining > 0.5) {
+                    console.log('Video almost ended, preparing to loop...');
+                }
+            }
+        });
+        
+        // 强制循环：当视频接近结束时无缝重新开始
+        video.addEventListener('timeupdate', function() {
+            if (video.duration > 0) {
+                const timeRemaining = video.duration - video.currentTime;
+                // 在最后0.1秒时重新开始
+                if (timeRemaining < 0.1) {
+                    video.currentTime = 0;
+                }
+            }
+        });
+        
+        // 处理网络状态变化
+        window.addEventListener('online', function() {
+            if (video.paused) {
+                console.log('Network back online, resuming video...');
+                video.play().catch(e => console.log('Network resume failed:', e));
+            }
+        });
+        
+        // 处理窗口焦点变化
+        window.addEventListener('focus', function() {
+            if (video.paused) {
+                console.log('Window focused, resuming video...');
+                video.play().catch(e => console.log('Focus resume failed:', e));
+            }
+        });
+        
+    } else {
+        console.warn('Hero video element not found!');
+    }
+}
+
 // Initialize all functionality
 document.addEventListener('DOMContentLoaded', function() {
     initLoadingAnimation();
-    initLanguageSwitching(); // Initialize language switching first
+	initVideoLoop(); // 添加这一行
     initSmoothScrolling();
     initScrollAnimations();
     initHeaderScrollEffect();
