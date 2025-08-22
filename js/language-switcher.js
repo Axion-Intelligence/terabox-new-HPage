@@ -1,37 +1,63 @@
 // Trilingual Language Switcher for TERABOX Website
 // Complete translations for Japanese, English, and Chinese
+// Fixed version matching all index.html content
 
 const translations = {
     ja: {
         // Navigation
-        'nav-news': 'お知らせ',
+        'nav-strength': '当社の強み',
+        'nav-business-news': '業務新聞',
         'nav-company': '会社概要',
         'nav-message': '代表挨拶',
         'nav-business': '事業内容',
+        'nav-cases': '導入実績',
         'nav-recruit': '採用情報',
-        'nav-access': 'アクセス',
         'nav-contact': 'お問い合わせ',
         
         // Hero Section
-        'hero-title': 'WELCOME TO<br>Terabox',
-        'hero-subtitle': 'AI Solution<br>Technology',
-        'hero-description': 'AIソリューション、IoTシステム、Blockchain & Web3<br>エンタープライズソリューション、エンジニアリング<br>人材サービスの六つの事業で未来を創造します',
+        'hero-title': 'TERABOX',
+        'hero-subtitle': '信頼できるITパートナー',
+        'hero-description': 'システムエンジニアリング・AI/DXソリューション・スマート機器導入<br>25名以上の専門エンジニアチーム、平均7年以上の業界経験<br>お客様のビジネス課題を解決する一站式ITソリューション',
         'hero-cta': '詳細を見る',
+        'hero-stat-engineers': '専門エンジニア',
+        'hero-stat-companies': '年間サービス企業',
+        'hero-stat-experience': '平均業界経験',
         
-        // News Section
-        'news-title': 'お知らせ',
-        'news-subtitle': '最新のニュースと情報をお届けします',
-        'news-hackathon-title': 'Terabox主催ブロックチェーンハッカソン大会が成功開催',
-        'news-hackathon-text': 'Terabox主催による第1回ブロックチェーンハッカソン大会が盛況のうちに開催されました。全国各地から参加した開発者チームが、革新的なWeb3ソリューションを発表し、DeFi、NFT、DAOなどの最先端技術応用に焦点を当てました。本大会を通じて、ブロックチェーン技術の各業界への実用化推進に大きく貢献いたします。',
-        'news-partnership-title': '海外パートナーシップによるコスト最適化を実現',
-        'news-partnership-text': 'Teraboxは、サプライヤー最適化戦略の一環として、英国のAxion Intelligence UKをはじめとする海外企業との戦略的パートナーシップを締結いたしました。同社の高品質かつコストパフォーマンスに優れた開発コンサルティングサービスにより、従来の開発コストを50%以上削減することに成功し、日本のお客様により手頃な価格でのサービス提供を実現いたします。この取り組みにより、より多くの企業様にAIソリューションやIoTシステムをご利用いただけるようになりました。',
-        'news-rakuten-title': '楽天モバイル向け遠隔医療ソリューション提案が採択',
-        'news-rakuten-text': 'Teraboxは、中国市場での豊富な遠隔医療ソリューション実績を活かし、楽天モバイル様への革新的な提案が正式に採択されました。WiFi6技術とGPU処理能力を組み合わせた超低遅延・高精細度の遠隔ビデオ医療ソリューションにより、日本の医療現場に新たな可能性をもたらします。本ソリューションは、医師と患者間のリアルタイム診療体験を飛躍的に向上させ、地域医療格差の解消に貢献いたします。',
+        // Strength Section
+        'strength-title': '当社の強み',
+        'strength-subtitle': 'Our Competitive Advantages',
+        'strength-team-title': '多国籍精鋭チーム',
+        'strength-team-text': '日本人エンジニアと外国籍エンジニアが協働。官公庁・自治体案件でのプリセールス・提案・要件定義・入札支援等の豊富な実績。グローバルな知見と日本国内公共/民間領域への対応力を両立。',
+        'strength-service-title': 'エンドツーエンドサービス',
+        'strength-service-text': 'RFP（提案依頼書）・要件定義など上流工程から、技術選定・見積・課題整理・設計～運用まで一貫対応。上流工程経験豊富なPM/PLと最適なチームが高品質プロジェクトを推進。',
+        'strength-experience-title': '豊富な業界経験',
+        'strength-experience-text': '金融（メガバンク）、医療、物流、製造業など多業界での実績。特に金融・保険業界の経験者が多数在籍していることから、セキュリティに対する高い意識と豊富な知識を保有。',
+        
+        // Business News Section
+        'business-news-title': '業務新聞',
+        'business-news-subtitle': 'Latest Business Updates',
+        
+        // News Content
+        'news-badge-new': 'NEW',
+        'news-date-1': '2025年1月15日',
+        'news-date-2': '2025年1月10日',
+        'news-date-3': '2025年1月5日',
+        'news-category-press': 'プレスリリース',
+        'news-category-award': '受賞情報',
+        'news-category-partnership': 'パートナーシップ',
+        'news-title-1': '大手製造業向けAI品質検査システムを納入',
+        'news-text-1': '当社が開発したAIベースの品質検査システムが、国内大手製造業に採用されました。深層学習技術を活用し、不良品検出率を99.8%まで向上させ、検査時間を従来の1/3に短縮することに成功しました。今後も製造業のDX推進に貢献してまいります。',
+        'news-title-2': 'Google Cloud Partner認定を取得',
+        'news-text-2': 'この度、当社はGoogle Cloud Partnerとして正式に認定されました。これまでのクラウド移行実績と技術力が評価されての認定となります。今後はGoogle Cloudの最新技術を活用し、お客様により高度なクラウドソリューションを提供してまいります。',
+        'news-title-3': 'Microsoft社との戦略的パートナーシップを締結',
+        'news-text-3': 'Microsoft Dynamics 365の導入支援において、Microsoft社と戦略的パートナーシップを締結しました。これにより、エンタープライズ向けERPソリューションの提供能力が大幅に強化され、より包括的なデジタルトランスフォーメーションを支援できるようになります。',
         
         // Company Section
         'company-title': '会社概要',
         'company-subtitle': 'Company Information',
         'company-headquarters': '本社',
+        'company-subsidiary': '関連会社',
+        'company-headquarters-title': 'テラボックス株式会社',
         'company-name-label': '名　称',
         'company-name-value': 'テラボックス株式会社',
         'company-address-label': '所在地',
@@ -45,49 +71,53 @@ const translations = {
         'company-capital-label': '資本金',
         'company-capital-value': '2000万円',
         'company-ceo-label': '代表者',
-        'company-ceo-value': '荊　威',
+        'company-ceo-value': '荆　威',
+        'company-certifications-label': '諸資格',
+        'company-certifications-value': 'プライバシーマーク 10825028<br>有料職業紹介許可証 13-ユ-309628<br>労働者派遣事業許可証 派13-312878<br>Google Cloud Partner',
         'company-lawyer-label': '顧問弁護士',
         'company-lawyer-value': '飯田綜合法律事務所',
         
         // Message Section
         'message-title': '代表挨拶',
         'message-subtitle': 'Message from CEO',
-        'ceo-name': '荊　威',
+        'ceo-name': '荆　威',
         'ceo-title': '代表取締役',
         'message-greeting': '拝啓',
         'message-p1': '貴社ますますご清栄のこととお慶び申し上げます。',
         'message-p2': 'このたびテラボックスは、日系企業で長く働きながら日本のビジネスを身に付けた経験豊富な精鋭メンバーの結集により設立させていただきました。今後とも、お客様から信頼されるビジネスパートナーとして真摯に業務に取り組んで参ります。',
         'message-p3': '昨今では外国系のIT企業は乱立気味であり、ともすれば人材を奪い合うような状況に陥りがちな市況でもある中、弊社の創業メンバーは逆転の発想と長い業界経験を活かし、互いに協力関係を築き合えるパートナーネットワークの仕組みを構築いたしました。',
         'message-p4': '優秀なビジネスパートナーとの緊密な連携により、お客様の様々なニーズに対応できる体制を整えております。',
-        'message-p5': '弊社の主な事業範囲としては、AIソリューション事業、IoT・スマートシステム事業、Blockchain & Web3事業、エンタープライズソリューション事業、エンジニアリング事業、人材事業の六つの柱を軸に事業展開しております。。また、特に金融・保険業界の経験者が多数在籍していることから、セキュリティに対する高い意識と豊富な知識も保有しております。',
+        'message-p5': '弊社の主な事業範囲としては、システムエンジニアリング事業、AI・DXソリューション事業、スマート機器・IoT事業、IT人材サービス事業の四つの柱を軸に事業展開しております。また、特に金融・保険業界の経験者が多数在籍していることから、セキュリティに対する高い意識と豊富な知識も保有しております。',
         'message-p6': '今後とも弊社ならびに弊社ネットワークの経験値と知見を結集し、貴社のご要望に柔軟に対応して参ります。また、それに対応するための十分以上の知力と体力を備えていると自負致しております。貴社のご期待に応えるべく全力を尽くす所存でございますので、何卒ご検討の程宜しくお願い申し上げます。',
         'message-closing': '敬具',
         'message-company': 'テラボックス株式会社',
-        'message-signature': '代表取締役　荊威',
-        
-        // Mission/Vision Section
-        'mission-title': '私たちのミッション',
-        'mission-subtitle': 'Our Mission',
-        'mission-text': '想無ぜぱてり韓地ごあぐぼ件表治クたン庫供ひほド社89関よゅょ南路ミセオテ年望ツ速講21幻ちんぴげ。私官勝雪リユ師野はそば告者トやめー航質ねフ秀劇マラミ業季ぞびや報思ぐレぼる光止ルぽざス道97入むずま図氏ツ恩氏ロ用来ッ前東ウオヨア経未オユテ面5長エ協身ね。',
-        'vision-title': '私たちのビジョン',
-        'vision-subtitle': 'Our Vision',
-        'vision-text': '想無ぜぱてり韓地ごあぐぼ件表治クたン庫供ひほド社89関よゅょ南路ミセオテ年望ツ速講21幻ちんぴげ。私官勝雪リユ師野はそば告者トやめー航質ねフ秀劇マラミ業季ぞびや報思ぐレぼる光止ルぽざス道97入むずま図氏ツ恩氏ロ用来ッ前東ウオヨア経未オユテ面5長エ協身ね。',
+        'message-signature': '代表取締役　荆威',
         
         // Business Section
         'business-title': '事業内容',
-        'business-subtitle': 'Our Business Solutions',
-        'business-ai-title': 'AI ソリューション事業',
-        'business-ai-text': '顔認証、AI文献要約、サービスロボット、配送ロボットなど、最先端AI技術を活用したソリューションを提供します。',
-        'business-iot-title': 'IoT・スマートシステム事業',
-        'business-iot-text': '電子棚札、スマート検針システム、電子スタンプカードなど、IoT技術を活用したスマートシステムを開発・提供します。',
+        'business-subtitle': 'Our Business Services',
+        'business-engineering-title': 'システムエンジニアリング事業',
+        'business-engineering-text': '25名以上の多国籍エンジニアチーム、平均業界経験7年以上のプロフェッショナル集団',
+        'business-ai-title': 'AI・DXソリューション事業',
+        'business-ai-text': 'RFPから運用まで一站式AI/DXソリューション提供',
+        'business-iot-title': 'スマート機器・IoT事業',
+        'business-iot-text': 'サービスロボット日本初導入のパイオニア',
+        'business-hr-title': 'IT人材サービス事業',
+        'business-hr-text': '総合的な人材ソリューション提供',
         'business-blockchain-title': 'Blockchain & Web3事業',
-        'business-blockchain-text': 'DeFiソリューション、NFTプラットフォーム、スマートコントラクト開発など、次世代Web3技術のソリューションを提供します。',
+        'business-blockchain-text': '次世代Web3技術とブロックチェーンソリューションの開発・導入',
         'business-enterprise-title': 'エンタープライズソリューション事業',
-        'business-enterprise-text': 'ローコードプラットフォーム、勤怠管理システム、データ分析コンサルティングなど、企業の業務効率化を支援します。',
-        'business-engineering-title': 'エンジニアリング事業',
-        'business-engineering-text': '受託開発、業務支援（SES）、システム開発・運用など、お客様のIT開発ニーズに幅広く対応いたします。',
-        'business-hr-title': '人材事業',
-        'business-hr-text': '人材紹介、IT人材研修、人材プラットフォーム運営、人材派遣など、総合的な人材ソリューションを提供します。',
+        'business-enterprise-text': '企業のデジタル変革を支援する総合ソリューション',
+        
+        // Cases Section
+        'cases-title': '導入実績',
+        'cases-subtitle': 'Our Track Record',
+        'case-megabank-title': '某メガバンク - AWS共通基盤構築',
+        'case-megabank-text': '次期基盤構築・運用保守プロジェクト。延べ100+人月、継続中。24/7運用体制を構築し、高可用性とセキュリティを実現。',
+        'case-medical-title': '上場医療データ専門会社 - ビッグデータ基盤',
+        'case-medical-text': 'ビッグデータ分析を含め、データ基盤構築・運用保守。延べ100+人月、継続中。AI/MLを活用した高度な分析環境を提供。',
+        'case-nursing-title': '介護施設 - 日本初サービスロボット導入',
+        'case-nursing-text': '配膳・清掃ロボットの日本初導入を実現。85%の利用者が負担軽減を実感。作業時間を25%～70%削減に成功。',
         
         // Recruit Section
         'recruit-title': '採用情報',
@@ -114,19 +144,39 @@ const translations = {
         'recruit-training-value': '能力開発体系に基づく研修<br>テクニカルスキル研修<br>eラーニング研修　OJT',
         'recruit-positions-title': '中途採用職種',
         
+        // Mid-Career Positions
+        'position-skills-label': '必要スキル:',
+        'position-apply-btn': '応募する',
+        'position-ai-title': 'AIエンジニア',
+        'position-ai-description': '機械学習モデルの開発・改善、データパイプライン構築、AIプロダクトの実装に従事していただきます。最新の技術トレンドを追いながら、革新的なソリューション開発に携わることができます。',
+        'position-ai-skills': 'Python, TensorFlow/PyTorch, 機械学習の基礎知識',
+        'position-fullstack-title': 'フルスタックエンジニア',
+        'position-fullstack-description': 'フロントエンドからバックエンドまで、システム全体の設計・開発に携わります。モダンな技術スタックを使用した開発環境で、技術力を存分に発揮できます。',
+        'position-fullstack-skills': 'JavaScript, React, Node.js, クラウドサービス',
+        'position-cloud-title': 'クラウドアーキテクト',
+        'position-cloud-description': '企業のクラウド移行戦略立案、アーキテクチャ設計、インフラ構築を担当します。スケーラブルで安全なクラウドソリューションの提供を通じて、お客様のDXを推進します。',
+        'position-cloud-skills': 'AWS/Azure/GCP, Kubernetes, Infrastructure as Code',
+        'position-pm-title': 'プロダクトマネージャー',
+        'position-pm-description': 'AIプロダクトの企画・開発・運用を統括し、市場ニーズを技術要件に落とし込みます。エンジニアリングチームと密接に連携し、革新的なプロダクトの創出をリードします。',
+        'position-pm-skills': 'プロダクト企画経験, 技術理解力, プロジェクト管理',
+        'position-devops-title': 'DevOpsエンジニア',
+        'position-devops-description': 'CI/CDパイプラインの構築、インフラの自動化、監視システムの導入を通じて、開発プロセスの効率化と品質向上を実現します。',
+        'position-devops-skills': 'Docker, Kubernetes, CI/CD, 監視ツール',
+        'position-ds-title': 'データサイエンティスト',
+        'position-ds-description': '大規模データの分析、統計モデリング、ビジネス課題解決のための洞察抽出を行います。データから価値を創出し、意思決定を支援する重要な役割です。',
+        'position-ds-skills': 'R/Python, SQL, 統計学の知識',
+        
         // Access Section
         'access-title': 'アクセス',
         'access-subtitle': 'How to reach us',
         'access-company-label': '会社名',
-        'access-company-value': '株式会社Terabox',
+        'access-company-value': 'テラボックス株式会社',
         'access-address-label': '住所',
-        'access-address-value': '〒100-0001<br>東京都千代田区千代田1-1-1<br>Teraboxビル 10F',
+        'access-address-value': '〒104-0045<br>東京都中央区築地6丁目17-4<br>リードシー築地ビル 4F',
         'access-station-label': '最寄り駅',
-        'access-station-value': 'JR東京駅 徒歩5分<br>地下鉄大手町駅 徒歩3分',
+        'access-station-value': '東京メトロ日比谷線 築地駅 徒歩5分<br>都営浅草線 東銀座駅 徒歩7分',
         'access-phone-label': '電話番号',
-        'access-phone-value': '03-1234-5678',
-        'access-fax-label': 'FAX番号',
-        'access-fax-value': '03-1234-5679',
+        'access-phone-value': '03-5542-7798',
         'access-hours-label': '営業時間',
         'access-hours-value': '平日 9:00 - 18:00<br>(土日祝日は休業)',
         'access-map-text': 'Google Maps',
@@ -134,43 +184,98 @@ const translations = {
         // Contact Section
         'contact-title': 'お問い合わせ',
         'contact-subtitle': 'Contact Us',
-        'contact-description': '想無ぜぱてり韓地ごあぐぼ件表治クたン庫供ひほド社89関よゅょ南路ミセオテ年望ツ速講21幻ちんぴげ。',
-        'contact-cta': '詳細を見る',
+        'contact-description': 'システム開発、AI/DXソリューション、人材サービスなど、<br>お気軽にご相談ください。',
+        'contact-cta': 'お問い合わせする',
         
         // Footer
-        'footer-copyright': 'TERABOX Copyright.'
+        'footer-copyright': 'TERABOX Copyright © 2024. All Rights Reserved.',
+        
+        // Engineering Service Page
+        'engineering-title': 'エンジニアリング事業',
+        'engineering-subtitle': 'Engineering Services',
+        'engineering-description': 'お客様のIT開発ニーズに幅広く対応し、高品質なシステム開発・運用サービスを提供します。',
+        
+        // AI Solution Page
+        'ai-title': 'AI・DXソリューション事業',
+        'ai-subtitle': 'AI/DX Solutions',
+        'ai-description': 'AI・機械学習・DXの導入から運用まで、包括的なソリューションを提供します。',
+        
+        // Enterprise Solution Page
+        'enterprise-title': 'エンタープライズソリューション事業',
+        'enterprise-subtitle': 'Enterprise Solutions',
+        'enterprise-description': '企業のデジタル変革を支援する総合的なソリューションを提供します。',
+        
+        // Human Resource Page
+        'hr-title': 'IT人材サービス事業',
+        'hr-subtitle': 'IT Human Resources',
+        'hr-description': '優秀なIT人材の派遣・紹介から育成まで、総合的な人材ソリューションを提供します。',
+        
+        // IoT Systems Page
+        'iot-title': 'スマート機器・IoT事業',
+        'iot-subtitle': 'Smart Devices & IoT',
+        'iot-description': '最新のIoT技術とスマートデバイスで、効率的な業務環境を実現します。',
+        
+        // Blockchain Web3 Page
+        'blockchain-title': 'ブロックチェーン・Web3事業',
+        'blockchain-subtitle': 'Blockchain & Web3',
+        'blockchain-description': '次世代Web3技術とブロックチェーンソリューションの開発・導入を支援します。'
     },
     
     en: {
         // Navigation
-        'nav-news': 'News',
+        'nav-strength': 'Our Strengths',
+        'nav-business-news': 'Business News',
         'nav-company': 'Company',
         'nav-message': 'CEO Message',
         'nav-business': 'Business',
+        'nav-cases': 'Case Studies',
         'nav-recruit': 'Careers',
-        'nav-access': 'Access',
         'nav-contact': 'Contact',
         
         // Hero Section
-        'hero-title': 'WELCOME TO<br>Terabox',
-        'hero-subtitle': 'AI Solution<br>Technology',
-        'hero-description': 'Creating the future with six business areas:<br>AI Solutions, IoT Systems, Blockchain & Web3<br>Enterprise Solutions, Engineering, and HR Services',
+        'hero-title': 'TERABOX',
+        'hero-subtitle': 'Your Trusted IT Partner',
+        'hero-description': 'System Engineering • AI/DX Solutions • Smart Device Implementation<br>25+ Professional Engineers, Average 7+ Years Industry Experience<br>One-Stop IT Solutions for Your Business Challenges',
         'hero-cta': 'Learn More',
+        'hero-stat-engineers': 'Professional Engineers',
+        'hero-stat-companies': 'Annual Service Companies',
+        'hero-stat-experience': 'Average Industry Experience',
         
-        // News Section
-        'news-title': 'News & Updates',
-        'news-subtitle': 'Stay informed with our latest news and announcements',
-        'news-hackathon-title': 'Terabox Blockchain Hackathon Successfully Held',
-        'news-hackathon-text': 'The first blockchain hackathon hosted by Terabox was successfully held with great success. Developer teams from across the nation presented innovative Web3 solutions, focusing on cutting-edge technology applications such as DeFi, NFT, and DAO. Through this event, we have made significant contributions to promoting the practical application of blockchain technology across various industries.',
-        'news-partnership-title': 'Cost Optimization Achieved Through International Partnerships',
-        'news-partnership-text': 'As part of our supplier optimization strategy, Terabox has formed strategic partnerships with overseas companies, including Axion Intelligence UK. Through their high-quality and cost-effective development consulting services, we have successfully reduced traditional development costs by over 50%, enabling us to provide more affordable services to our Japanese customers. This initiative has made AI solutions and IoT systems accessible to more companies.',
-        'news-rakuten-title': 'Telemedicine Solution Proposal for Rakuten Mobile Adopted',
-        'news-rakuten-text': 'Leveraging our extensive telemedicine solution experience in the Chinese market, Terabox\'s innovative proposal to Rakuten Mobile has been officially adopted. Our ultra-low latency, high-definition remote video medical solution combining WiFi6 technology and GPU processing capabilities brings new possibilities to Japan\'s medical field. This solution dramatically improves real-time consultation experiences between doctors and patients, contributing to reducing regional medical disparities.',
+        // Strength Section
+        'strength-title': 'Our Strengths',
+        'strength-subtitle': 'Our Competitive Advantages',
+        'strength-team-title': 'Multinational Elite Team',
+        'strength-team-text': 'Collaboration between Japanese and international engineers. Rich experience in government and municipal projects including presales, proposals, requirements definition, and bidding support. Combining global insights with domestic public/private sector capabilities.',
+        'strength-service-title': 'End-to-End Services',
+        'strength-service-text': 'Comprehensive support from upstream processes like RFP and requirements definition to technology selection, estimation, issue resolution, design, and operations. Experienced PMs/PLs lead optimal teams for high-quality project delivery.',
+        'strength-experience-title': 'Extensive Industry Experience',
+        'strength-experience-text': 'Proven track record across finance (megabanks), healthcare, logistics, and manufacturing. Strong security awareness and knowledge from numerous financial and insurance industry veterans.',
+        
+        // Business News Section
+        'business-news-title': 'Business News',
+        'business-news-subtitle': 'Latest Business Updates',
+        
+        // News Content
+        'news-badge-new': 'NEW',
+        'news-date-1': 'January 15, 2025',
+        'news-date-2': 'January 10, 2025',
+        'news-date-3': 'January 5, 2025',
+        'news-category-press': 'Press Release',
+        'news-category-award': 'Award',
+        'news-category-partnership': 'Partnership',
+        'news-title-1': 'AI Quality Inspection System Delivered to Major Manufacturing Company',
+        'news-text-1': 'Our AI-based quality inspection system has been adopted by a major domestic manufacturing company. By leveraging deep learning technology, we successfully improved defect detection rates to 99.8% and reduced inspection time to one-third of the conventional process. We will continue contributing to manufacturing industry DX promotion.',
+        'news-title-2': 'Obtained Google Cloud Partner Certification',
+        'news-text-2': 'We are pleased to announce that our company has been officially certified as a Google Cloud Partner. This certification recognizes our cloud migration achievements and technical capabilities. Moving forward, we will leverage Google Cloud\'s latest technologies to provide more advanced cloud solutions to our customers.',
+        'news-title-3': 'Strategic Partnership Agreement with Microsoft',
+        'news-text-3': 'We have entered into a strategic partnership with Microsoft for Microsoft Dynamics 365 implementation support. This significantly strengthens our enterprise ERP solution delivery capabilities, enabling us to provide more comprehensive digital transformation support.',
         
         // Company Section
         'company-title': 'Company Overview',
-        'company-subtitle': '会社情報',
+        'company-subtitle': 'Company Information',
         'company-headquarters': 'Headquarters',
+        'company-subsidiary': 'Subsidiary',
+        'company-headquarters-title': 'Terabox Co., Ltd.',
         'company-name-label': 'Company Name',
         'company-name-value': 'Terabox Co., Ltd.',
         'company-address-label': 'Address',
@@ -185,12 +290,14 @@ const translations = {
         'company-capital-value': '20 Million Yen',
         'company-ceo-label': 'Representative',
         'company-ceo-value': 'Jing Wei',
+        'company-certifications-label': 'Certifications',
+        'company-certifications-value': 'Privacy Mark 10825028<br>Employment Agency License 13-ユ-309628<br>Worker Dispatch License 派13-312878<br>Google Cloud Partner',
         'company-lawyer-label': 'Legal Advisor',
         'company-lawyer-value': 'Iida Sogo Law Office',
         
         // Message Section
         'message-title': 'Message from CEO',
-        'message-subtitle': '代表挨拶',
+        'message-subtitle': 'Message from CEO',
         'ceo-name': 'Jing Wei',
         'ceo-title': 'President & CEO',
         'message-greeting': 'Dear Valued Partners,',
@@ -198,39 +305,41 @@ const translations = {
         'message-p2': 'Terabox was established through the collaboration of experienced elite members who have long worked in Japanese companies and acquired deep knowledge of Japanese business practices. We will continue to work diligently as a trusted business partner for our customers.',
         'message-p3': 'In recent years, foreign IT companies have become increasingly prevalent, and the market tends to fall into a situation where companies compete for talent. Our founding members have leveraged their reverse thinking and extensive industry experience to build a partner network system that enables mutual cooperation.',
         'message-p4': 'Through close collaboration with excellent business partners, we have established a system that can respond to various customer needs.',
-        'message-p5': 'Our main business scope is based on six pillars: AI Solutions, IoT & Smart Systems, Blockchain & Web3, Enterprise Solutions, Engineering, and Human Resources. In addition, since we have many experienced professionals from the financial and insurance industries, we possess high security awareness and extensive knowledge.',
+        'message-p5': 'Our main business scope is based on four pillars: System Engineering, AI/DX Solutions, Smart Devices & IoT, and IT Human Resources Services. In addition, since we have many experienced professionals from the financial and insurance industries, we possess high security awareness and extensive knowledge.',
         'message-p6': 'We will continue to combine the experience and knowledge of our company and our network to flexibly respond to your requirements. We are confident that we have more than sufficient intelligence and physical strength to handle this. We will do our best to meet your expectations, so we ask for your kind consideration.',
         'message-closing': 'Sincerely,',
         'message-company': 'Terabox Co., Ltd.',
         'message-signature': 'President & CEO, Jing Wei',
         
-        // Mission/Vision Section
-        'mission-title': 'Our Mission',
-        'mission-subtitle': '私たちのミッション',
-        'mission-text': 'To revolutionize business operations through innovative AI solutions, empowering organizations to achieve unprecedented efficiency and growth in the digital age while fostering sustainable technological advancement.',
-        'vision-title': 'Our Vision',
-        'vision-subtitle': '私たちのビジョン',
-        'vision-text': 'To become the leading AI technology partner in Asia, driving digital transformation and creating sustainable value for businesses across all industries through cutting-edge innovation.',
-        
         // Business Section
         'business-title': 'Our Business',
-        'business-subtitle': '事業内容',
-        'business-ai-title': 'AI Solution Business',
-        'business-ai-text': 'We provide solutions utilizing cutting-edge AI technology including facial recognition, AI document summarization, service robots, and delivery robots.',
-        'business-iot-title': 'IoT & Smart Systems Business',
-        'business-iot-text': 'We develop and provide smart systems utilizing IoT technology including electronic shelf labels, smart meter reading systems, and electronic stamp cards.',
-        'business-blockchain-title': 'Blockchain & Web3 Business',
-        'business-blockchain-text': 'We provide next-generation Web3 technology solutions including DeFi solutions, NFT platforms, and smart contract development.',
-        'business-enterprise-title': 'Enterprise Solutions Business',
-        'business-enterprise-text': 'We support corporate operational efficiency through low-code platforms, attendance management systems, and data analysis consulting.',
-        'business-engineering-title': 'Engineering Business',
-        'business-engineering-text': 'We comprehensively respond to customer IT development needs through contract development, business support (SES), and system development & operations.',
-        'business-hr-title': 'Human Resources Business',
-        'business-hr-text': 'We provide comprehensive human resource solutions including talent placement, IT talent training, HR platform management, and temporary staffing.',
+        'business-subtitle': 'Our Business Services',
+        'business-engineering-title': 'System Engineering',
+        'business-engineering-text': '25+ multinational engineers with average 7+ years industry experience',
+        'business-ai-title': 'AI/DX Solutions',
+        'business-ai-text': 'End-to-end AI/DX solutions from RFP to operations',
+        'business-iot-title': 'Smart Devices & IoT',
+        'business-iot-text': 'Pioneer in service robot implementation in Japan',
+        'business-hr-title': 'IT HR Services',
+        'business-hr-text': 'Comprehensive human resource solutions',
+        'business-blockchain-title': 'Blockchain & Web3',
+        'business-blockchain-text': 'Development and implementation of next-generation Web3 technology and blockchain solutions',
+        'business-enterprise-title': 'Enterprise Solutions',
+        'business-enterprise-text': 'Comprehensive solutions supporting enterprise digital transformation',
+        
+        // Cases Section
+        'cases-title': 'Case Studies',
+        'cases-subtitle': 'Our Track Record',
+        'case-megabank-title': 'Major Bank - AWS Common Infrastructure',
+        'case-megabank-text': 'Next-generation infrastructure construction and operation maintenance project. Over 100+ person-months, ongoing. Built 24/7 operational system achieving high availability and security.',
+        'case-medical-title': 'Listed Medical Data Company - Big Data Platform',
+        'case-medical-text': 'Data platform construction and operation maintenance including big data analysis. Over 100+ person-months, ongoing. Providing advanced analytical environment utilizing AI/ML.',
+        'case-nursing-title': 'Nursing Facility - First Service Robot Implementation in Japan',
+        'case-nursing-text': 'Achieved the first implementation of meal serving and cleaning robots in Japan. 85% of users experienced burden reduction. Successfully reduced working time by 25% to 70%.',
         
         // Recruit Section
         'recruit-title': 'Careers',
-        'recruit-subtitle': '採用情報',
+        'recruit-subtitle': 'Join Our Team',
         'recruit-requirements-title': 'Job Requirements (New Graduates & Mid-Career)',
         'recruit-position-label': 'Positions',
         'recruit-position-value': '①IT Engineer　②General Position',
@@ -253,67 +362,142 @@ const translations = {
         'recruit-training-value': 'Capability development training<br>Technical skills training<br>E-learning, OJT',
         'recruit-positions-title': 'Mid-Career Positions',
         
+        // Mid-Career Positions
+        'position-skills-label': 'Required Skills:',
+        'position-apply-btn': 'Apply Now',
+        'position-ai-title': 'AI Engineer',
+        'position-ai-description': 'You will be involved in developing and improving machine learning models, building data pipelines, and implementing AI products. You can engage in innovative solution development while following the latest technology trends.',
+        'position-ai-skills': 'Python, TensorFlow/PyTorch, Basic knowledge of machine learning',
+        'position-fullstack-title': 'Full Stack Engineer',
+        'position-fullstack-description': 'You will be involved in the design and development of entire systems from front-end to back-end. You can fully utilize your technical skills in a development environment using modern technology stacks.',
+        'position-fullstack-skills': 'JavaScript, React, Node.js, Cloud Services',
+        'position-cloud-title': 'Cloud Architect',
+        'position-cloud-description': 'You will be responsible for enterprise cloud migration strategy planning, architecture design, and infrastructure construction. Through providing scalable and secure cloud solutions, you will promote customer DX.',
+        'position-cloud-skills': 'AWS/Azure/GCP, Kubernetes, Infrastructure as Code',
+        'position-pm-title': 'Product Manager',
+        'position-pm-description': 'You will oversee AI product planning, development, and operations, translating market needs into technical requirements. Work closely with engineering teams to lead the creation of innovative products.',
+        'position-pm-skills': 'Product planning experience, Technical understanding, Project management',
+        'position-devops-title': 'DevOps Engineer',
+        'position-devops-description': 'You will achieve development process efficiency and quality improvement through CI/CD pipeline construction, infrastructure automation, and monitoring system implementation.',
+        'position-devops-skills': 'Docker, Kubernetes, CI/CD, Monitoring tools',
+        'position-ds-title': 'Data Scientist',
+        'position-ds-description': 'You will perform large-scale data analysis, statistical modeling, and insight extraction for business problem solving. This is an important role that creates value from data and supports decision-making.',
+        'position-ds-skills': 'R/Python, SQL, Knowledge of statistics',
+        
         // Access Section
         'access-title': 'Access',
-        'access-subtitle': 'アクセス情報',
+        'access-subtitle': 'How to reach us',
         'access-company-label': 'Company Name',
         'access-company-value': 'Terabox Co., Ltd.',
         'access-address-label': 'Address',
-        'access-address-value': '〒100-0001<br>1-1-1 Chiyoda, Chiyoda City, Tokyo<br>Terabox Building 10F',
+        'access-address-value': '〒104-0045<br>6-17-4 Tsukiji, Chuo City, Tokyo<br>Reed Sea Tsukiji Building 4F',
         'access-station-label': 'Nearest Station',
-        'access-station-value': 'JR Tokyo Station 5min walk<br>Otemachi Station 3min walk',
+        'access-station-value': 'Tokyo Metro Hibiya Line Tsukiji Station 5 min walk<br>Toei Asakusa Line Higashi-Ginza Station 7 min walk',
         'access-phone-label': 'Phone',
-        'access-phone-value': '03-1234-5678',
-        'access-fax-label': 'FAX',
-        'access-fax-value': '03-1234-5679',
+        'access-phone-value': '03-5542-7798',
         'access-hours-label': 'Business Hours',
         'access-hours-value': 'Weekdays 9:00 - 18:00<br>(Closed on weekends and holidays)',
         'access-map-text': 'Google Maps',
         
         // Contact Section
         'contact-title': 'Contact Us',
-        'contact-subtitle': 'お問い合わせ',
-        'contact-description': 'Get in touch with us to learn more about our AI solutions and how we can help transform your business through innovative technology.',
-        'contact-cta': 'Get Started',
+        'contact-subtitle': 'Contact Us',
+        'contact-description': 'System development, AI/DX solutions, HR services, and more.<br>Feel free to contact us for consultation.',
+        'contact-cta': 'Contact Us',
         
         // Footer
-        'footer-copyright': 'TERABOX Copyright.'
+        'footer-copyright': 'TERABOX Copyright © 2024. All Rights Reserved.',
+        
+        // Engineering Service Page
+        'engineering-title': 'System Engineering',
+        'engineering-subtitle': 'Engineering Services',
+        'engineering-description': 'We provide high-quality system development and operational services to meet your diverse IT development needs.',
+        
+        // AI Solution Page
+        'ai-title': 'AI/DX Solutions',
+        'ai-subtitle': 'AI/DX Solutions',
+        'ai-description': 'We provide comprehensive solutions from AI, machine learning, and DX implementation to operations.',
+        
+        // Enterprise Solution Page
+        'enterprise-title': 'Enterprise Solutions',
+        'enterprise-subtitle': 'Enterprise Solutions',
+        'enterprise-description': 'We provide comprehensive solutions to support enterprise digital transformation.',
+        
+        // Human Resource Page
+        'hr-title': 'IT Human Resources',
+        'hr-subtitle': 'IT Human Resources',
+        'hr-description': 'We provide comprehensive human resource solutions from dispatching and recruiting excellent IT talent to training.',
+        
+        // IoT Systems Page
+        'iot-title': 'Smart Devices & IoT',
+        'iot-subtitle': 'Smart Devices & IoT',
+        'iot-description': 'We realize efficient business environments with cutting-edge IoT technology and smart devices.',
+        
+        // Blockchain Web3 Page
+        'blockchain-title': 'Blockchain & Web3',
+        'blockchain-subtitle': 'Blockchain & Web3',
+        'blockchain-description': 'We support the development and implementation of next-generation Web3 technology and blockchain solutions.'
     },
     
     zh: {
         // Navigation
-        'nav-news': '新闻动态',
+        'nav-strength': '我们的优势',
+        'nav-business-news': '业务新闻',
         'nav-company': '公司概况',
         'nav-message': '总裁致辞',
         'nav-business': '业务内容',
+        'nav-cases': '导入案例',
         'nav-recruit': '招聘信息',
-        'nav-access': '交通指南',
         'nav-contact': '联系我们',
         
         // Hero Section
-        'hero-title': '欢迎来到<br>Terabox',
-        'hero-subtitle': 'AI解决方案<br>技术公司',
-        'hero-description': '通过六大业务领域创造未来：<br>AI解决方案、IoT系统、区块链与Web3<br>企业解决方案、工程技术和人力资源服务',
+        'hero-title': 'TERABOX',
+        'hero-subtitle': '值得信赖的IT合作伙伴',
+        'hero-description': '系统工程 • AI/DX解决方案 • 智能设备导入<br>25名以上专业工程师团队，平均7年以上行业经验<br>为您的商业挑战提供一站式IT解决方案',
         'hero-cta': '了解更多',
+        'hero-stat-engineers': '专业工程师',
+        'hero-stat-companies': '年服务企业',
+        'hero-stat-experience': '平均行业经验',
         
-        // News Section
-        'news-title': '新闻动态',
-        'news-subtitle': '获取我们最新的新闻和公告信息',
-        'news-hackathon-title': 'Terabox主办区块链黑客马拉松大赛成功举办',
-        'news-hackathon-text': 'Terabox主办的首届区块链黑客马拉松大赛成功举办，盛况空前。来自全国各地的开发者团队展示了创新的Web3解决方案，重点关注DeFi、NFT、DAO等前沿技术应用。通过本次大赛，我们为推动区块链技术在各行业的实际应用做出了重大贡献。',
-        'news-partnership-title': '通过国际合作伙伴关系实现成本优化',
-        'news-partnership-text': '作为供应商优化战略的一部分，Terabox与包括英国Axion Intelligence UK在内的海外企业建立了战略合作伙伴关系。通过他们高质量且具有成本效益的开发咨询服务，我们成功将传统开发成本降低了50%以上，使我们能够为日本客户提供更实惠的服务。这一举措使更多公司能够使用AI解决方案和IoT系统。',
-        'news-rakuten-title': '针对乐天移动的远程医疗解决方案提案获得采纳',
-        'news-rakuten-text': '凭借我们在中国市场丰富的远程医疗解决方案经验，Terabox向乐天移动提出的创新方案已被正式采纳。我们结合WiFi6技术和GPU处理能力的超低延迟、高清远程视频医疗解决方案为日本医疗领域带来了新的可能性。该解决方案大幅改善了医生与患者之间的实时咨询体验，有助于减少地区医疗差距。',
+        // Strength Section
+        'strength-title': '我们的优势',
+        'strength-subtitle': '我们的竞争优势',
+        'strength-team-title': '多国籍精英团队',
+        'strength-team-text': '日本工程师与外籍工程师协作。在政府和地方自治体项目中拥有丰富的售前、提案、需求定义、招标支持等经验。兼具全球视野和日本国内公共/民间领域的应对能力。',
+        'strength-service-title': '端到端服务',
+        'strength-service-text': '从RFP（提案请求书）、需求定义等上游工程到技术选型、报价、问题整理、设计到运维的一贯对应。经验丰富的PM/PL带领最适合的团队推进高质量项目。',
+        'strength-experience-title': '丰富的行业经验',
+        'strength-experience-text': '在金融（大型银行）、医疗、物流、制造业等多个行业拥有实绩。特别是有众多金融保险行业经验者在籍，拥有高度的安全意识和丰富的知识。',
+        
+        // Business News Section
+        'business-news-title': '业务新闻',
+        'business-news-subtitle': '最新业务动态',
+        
+        // News Content
+        'news-badge-new': '最新',
+        'news-date-1': '2025年1月15日',
+        'news-date-2': '2025年1月10日',
+        'news-date-3': '2025年1月5日',
+        'news-category-press': '新闻发布',
+        'news-category-award': '获奖信息',
+        'news-category-partnership': '合作伙伴',
+        'news-title-1': '向大型制造企业交付AI质量检测系统',
+        'news-text-1': '我们开发的基于AI的质量检测系统被国内大型制造企业采用。通过利用深度学习技术，成功将不良品检出率提高至99.8%，检测时间缩短至传统方式的1/3。今后将继续为制造业的DX推进做出贡献。',
+        'news-title-2': '获得Google Cloud Partner认证',
+        'news-text-2': '我们很高兴地宣布，本公司已正式获得Google Cloud Partner认证。此次认证是对我们迄今为止的云迁移实绩和技术实力的认可。今后将利用Google Cloud的最新技术，为客户提供更高水平的云解决方案。',
+        'news-title-3': '与Microsoft公司签署战略合作伙伴关系',
+        'news-text-3': '在Microsoft Dynamics 365的导入支援方面，与Microsoft公司签署了战略合作伙伴关系。这将大幅强化面向企业的ERP解决方案提供能力，能够支援更全面的数字化转型。',
         
         // Company Section
         'company-title': '公司概况',
-        'company-subtitle': 'Company Information',
+        'company-subtitle': '公司信息',
         'company-headquarters': '总部',
+        'company-subsidiary': '关联公司',
+        'company-headquarters-title': 'Terabox株式会社',
         'company-name-label': '公司名称',
         'company-name-value': 'Terabox株式会社',
         'company-address-label': '地址',
-        'company-address-value': '〒104-0045 东京都中央区築地6丁目17-4<br>リードシー築地大厦 4F',
+        'company-address-value': '〒104-0045 东京都中央区筑地6丁目17-4<br>Reed Sea筑地大厦 4F',
         'company-tel-label': '电话',
         'company-tel-value': '03-5542-7798',
         'company-email-label': '邮箱',
@@ -324,12 +508,14 @@ const translations = {
         'company-capital-value': '2000万日元',
         'company-ceo-label': '法人代表',
         'company-ceo-value': '荆威',
+        'company-certifications-label': '各项资质',
+        'company-certifications-value': '隐私标志 10825028<br>收费职业介绍许可证 13-ユ-309628<br>劳动者派遣事业许可证 派13-312878<br>Google Cloud Partner',
         'company-lawyer-label': '法律顾问',
-        'company-lawyer-value': '飯田綜合法律事务所',
+        'company-lawyer-value': '饭田综合法律事务所',
         
         // Message Section
         'message-title': '总裁致辞',
-        'message-subtitle': 'Message from CEO',
+        'message-subtitle': '总裁致辞',
         'ceo-name': '荆威',
         'ceo-title': '代表董事',
         'message-greeting': '尊敬的合作伙伴：',
@@ -337,39 +523,41 @@ const translations = {
         'message-p2': 'Terabox是由在日本企业长期工作并掌握了日本商务知识的经验丰富的精英成员合作成立的。我们将继续作为客户信赖的商业伙伴，真诚地开展业务。',
         'message-p3': '近年来，外资IT企业呈现乱立态势，市场往往陷入人才争夺的局面。我们的创始成员运用逆向思维和丰富的行业经验，构建了能够相互建立合作关系的合作伙伴网络机制。',
         'message-p4': '通过与优秀商业伙伴的紧密合作，我们建立了能够满足客户各种需求的体制。',
-        'message-p5': '我们的主要业务范围以AI解决方案事业、IoT·智能系统事业、区块链与Web3事业、企业解决方案事业、工程事业、人力资源事业六大支柱为轴心展开业务。此外，由于有众多金融保险行业的经验者在籍，我们也拥有对安全的高度意识和丰富知识。',
+        'message-p5': '我们的主要业务范围以系统工程事业、AI·DX解决方案事业、智能设备·IoT事业、IT人才服务事业四大支柱为轴心展开业务。此外，由于有众多金融保险行业经验者在籍，我们也拥有对安全的高度意识和丰富知识。',
         'message-p6': '今后我们将继续结合公司及公司网络的经验值和见解，灵活应对贵公司的要求。我们相信具备了应对这些要求的充分智力和体力。我们将全力以赴满足贵公司的期待，恳请予以考虑。',
         'message-closing': '此致敬礼',
         'message-company': 'Terabox株式会社',
         'message-signature': '代表董事 荆威',
         
-        // Mission/Vision Section
-        'mission-title': '我们的使命',
-        'mission-subtitle': 'Our Mission',
-        'mission-text': '通过创新的AI解决方案革命性地改变商业运营，赋能组织在数字时代实现前所未有的效率和增长，同时促进可持续的技术进步。',
-        'vision-title': '我们的愿景',
-        'vision-subtitle': 'Our Vision',
-        'vision-text': '成为亚洲领先的AI技术合作伙伴，推动数字化转型，通过尖端创新为各行各业的企业创造可持续价值。',
-        
         // Business Section
         'business-title': '业务内容',
-        'business-subtitle': 'Our Business Solutions',
-        'business-ai-title': 'AI解决方案事业',
-        'business-ai-text': '我们提供利用尖端AI技术的解决方案，包括人脸识别、AI文献摘要、服务机器人、配送机器人等。',
-        'business-iot-title': 'IoT·智能系统事业',
-        'business-iot-text': '我们开发和提供利用IoT技术的智能系统，包括电子货架标签、智能抄表系统、电子积分卡等。',
-        'business-blockchain-title': '区块链与Web3事业',
-        'business-blockchain-text': '我们提供下一代Web3技术解决方案，包括DeFi解决方案、NFT平台、智能合约开发等。',
+        'business-subtitle': '我们的业务服务',
+        'business-engineering-title': '系统工程事业',
+        'business-engineering-text': '25名以上多国籍工程师团队，平均行业经验7年以上的专业集团',
+        'business-ai-title': 'AI·DX解决方案事业',
+        'business-ai-text': '从RFP到运维的一站式AI/DX解决方案提供',
+        'business-iot-title': '智能设备·IoT事业',
+        'business-iot-text': '服务机器人日本首次导入的先驱',
+        'business-hr-title': 'IT人才服务事业',
+        'business-hr-text': '提供综合性人才解决方案',
+        'business-blockchain-title': '区块链・Web3事业',
+        'business-blockchain-text': '下一代Web3技术和区块链解决方案的开发・导入',
         'business-enterprise-title': '企业解决方案事业',
-        'business-enterprise-text': '我们通过低代码平台、考勤管理系统、数据分析咨询等支持企业运营效率化。',
-        'business-engineering-title': '工程事业',
-        'business-engineering-text': '我们通过承包开发、业务支援（SES）、系统开发·运维等，全面应对客户的IT开发需求。',
-        'business-hr-title': '人力资源事业',
-        'business-hr-text': '我们提供综合性人力资源解决方案，包括人才介绍、IT人才培训、人才平台运营、人才派遣等。',
+        'business-enterprise-text': '支持企业数字化转型的综合解决方案',
+        
+        // Cases Section
+        'cases-title': '导入案例',
+        'cases-subtitle': '我们的业绩',
+        'case-megabank-title': '某大型银行 - AWS共通基础设施构建',
+        'case-megabank-text': '下一代基础设施构建·运维保守项目。累计100+人月，持续进行中。构建24/7运维体制，实现高可用性和安全性。',
+        'case-medical-title': '上市医疗数据专业公司 - 大数据平台',
+        'case-medical-text': '包含大数据分析的数据平台构建·运维保守。累计100+人月，持续进行中。利用AI/ML提供高度的分析环境。',
+        'case-nursing-title': '养老设施 - 日本首次服务机器人导入',
+        'case-nursing-text': '实现配餐·清扫机器人的日本首次导入。85%的使用者感受到负担减轻。成功将作业时间削减25%～70%。',
         
         // Recruit Section
         'recruit-title': '招聘信息',
-        'recruit-subtitle': 'Join Our Team',
+        'recruit-subtitle': '加入我们的团队',
         'recruit-requirements-title': '招聘要求（应届生·社会人士）',
         'recruit-position-label': '招聘职位',
         'recruit-position-value': '①IT工程师　②综合职位',
@@ -382,7 +570,7 @@ const translations = {
         'recruit-salary-new': '应届生',
         'recruit-salary-mid': '社会招聘',
         'recruit-salary-mid-range': '年收入400～1000万日元',
-        'recruit-raise-label': '升职加薪',
+        'recruit-raise-label': '晋升加薪',
         'recruit-raise-value': '半年一次评定',
         'recruit-trial-label': '试用培训期间',
         'recruit-trial-value': '3个月',
@@ -392,31 +580,81 @@ const translations = {
         'recruit-training-value': '基于能力开发体系的培训<br>技术技能培训<br>在线培训　OJT',
         'recruit-positions-title': '社会招聘职位',
         
+        // Mid-Career Positions
+        'position-skills-label': '必要技能:',
+        'position-apply-btn': '立即申请',
+        'position-ai-title': 'AI工程师',
+        'position-ai-description': '负责机器学习模型开发优化、数据管道构建、AI产品实施。在追求最新技术趋势的同时，参与创新解决方案的开发。',
+        'position-ai-skills': 'Python, TensorFlow/PyTorch, 机器学习基础知识',
+        'position-fullstack-title': '全栈工程师',
+        'position-fullstack-description': '负责从前端到后端的整个系统设计开发。在使用现代技术栈的开发环境中充分发挥技术实力。',
+        'position-fullstack-skills': 'JavaScript, React, Node.js, 云服务',
+        'position-cloud-title': '云架构师',
+        'position-cloud-description': '负责企业云迁移战略规划、架构设计、基础设施构建。通过提供可扩展且安全的云解决方案，推进客户的数字化转型。',
+        'position-cloud-skills': 'AWS/Azure/GCP, Kubernetes, Infrastructure as Code',
+        'position-pm-title': '产品经理',
+        'position-pm-description': '统筹AI产品的企划开发运营，将市场需求转化为技术要求。与工程团队紧密协作，引领创新产品的创造。',
+        'position-pm-skills': '产品企划经验, 技术理解力, 项目管理',
+        'position-devops-title': 'DevOps工程师',
+        'position-devops-description': '通过CI/CD管道构建、基础设施自动化、监控系统导入，实现开发流程的效率化和质量提升。',
+        'position-devops-skills': 'Docker, Kubernetes, CI/CD, 监控工具',
+        'position-ds-title': '数据科学家',
+        'position-ds-description': '进行大规模数据分析、统计建模、业务问题解决的洞察提取。从数据中创造价值，支持决策的重要角色。',
+        'position-ds-skills': 'R/Python, SQL, 统计学知识',
+        
         // Access Section
         'access-title': '交通指南',
-        'access-subtitle': 'How to reach us',
+        'access-subtitle': '如何到达',
         'access-company-label': '公司名称',
         'access-company-value': 'Terabox株式会社',
         'access-address-label': '地址',
-        'access-address-value': '〒100-0001<br>东京都千代田区千代田1-1-1<br>Terabox大厦 10F',
+        'access-address-value': '〒104-0045<br>东京都中央区筑地6丁目17-4<br>Reed Sea筑地大厦 4F',
         'access-station-label': '最近车站',
-        'access-station-value': 'JR东京站 步行5分钟<br>地铁大手町站 步行3分钟',
+        'access-station-value': '东京地铁日比谷线 筑地站 步行5分钟<br>都营浅草线 东银座站 步行7分钟',
         'access-phone-label': '电话号码',
-        'access-phone-value': '03-1234-5678',
-        'access-fax-label': '传真号码',
-        'access-fax-value': '03-1234-5679',
+        'access-phone-value': '03-5542-7798',
         'access-hours-label': '营业时间',
         'access-hours-value': '工作日 9:00 - 18:00<br>(周末节假日休业)',
         'access-map-text': 'Google Maps',
         
         // Contact Section
         'contact-title': '联系我们',
-        'contact-subtitle': 'Contact Us',
-        'contact-description': '联系我们，了解更多关于我们的AI解决方案，以及我们如何通过创新技术帮助您的企业实现转型。',
-        'contact-cta': '开始咨询',
+        'contact-subtitle': '联系我们',
+        'contact-description': '系统开发、AI/DX解决方案、人才服务等，<br>欢迎随时咨询。',
+        'contact-cta': '联系我们',
         
         // Footer
-        'footer-copyright': 'TERABOX Copyright.'
+        'footer-copyright': 'TERABOX Copyright © 2024. All Rights Reserved.',
+        
+        // Engineering Service Page
+        'engineering-title': '系统工程事业',
+        'engineering-subtitle': '工程服务',
+        'engineering-description': '广泛应对客户的IT开发需求，提供高质量的系统开发・运维服务。',
+        
+        // AI Solution Page
+        'ai-title': 'AI・DX解决方案事业',
+        'ai-subtitle': 'AI/DX解决方案',
+        'ai-description': '从AI・机器学习・DX的导入到运维，提供全面的解决方案。',
+        
+        // Enterprise Solution Page
+        'enterprise-title': '企业解决方案事业',
+        'enterprise-subtitle': '企业解决方案',
+        'enterprise-description': '提供支持企业数字化转型的综合解决方案。',
+        
+        // Human Resource Page
+        'hr-title': 'IT人才服务事业',
+        'hr-subtitle': 'IT人力资源',
+        'hr-description': '从优秀IT人才的派遣・介绍到培养，提供综合性人才解决方案。',
+        
+        // IoT Systems Page
+        'iot-title': '智能设备・IoT事业',
+        'iot-subtitle': '智能设备与IoT',
+        'iot-description': '通过最新的IoT技术和智能设备，实现高效的业务环境。',
+        
+        // Blockchain Web3 Page
+        'blockchain-title': '区块链・Web3事业',
+        'blockchain-subtitle': '区块链与Web3',
+        'blockchain-description': '支持下一代Web3技术和区块链解决方案的开发・导入。'
     }
 };
 
@@ -451,6 +689,21 @@ function switchLanguage(lang) {
         localStorage.setItem('terabox-language', lang);
     } catch (e) {
         console.warn('Unable to save language preference to localStorage:', e);
+    }
+
+    // Handle language-specific images
+    document.querySelectorAll('.lang-image').forEach(img => {
+        img.style.display = 'none';
+    });
+    
+    if (lang === 'ja') {
+        document.querySelectorAll('.ja-only').forEach(img => {
+            img.style.display = 'block';
+        });
+    } else {
+        document.querySelectorAll('.en-zh-only').forEach(img => {
+            img.style.display = 'block';
+        });
     }
 
     // Show language switch notification

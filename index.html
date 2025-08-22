@@ -1,627 +1,1264 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TERABOX - AI Solution Technology</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-     <!-- 分割后的CSS文件引用 -->
-    <link rel="stylesheet" href="css/base-styles.css">
-    <link rel="stylesheet" href="css/header-hero-styles.css">
-    <link rel="stylesheet" href="css/content-sections-styles.css">
-    <link rel="stylesheet" href="css/business-styles.css">
-    <link rel="stylesheet" href="css/recruit-forms-styles.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>TERABOX - 信頼できるITパートナー</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <!-- 分割後的CSS文件引用 -->
+   <link rel="stylesheet" href="css/base-styles.css">
+   <link rel="stylesheet" href="css/header-hero-styles.css">
+   <link rel="stylesheet" href="css/content-sections-styles.css">
+   <link rel="stylesheet" href="css/business-styles.css">
+   <link rel="stylesheet" href="css/recruit-forms-styles.css">
+   <style>
+       /* Navigation Menu Spacing Enhancement for Index Page */
+       body .nav-links {
+           gap: 40px !important; /* Main page spacing */
+       }
+       
+       body .nav-links a {
+           font-size: 16px !important; /* Unified font size */
+           padding: 10px 5px !important; /* Added horizontal padding */
+           white-space: nowrap !important; /* Prevent text wrapping */
+       }
+
+       /* Logo spacing for main page */
+       body .logo {
+           margin-right: 72px !important;
+       }
+       
+       /* Adjust header for wider navigation */
+       .header {
+           padding: 25px 0;
+           margin-bottom: 40px;
+       }
+       
+       .nav {
+           max-width: 1400px; /* Increased from 1200px */
+       }
+       
+       /* 新增样式 */
+       .hero-stats {
+           display: flex;
+           gap: 40px;
+           margin: 30px 0;
+       }
+       .stat-item {
+           text-align: center;
+       }
+       .stat-number {
+           display: block;
+           font-size: 36px;
+           font-weight: bold;
+           color: #9FD500;
+           margin-bottom: 5px;
+       }
+       .stat-label {
+           font-size: 14px;
+           color: #cccccc;
+       }
+       .achievement-tags {
+           display: flex;
+           flex-wrap: wrap;
+           gap: 8px;
+           margin-top: 15px;
+       }
+       .achievement-tags .tag {
+           background: rgba(159, 213, 0, 0.1);
+           color: #9FD500;
+           padding: 4px 12px;
+           border-radius: 12px;
+           font-size: 12px;
+           border: 1px solid rgba(159, 213, 0, 0.3);
+       }
+       .business-card {
+           min-height: 420px;
+       }
+       
+       /* Case Studies Section Image Enhancement */
+       .news-section .news-image {
+           position: relative;
+           overflow: hidden;
+           border-radius: 8px;
+           transition: all 0.3s ease;
+       }
+       
+       .news-section .news-image::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+           z-index: 1;
+           transition: all 0.3s ease;
+       }
+       
+       .news-card:hover .news-image::before {
+           background: linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.05) 100%);
+       }
+       
+       .news-card:hover .news-image {
+           transform: scale(1.05);
+       }
+       
+       /* Business News Section Specific Styles */
+       .news-date {
+           color: #999;
+           font-size: 12px;
+           margin-bottom: 8px;
+           display: flex;
+           align-items: center;
+           gap: 8px;
+       }
+       
+       .news-date i {
+           color: #9FD500;
+           font-size: 10px;
+       }
+       
+       .news-category {
+           display: inline-block;
+           background: rgba(159, 213, 0, 0.15);
+           color: #9FD500;
+           padding: 3px 10px;
+           border-radius: 12px;
+           font-size: 11px;
+           margin-left: 10px;
+           border: 1px solid rgba(159, 213, 0, 0.3);
+       }
+       
+       .news-badge {
+           position: absolute;
+           top: 15px;
+           right: 15px;
+           background: linear-gradient(45deg, #9FD500, #7FB800);
+           color: #000;
+           padding: 5px 12px;
+           border-radius: 15px;
+           font-size: 11px;
+           font-weight: bold;
+           text-transform: uppercase;
+           z-index: 2;
+       }
+       
+       /* Responsive navigation for index page */
+       @media (max-width: 1024px) {
+           body .nav-links {
+               gap: 30px !important;
+           }
+           body .nav-links a {
+               font-size: 15px !important;
+           }
+           body .logo {
+               margin-right: 54px !important;
+           }
+       }
+       
+       @media (max-width: 768px) {
+           .hero-stats {
+               justify-content: space-around;
+           }
+           .stat-number {
+               font-size: 28px;
+           }
+           body .nav-links {
+               gap: 18px !important;
+           }
+           body .nav-links a {
+               font-size: 14px !important;
+               padding: 8px 0 !important;
+           }
+           body .logo {
+               margin-right: 36px !important;
+           }
+       }
+	   
+	   /* Company Tabs Container - Horizontal Layout */
+.company-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+    flex-direction: row; /* Ensure horizontal layout */
+}
+
+/* Company Tab Button Styling */
+.tab-button {
+    background: rgba(26, 26, 26, 0.8);
+    color: #888;
+    border: 2px solid #333;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    display: inline-flex; /* Changed to inline-flex for horizontal alignment */
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    min-width: 180px; /* Ensure consistent button width */
+    justify-content: center;
+}
+
+/* Icon Styling */
+.tab-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+}
+
+.tab-icon i {
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.tab-button:hover {
+    background: rgba(26, 26, 26, 0.95);
+    border-color: #666;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tab-button:hover .tab-icon i {
+    transform: scale(1.1) rotate(5deg);
+    color: #aaa;
+}
+
+/* Active State */
+.tab-button.active {
+    background: linear-gradient(45deg, rgba(159, 213, 0, 0.2), rgba(127, 184, 0, 0.2));
+    color: #9FD500;
+    border-color: #9FD500;
+    box-shadow: 
+        0 0 20px rgba(159, 213, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.tab-button.active .tab-icon i {
+    color: #9FD500;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 8px rgba(159, 213, 0, 0.5));
+}
+
+/* Underline animation for active tab */
+.tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #9FD500, transparent);
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .company-tabs {
+        gap: 15px;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens if needed */
+    }
+    
+    .tab-button {
+        padding: 12px 30px;
+        min-width: 150px;
+        font-size: 15px;
+    }
+    
+    .tab-icon i {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .company-tabs {
+        gap: 10px;
+    }
+    
+    .tab-button {
+        padding: 10px 20px;
+        min-width: 130px;
+        font-size: 14px;
+    }
+    
+    .tab-icon i {
+        font-size: 16px;
+    }
+}
+
+/* Google Maps Styling */
+.map-container {
+    height: 600px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(159, 213, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.google-map {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.map-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+    color: #9FD500;
+}
+
+.map-loading i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+}
+
+.loading-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+/* Responsive map adjustments */
+@media (max-width: 768px) {
+    .map-container {
+        height: 450px;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-container {
+        height: 375px;
+    }
+    
+    .map-loading i {
+        font-size: 36px;
+    }
+}
+	   
+	   
+   </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <a href="#" class="logo">
-    <img src="images/logo.svg" alt="Terabox Logo" class="logo-icon">
-    TERABOX
-</a>
-            <ul class="nav-links">
-                <li><a href="#news" data-lang-key="nav-news">お知らせ</a></li>
-                <li><a href="#company" data-lang-key="nav-company">会社概要</a></li>
-                <li><a href="#message" data-lang-key="nav-message">代表挨拶</a></li>
-                <li><a href="#business" data-lang-key="nav-business">事業内容</a></li>
-                <li><a href="#recruit" data-lang-key="nav-recruit">採用情報</a></li>
-                <li><a href="#access" data-lang-key="nav-access">アクセス</a></li>
-                <li><a href="#contact" data-lang-key="nav-contact">お問い合わせ</a></li>
-            </ul>
-            <div class="language-switcher">
-                <button class="lang-btn active" data-lang="ja" title="日本語">
-                    <img src="images/japanese.png" alt="日本語" class="flag-image">
-                </button>
-                <button class="lang-btn" data-lang="en" title="English">
-                    <img src="images/english.png" alt="English" class="flag-image">
-                </button>
-                <button class="lang-btn" data-lang="zh" title="中文">
-                    <img src="images/chinese.png" alt="中文" class="flag-image">
-                </button>
-            </div>
-        </nav>
-    </header>
+   <!-- Header -->
+   <header class="header">
+       <nav class="nav">
+           <a href="#" class="logo">
+               <img src="images/logo.svg" alt="Terabox Logo" class="logo-icon">
+               TERABOX
+           </a>
+           <ul class="nav-links">
+               <li><a href="#strength" data-lang-key="nav-strength">当社の強み</a></li>
+               <li><a href="#business-news" data-lang-key="nav-business-news">業務新聞</a></li>
+               <li><a href="#company" data-lang-key="nav-company">会社概要</a></li>
+               <li><a href="#message" data-lang-key="nav-message">代表挨拶</a></li>
+               <li><a href="#business" data-lang-key="nav-business">事業内容</a></li>
+               <li><a href="#cases" data-lang-key="nav-cases">導入実績</a></li>
+               <li><a href="#recruit" data-lang-key="nav-recruit">採用情報</a></li>
+               <li><a href="#contact" data-lang-key="nav-contact">お問い合わせ</a></li>
+           </ul>
+           <div class="language-switcher">
+               <button class="lang-btn active" data-lang="ja" title="日本語">
+                   <img src="images/japanese.png" alt="日本語" class="flag-image">
+               </button>
+               <button class="lang-btn" data-lang="en" title="English">
+                   <img src="images/english.png" alt="English" class="flag-image">
+               </button>
+               <button class="lang-btn" data-lang="zh" title="中文">
+                   <img src="images/chinese.png" alt="中文" class="flag-image">
+               </button>
+           </div>
+       </nav>
+   </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="particles" id="particles"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title animate" data-lang-key="hero-title">WELCOME TO<br>Terabox</h1>
-                <p class="hero-subtitle animate animate-delay-1" data-lang-key="hero-subtitle">AI Solution<br>Technology</p>
-                <p class="hero-description animate animate-delay-2" data-lang-key="hero-description">
-                    AIソリューション、IoTシステム、Blockchain & Web3<br>
-                    エンタープライズソリューション、エンジニアリング<br>
-                    人材サービスの六つの事業で未来を創造します
-                </p>
-				 <!-- Hand SVG Decoration (bottom-right) -->
-                <div class="hand-decoration">
-                    <!-- 直接引用SVG文件 -->
-                    <img src="images/hand.svg" alt="Hand Decoration" class="hand-svg">
-                </div>
-                <a href="#contact" class="cta-button animate animate-delay-3" data-lang-key="hero-cta">詳細を見る</a>
-            </div>
-            <div class="video-container">
-    <video autoplay muted loop playsinline class="hero-video">
-        <source src="video/TeraboxHero.mp4" type="video/mp4">
-        <!-- Fallback for browsers that don't support video -->
-        <div class="video-fallback">
-            <div class="cube-container">
-                <div class="cube">
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                    <div class="cube-face"></div>
-                </div>
-            </div>
-        </div>
-    </video>
-</div>
-        </div>
-    </section>
+   <!-- Hero Section -->
+   <section class="hero">
+       <div class="particles" id="particles"></div>
+       <div class="hero-content">
+           <div class="hero-text">
+               <h1 class="hero-title animate" data-lang-key="hero-title">TERABOX</h1>
+               <p class="hero-subtitle animate animate-delay-1" data-lang-key="hero-subtitle">信頼できるITパートナー</p>
+               <p class="hero-description animate animate-delay-2" data-lang-key="hero-description">
+                   システムエンジニアリング・AI/DXソリューション・スマート機器導入<br>
+                   25名以上の専門エンジニアチーム、平均7年以上の業界経験<br>
+                   お客様のビジネス課題を解決する一站式ITソリューション
+               </p>
+               
+               <!-- 核心数据展示 -->
+               <div class="hero-stats animate animate-delay-3">
+                   <div class="stat-item">
+                       <span class="stat-number">25+</span>
+                       <span class="stat-label" data-lang-key="hero-stat-engineers">専門エンジニア</span>
+                   </div>
+                   <div class="stat-item">
+                       <span class="stat-number">20+</span>
+                       <span class="stat-label" data-lang-key="hero-stat-companies">年間サービス企業</span>
+                   </div>
+                   <div class="stat-item">
+                       <span class="stat-number">7年</span>
+                       <span class="stat-label" data-lang-key="hero-stat-experience">平均業界経験</span>
+                   </div>
+               </div>
+               
+               <!-- Hand SVG Decoration -->
+               <div class="hand-decoration">
+                   <img src="images/hand.svg" alt="Hand Decoration" class="hand-svg">
+               </div>
+               <a href="#contact" class="cta-button animate animate-delay-4" data-lang-key="hero-cta">詳細を見る</a>
+           </div>
+           <div class="video-container">
+               <video autoplay muted loop playsinline class="hero-video">
+                   <source src="video/TeraboxHero.mp4" type="video/mp4">
+                   <div class="video-fallback">
+                       <div class="cube-container">
+                           <div class="cube">
+                               <div class="cube-face"></div>
+                               <div class="cube-face"></div>
+                               <div class="cube-face"></div>
+                               <div class="cube-face"></div>
+                               <div class="cube-face"></div>
+                               <div class="cube-face"></div>
+                           </div>
+                       </div>
+                   </div>
+               </video>
+           </div>
+       </div>
+   </section>
 
-    <!-- News Section -->
-    <section id="news" class="news-section">
-        <div class="container">
-            <h2 class="section-title scroll-animate" data-lang-key="news-title">お知らせ</h2>
-            <p class="section-subtitle scroll-animate" data-lang-key="news-subtitle">最新のニュースと情報をお届けします</p>
-            <div class="news-grid">
-                <div class="news-card scroll-animate">
-    <div class="news-image"><i class="fas fa-trophy"></i></div>
-    <div class="news-content">
-        <div class="news-title" data-lang-key="news-hackathon-title">Terabox主催ブロックチェーンハッカソン大会が成功開催</div>
-        <p class="news-text" data-lang-key="news-hackathon-text">Terabox主催による第1回ブロックチェーンハッカソン大会が盛況のうちに開催されました。全国各地から参加した開発者チームが、革新的なWeb3ソリューションを発表し、DeFi、NFT、DAOなどの最先端技術応用に焦点を当てました。本大会を通じて、ブロックチェーン技術の各業界への実用化推進に大きく貢献いたします。<a href="#contact" class="news-link">詳細はこちら</a></p>
-    </div>
-</div>
-                 <div class="news-card scroll-animate">
-                    <div class="news-image"><i class="fas fa-building"></i></div>
-                    <div class="news-content">
-                        <div class="news-title" data-lang-key="news-partnership-title">海外パートナーシップによるコスト最適化を実現</div>
-                        <p class="news-text" data-lang-key="news-partnership-text">Teraboxは、サプライヤー最適化戦略の一環として、英国のAxion Intelligence UKをはじめとする海外企業との戦略的パートナーシップを締結いたしました。同社の高品質かつコストパフォーマンスに優れた開発コンサルティングサービスにより、従来の開発コストを50%以上削減することに成功し、日本のお客様により手頃な価格でのサービス提供を実現いたします。この取り組みにより、より多くの企業様にAIソリューションやIoTシステムをご利用いただけるようになりました。<a href="#contact" class="news-link">詳細はこちら</a></p>
-                    </div>
-                </div>
-                <div class="news-card scroll-animate">
-    <div class="news-image"><i class="fas fa-chart-bar"></i></div>
-    <div class="news-content">
-        <div class="news-title" data-lang-key="news-rakuten-title">楽天モバイル向け遠隔医療ソリューション提案が採択</div>
-        <p class="news-text" data-lang-key="news-rakuten-text">Teraboxは、中国市場での豊富な遠隔医療ソリューション実績を活かし、楽天モバイル様への革新的な提案が正式に採択されました。WiFi6技術とGPU処理能力を組み合わせた超低遅延・高精細度の遠隔ビデオ医療ソリューションにより、日本の医療現場に新たな可能性をもたらします。本ソリューションは、医師と患者間のリアルタイム診療体験を飛躍的に向上させ、地域医療格差の解消に貢献いたします。<a href="#contact" class="news-link">詳細はこちら</a></p>
-    </div>
-</div>
-            </div>
-        </div>
-    </section>
+   <!-- Strength Section - 当社の強み -->
+   <section id="strength" class="news-section">
+       <div class="container">
+           <h2 class="section-title scroll-animate" data-lang-key="strength-title">当社の強み</h2>
+           <p class="section-subtitle scroll-animate" data-lang-key="strength-subtitle">Our Competitive Advantages</p>
+           <div class="news-grid">
+               <div class="news-card scroll-animate">
+                   <div class="news-image" style="background-image: url('images/strength1-team.jpg'); background-size: cover; background-position: center;"></div>
+                   <div class="news-content">
+                       <div class="news-title" data-lang-key="strength-team-title">多国籍精鋭チーム</div>
+                       <p class="news-text" data-lang-key="strength-team-text">日本人エンジニアと外国籍エンジニアが協働。官公庁・自治体案件でのプリセールス・提案・要件定義・入札支援等の豊富な実績。グローバルな知見と日本国内公共/民間領域への対応力を両立。</p>
+                   </div>
+               </div>
+               
+               <div class="news-card scroll-animate">
+                   <div class="news-image" style="background-image: url('images/strengt2-e2e.jpg'); background-size: cover; background-position: center;"></div>
+                   <div class="news-content">
+                       <div class="news-title" data-lang-key="strength-service-title">エンドツーエンドサービス</div>
+                       <p class="news-text" data-lang-key="strength-service-text">RFP（提案依頼書）・要件定義など上流工程から、技術選定・見積・課題整理・設計～運用まで一貫対応。上流工程経験豊富なPM/PLと最適なチームが高品質プロジェクトを推進。</p>
+                   </div>
+               </div>
+               
+               <div class="news-card scroll-animate">
+                   <div class="news-image" style="background-image: url('images/strength3-richexperience.jpg'); background-size: cover; background-position: center;"></div>
+                   <div class="news-content">
+                       <div class="news-title" data-lang-key="strength-experience-title">豊富な業界経験</div>
+                       <p class="news-text" data-lang-key="strength-experience-text">金融（メガバンク）、医療、物流、製造業など多業界での実績。特に金融・保険業界の経験者が多数在籍していることから、セキュリティに対する高い意識と豊富な知識を保有。</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <!-- Company Section -->
-    <section id="company" class="company-section">
-        <div class="container">
-            <h2 class="section-title scroll-animate" data-lang-key="company-title">会社概要</h2>
-            <p class="section-subtitle scroll-animate" data-lang-key="company-subtitle">Company Information</p>
-            <div class="company-info scroll-animate">
-                <h3 class="company-subtitle" data-lang-key="company-headquarters">本社</h3>
-                <div class="company-grid">
-                    <div class="company-item">
-                        <div class="company-label" data-lang-key="company-name-label">名　称</div>
-                        <div class="company-value" data-lang-key="company-name-value">テラボックス株式会社</div>
-                    </div>
-                    <div class="company-item">
-                        <div class="company-label" data-lang-key="company-address-label">所在地</div>
-                        <div class="company-value" data-lang-key="company-address-value">〒104-0045 東京都中央区築地6丁目17-4<br>リードシー築地ビル 4F</div>
-                    </div>
-                    <div class="company-item">
-                        <div class="company-label" data-lang-key="company-tel-label">TEL</div>
-                        <div class="company-value" data-lang-key="company-tel-value">03-5542-7798</div>
-                    </div>
-                    <div class="company-item">
-                        <div class="company-label" data-lang-key="company-email-label">E-mail</div>
-                        <div class="company-value" data-lang-key="company-email-value">info@terabox.jp</div>
-                    </div>
-                    <div class="company-item">
-                        <div class="company-label" data-lang-key="company-established-label">設立日</div>
-                        <div class="company-value" data-lang-key="company-established-value">平成28年4月</div>
-                    </div>
-                    <div class="company-item">
-                        <div class="company-label" data-lang-key="company-capital-label">資本金</div>
-                        <div class="company-value" data-lang-key="company-capital-value">2000万円</div>
-                    </div>
-                    <div class="company-item">
-                        <div class="company-label" data-lang-key="company-ceo-label">代表者</div>
-                        <div class="company-value" data-lang-key="company-ceo-value">荊　威</div>
-                    </div>
-                    <div class="company-item">
-                        <div class="company-label" data-lang-key="company-lawyer-label">顧問弁護士</div>
-                        <div class="company-value" data-lang-key="company-lawyer-value">飯田綜合法律事務所</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <!-- Business News Section - 業務新聞 -->
+   <section id="business-news" class="news-section" style="background: #0a0a0a;">
+       <div class="container">
+           <h2 class="section-title scroll-animate" data-lang-key="business-news-title">業務新聞</h2>
+           <p class="section-subtitle scroll-animate" data-lang-key="business-news-subtitle">Latest Business Updates</p>
+           <div class="news-grid">
+               <div class="news-card scroll-animate">
+                   <span class="news-badge" data-lang-key="news-badge-new">NEW</span>
+                   <div class="news-image" style="background: linear-gradient(135deg, #1a4a4a, #2a5a5a); background-image: url('images/dashouAImukei.png'); background-size: cover; background-position: center;">
+                       <i class="fas fa-rocket" style="display: none;"></i>
+                   </div>
+                   <div class="news-content">
+                       <div class="news-date">
+                           <i class="fas fa-calendar-alt"></i>
+                           <span data-lang-key="news-date-1">2025年1月15日</span>
+                           <span class="news-category" data-lang-key="news-category-press">プレスリリース</span>
+                       </div>
+                       <div class="news-title" data-lang-key="news-title-1">大手製造業向けAI品質検査システムを納入</div>
+                       <p class="news-text" data-lang-key="news-text-1">当社が開発したAIベースの品質検査システムが、国内大手製造業に採用されました。深層学習技術を活用し、不良品検出率を99.8%まで向上させ、検査時間を従来の1/3に短縮することに成功しました。今後も製造業のDX推進に貢献してまいります。</p>
+                   </div>
+               </div>
+               
+               <div class="news-card scroll-animate">
+                   <div class="news-image" style="background: linear-gradient(135deg, #4a1a4a, #5a2a5a); background-image: url('images/google-certified.png'); background-size: cover; background-position: center;">
+                       <i class="fas fa-award" style="display: none;"></i>
+                   </div>
+                   <div class="news-content">
+                       <div class="news-date">
+                           <i class="fas fa-calendar-alt"></i>
+                           <span data-lang-key="news-date-2">2025年1月10日</span>
+                           <span class="news-category" data-lang-key="news-category-award">受賞情報</span>
+                       </div>
+                       <div class="news-title" data-lang-key="news-title-2">Google Cloud Partner認定を取得</div>
+                       <p class="news-text" data-lang-key="news-text-2">この度、当社はGoogle Cloud Partnerとして正式に認定されました。これまでのクラウド移行実績と技術力が評価されての認定となります。今後はGoogle Cloudの最新技術を活用し、お客様により高度なクラウドソリューションを提供してまいります。</p>
+                   </div>
+               </div>
+               
+               <div class="news-card scroll-animate">
+                   <div class="news-image" style="background: linear-gradient(135deg, #4a4a1a, #5a5a2a); background-image: url('images/microsoft.png'); background-size: cover; background-position: center;">
+                       <i class="fas fa-handshake" style="display: none;"></i>
+                   </div>
+                   <div class="news-content">
+                       <div class="news-date">
+                           <i class="fas fa-calendar-alt"></i>
+                           <span data-lang-key="news-date-3">2025年1月5日</span>
+                           <span class="news-category" data-lang-key="news-category-partnership">パートナーシップ</span>
+                       </div>
+                       <div class="news-title" data-lang-key="news-title-3">Microsoft社との戦略的パートナーシップを締結</div>
+                       <p class="news-text" data-lang-key="news-text-3">Microsoft Dynamics 365の導入支援において、Microsoft社と戦略的パートナーシップを締結しました。これにより、エンタープライズ向けERPソリューションの提供能力が大幅に強化され、より包括的なデジタルトランスフォーメーションを支援できるようになります。</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+   
+   <!-- Company Section -->
+   <section id="company" class="company-section">
+       <div class="container">
+           <h2 class="section-title scroll-animate" data-lang-key="company-title">会社概要</h2>
+           <p class="section-subtitle scroll-animate" data-lang-key="company-subtitle">Company Information</p>
+           
+           <!-- 公司选项卡 -->
+			<div class="company-tabs scroll-animate">
+				<button class="tab-button active" data-tab="headquarters">
+					<span class="tab-icon">
+						<i class="fas fa-building"></i>
+					</span>
+					<span data-lang-key="company-headquarters">本社</span>
+				</button>
+				<button class="tab-button" data-tab="subsidiary">
+					<span class="tab-icon">
+						<i class="fas fa-globe-asia"></i>
+					</span>
+					<span data-lang-key="company-subsidiary">関連会社</span>
+				</button>
+			</div>
+           
+           <!-- 本社信息 -->
+           <div class="company-info scroll-animate" id="headquarters-info">
+               <div class="company-header">
+                   <h3 class="company-subtitle" data-lang-key="company-headquarters-title">テラボックス株式会社</h3>
+                 
+               </div>
+               
+               <div class="company-grid">
+                   <div class="company-item">
+                       <div class="company-label" data-lang-key="company-address-label">所在地</div>
+                       <div class="company-value" data-lang-key="company-address-value">
+                           〒104-0045<br>
+                           東京都中央区築地6丁目17-4<br>
+                           リードシー築地ビル4階
+                       </div>
+                   </div>
+                   <div class="company-item">
+                       <div class="company-label" data-lang-key="company-tel-label">TEL</div>
+                       <div class="company-value" data-lang-key="company-tel-value">03-5542-7798</div>
+                   </div>
+                   <div class="company-item">
+                       <div class="company-label" data-lang-key="company-established-label">設立</div>
+                       <div class="company-value" data-lang-key="company-established-value">2016年4月</div>
+                   </div>
+                   <div class="company-item">
+                       <div class="company-label" data-lang-key="company-capital-label">資本金</div>
+                       <div class="company-value" data-lang-key="company-capital-value">2,000万円</div>
+                   </div>
+                   <div class="company-item">
+                       <div class="company-label" data-lang-key="company-ceo-label">代表者</div>
+                       <div class="company-value" data-lang-key="company-ceo-value">荆　威</div>
+                   </div>
+                   <div class="company-item">
+                       <div class="company-label" data-lang-key="company-email-label">E-mail</div>
+                       <div class="company-value" data-lang-key="company-email-value">info@terabox.jp</div>
+                   </div>
+                   <div class="company-item full-width">
+                       <div class="company-label" data-lang-key="company-certifications-label">諸資格</div>
+                       <div class="company-value certifications-list" data-lang-key="company-certifications-value">
+                           <span class="cert-badge">プライバシーマーク 10825028</span>
+                           <span class="cert-badge">有料職業紹介許可証 13-ユ-309628</span>
+                           <span class="cert-badge">労働者派遣事業許可証 派13-312878</span>
+                           <span class="cert-badge google">Google Cloud Partner</span>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
+           <!-- 関連会社信息 -->
+           <div class="company-info scroll-animate" id="subsidiary-info" style="display: none;">
+               <div class="company-header">
+                   <h3 class="company-subtitle">博科思信息科技（広州）有限公司</h3>
+                   <div class="company-badge">Guangzhou Branch</div>
+               </div>
+               
+               <div class="company-grid">
+                   <div class="company-item">
+                       <div class="company-label">所在地</div>
+                       <div class="company-value">
+                           〒510000<br>
+                           中国広東省広州市<br>
+                           海珠区赤岗西路205号A棟210室A16
+                       </div>
+                   </div>
+                   <div class="company-item">
+                       <div class="company-label">TEL</div>
+                       <div class="company-value">86-13167022930</div>
+                   </div>
+                   <div class="company-item">
+                       <div class="company-label">設立</div>
+                       <div class="company-value">2019年12月</div>
+                   </div>
+                   <div class="company-item">
+                       <div class="company-label">資本金</div>
+                       <div class="company-value">50万人民元</div>
+                   </div>
+                   <div class="company-item">
+                       <div class="company-label">代表者</div>
+                       <div class="company-value">荆　威</div>
+                   </div>
+                   <div class="company-item">
+                       <div class="company-label">事業内容</div>
+                       <div class="company-value">技術開発・オフショア開発センター</div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <!-- Message Section -->
-    <section id="message" class="message-section">
-        <div class="container">
-            <h2 class="section-title scroll-animate" data-lang-key="message-title">代表挨拶</h2>
-            <p class="section-subtitle scroll-animate" data-lang-key="message-subtitle">Message from CEO</p>
-            <div class="message-layout">
-                <div class="ceo-info scroll-animate">
-                    <div class="ceo-photo">
-                        <img src="images/president-photo.jpg" alt="荊威" class="ceo-image">
-                    </div>
-                    <div class="ceo-details">
-                        <div class="ceo-name" data-lang-key="ceo-name">荊　威</div>
-                        <div class="ceo-title" data-lang-key="ceo-title">代表取締役</div>
-                    </div>
-                </div>
-                
-                <div class="message-content scroll-animate">
-                    <div class="message-text">
-                        <p class="message-greeting" data-lang-key="message-greeting">拝啓</p>
-                        
-                        <p data-lang-key="message-p1">貴社ますますご清栄のこととお慶び申し上げます。</p>
-                        
-                        <p data-lang-key="message-p2">このたびテラボックスは、日系企業で長く働きながら日本のビジネスを身に付けた経験豊富な精鋭メンバーの結集により設立させていただきました。今後とも、お客様から信頼されるビジネスパートナーとして真摯に業務に取り組んで参ります。</p>
-                        
-                        <p data-lang-key="message-p3">昨今では外国系のIT企業は乱立気味であり、ともすれば人材を奪い合うような状況に陥りがちな市況でもある中、弊社の創業メンバーは逆転の発想と長い業界経験を活かし、互いに協力関係を築き合えるパートナーネットワークの仕組みを構築いたしました。</p>
-                        
-                        <p data-lang-key="message-p4">優秀なビジネスパートナーとの緊密な連携により、お客様の様々なニーズに対応できる体制を整えております。</p>
-                        
-                        <p data-lang-key="message-p5">弊社の主な事業範囲としては、AIソリューション事業、IoT・スマートシステム事業、Blockchain & Web3事業、エンタープライズソリューション事業、エンジニアリング事業、人材事業の六つの柱を軸に事業展開しております。。また、特に金融・保険業界の経験者が多数在籍していることから、セキュリティに対する高い意識と豊富な知識も保有しております。</p>
-                        
-                        <p data-lang-key="message-p6">今後とも弊社ならびに弊社ネットワークの経験値と知見を結集し、貴社のご要望に柔軟に対応して参ります。また、それに対応するための十分以上の知力と体力を備えていると自負致しております。貴社のご期待に応えるべく全力を尽くす所存でございますので、何卒ご検討の程宜しくお願い申し上げます。</p>
-                        
-                        <div class="message-signature">
-                            <p class="signature-closing" data-lang-key="message-closing">敬具</p>
-                            <p data-lang-key="message-company">テラボックス株式会社</p>
-                            <p class="signature-name" data-lang-key="message-signature">代表取締役　荊威</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <!-- Message Section -->
+   <section id="message" class="message-section">
+       <div class="container">
+           <h2 class="section-title scroll-animate" data-lang-key="message-title">代表挨拶</h2>
+           <p class="section-subtitle scroll-animate" data-lang-key="message-subtitle">Message from CEO</p>
+           <div class="message-layout">
+               <div class="ceo-info scroll-animate">
+                   <div class="ceo-photo">
+                       <img src="images/president-photo.jpg" alt="荆威" class="ceo-image">
+                   </div>
+                   <div class="ceo-details">
+                       <div class="ceo-name" data-lang-key="ceo-name">荆　威</div>
+                       <div class="ceo-title" data-lang-key="ceo-title">代表取締役</div>
+                   </div>
+               </div>
+               
+               <div class="message-content scroll-animate">
+                   <div class="message-text">
+                       <p class="message-greeting" data-lang-key="message-greeting">拝啓</p>
+                       
+                       <p data-lang-key="message-p1">貴社ますますご清栄のこととお慶び申し上げます。</p>
+                       
+                       <p data-lang-key="message-p2">このたびテラボックスは、日系企業で長く働きながら日本のビジネスを身に付けた経験豊富な精鋭メンバーの結集により設立させていただきました。今後とも、お客様から信頼されるビジネスパートナーとして真摯に業務に取り組んで参ります。</p>
+                       
+                       <p data-lang-key="message-p3">昨今では外国系のIT企業は乱立気味であり、ともすれば人材を奪い合うような状況に陥りがちな市況でもある中、弊社の創業メンバーは逆転の発想と長い業界経験を活かし、互いに協力関係を築き合えるパートナーネットワークの仕組みを構築いたしました。</p>
+                       
+                       <p data-lang-key="message-p4">優秀なビジネスパートナーとの緊密な連携により、お客様の様々なニーズに対応できる体制を整えております。</p>
+                       
+                       <p data-lang-key="message-p5">弊社の主な事業範囲としては、システムエンジニアリング事業、AI・DXソリューション事業、スマート機器・IoT事業、IT人材サービス事業の四つの柱を軸に事業展開しております。また、特に金融・保険業界の経験者が多数在籍していることから、セキュリティに対する高い意識と豊富な知識も保有しております。</p>
+                       
+                       <p data-lang-key="message-p6">今後とも弊社ならびに弊社ネットワークの経験値と知見を結集し、貴社のご要望に柔軟に対応して参ります。また、それに対応するための十分以上の知力と体力を備えていると自負致しております。貴社のご期待に応えるべく全力を尽くす所存でございますので、何卒ご検討の程宜しくお願い申し上げます。</p>
+                       
+                       <div class="message-signature">
+                           <p class="signature-closing" data-lang-key="message-closing">敬具</p>
+                           <p data-lang-key="message-company">テラボックス株式会社</p>
+                           <p class="signature-name" data-lang-key="message-signature">代表取締役　荆威</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <section class="mission-vision">
-        <div class="container">
-            <div class="mv-grid">
-                <div class="mv-card mission-card scroll-animate">
-                    <h2 class="mv-title" data-lang-key="mission-title">私たちのミッション</h2>
-                    <p class="section-subtitle" data-lang-key="mission-subtitle">Our Mission</p>
-                    <p class="mv-text" data-lang-key="mission-text">
-                        想無ぜぱてり韓地ごあぐぼ件表治クたン庫供ひほド社89関よゅょ南路ミセオテ年望ツ速講21幻ちんぴげ。私官勝雪リユ師野はそば告者トやめー航質ねフ秀劇マラミ業季ぞびや報思ぐレぼる光止ルぽざス道97入むずま図氏ツ恩氏ロ用来ッ前東ウオヨア経未オユテ面5長エ協身ね。
-                    </p>
-                </div>
-                <div class="mv-card vision-card scroll-animate">
-                    <h2 class="mv-title" data-lang-key="vision-title">私たちのビジョン</h2>
-                    <p class="section-subtitle" data-lang-key="vision-subtitle">Our Vision</p>
-                    <p class="mv-text" data-lang-key="vision-text">
-                        想無ぜぱてり韓地ごあぐぼ件表治クたン庫供ひほド社89関よゅょ南路ミセオテ年望ツ速講21幻ちんぴげ。私官勝雪リユ師野はそば告者トやめー航質ねフ秀劇マラミ業季ぞびや報思ぐレぼる光止ルぽざス道97入むずま図氏ツ恩氏ロ用来ッ前東ウオヨア経未オユテ面5長エ協身ね。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+   <!-- Business Section -->
+   <section id="business" class="business-section">
+       <div class="container">
+           <h2 class="section-title scroll-animate" data-lang-key="business-title">事業内容</h2>
+           <p class="section-subtitle scroll-animate" data-lang-key="business-subtitle">Our Business Services</p>
+           
+           <div class="business-cards">
+               <!-- システムエンジニアリング事業 -->
+               <div class="business-card scroll-animate" onclick="window.location.href='engineering-service.html'" style="cursor: pointer;">
+                   <div class="business-icon"><i class="fas fa-code"></i></div>
+                   <h3 data-lang-key="business-engineering-title">システムエンジニアリング事業</h3>
+                   <p data-lang-key="business-engineering-text">25名以上の多国籍エンジニアチーム、平均業界経験7年以上のプロフェッショナル集団</p>
+                   <div class="business-services">
+                       <span>SES（システムエンジニア派遣）</span>
+                       <span>受託開発</span>
+                       <span>AWS/クラウド基盤構築</span>
+                       <span>システム開発・運用保守</span>
+                   </div>
+                   <div class="achievement-tags">
+                       <span class="tag">年間20社以上</span>
+                       <span class="tag">延べ100+人月実績</span>
+                   </div>
+               </div>
+               
+               <!-- AI・DXソリューション事業 -->
+               <div class="business-card scroll-animate" onclick="window.location.href='ai-solution.html'" style="cursor: pointer;">
+                   <div class="business-icon"><i class="fas fa-brain"></i></div>
+                   <h3 data-lang-key="business-ai-title">AI・DXソリューション事業</h3>
+                   <p data-lang-key="business-ai-text">RFPから運用まで一站式AI/DXソリューション提供</p>
+                   <div class="business-services">
+                       <span>AI智能市場調査</span>
+                       <span>AI人材マッチング</span>
+                       <span>OCR×AI画像認識</span>
+                       <span>LLMモデル構築</span>
+                   </div>
+                   <div class="achievement-tags">
+                       <span class="tag">Kaggle受賞エンジニア</span>
+                       <span class="tag">大手企業実績</span>
+                   </div>
+               </div>
+               
+               <!-- スマート機器・IoT事業 -->
+               <div class="business-card scroll-animate" onclick="window.location.href='iot-systems.html'" style="cursor: pointer;">
+                   <div class="business-icon"><i class="fas fa-robot"></i></div>
+                   <h3 data-lang-key="business-iot-title">スマート機器・IoT事業</h3>
+                   <p data-lang-key="business-iot-text">サービスロボット日本初導入のパイオニア</p>
+                   <div class="business-services">
+                       <span>KEENONサービスロボット</span>
+                       <span>AIoTスマートメーター</span>
+                       <span>清掃ロボット</span>
+                       <span>配膳ロボット</span>
+                   </div>
+                   <div class="achievement-tags">
+                       <span class="tag">介護施設初導入</span>
+                       <span class="tag">85%利用者満足度</span>
+                   </div>
+               </div>
+               
+               <!-- IT人材サービス事業 -->
+               <div class="business-card scroll-animate" onclick="window.location.href='human-resource.html'" style="cursor: pointer;">
+                   <div class="business-icon"><i class="fas fa-users"></i></div>
+                   <h3 data-lang-key="business-hr-title">IT人材サービス事業</h3>
+                   <p data-lang-key="business-hr-text">総合的な人材ソリューション提供</p>
+                   <div class="business-services">
+                       <span>人材紹介</span>
+                       <span>IT技能研修</span>
+                       <span>人材派遣</span>
+                       <span>人材プラットフォーム運営</span>
+                   </div>
+                   <div class="achievement-tags">
+                       <span class="tag">正規許可取得</span>
+                       <span class="tag">研修体制完備</span>
+                   </div>
+               </div>
+               
+               <!-- Blockchain & Web3事業 -->
+               <div class="business-card scroll-animate" onclick="window.location.href='blockchain-web3.html'" style="cursor: pointer;">
+                   <div class="business-icon"><i class="fas fa-link"></i></div>
+                   <h3 data-lang-key="business-blockchain-title">Blockchain & Web3事業</h3>
+                   <p data-lang-key="business-blockchain-text">次世代Web3技術とブロックチェーンソリューションの開発・導入</p>
+                   <div class="business-services">
+                       <span>Ethereum/Solidity開発</span>
+                       <span>Hyperledger Fabric</span>
+                       <span>DeFiプロトコル</span>
+                       <span>Cosmos/Tendermint</span>
+                   </div>
+                   <div class="achievement-tags">
+                       <span class="tag">9年以上の実績</span>
+                       <span class="tag">国際ハッカソン受賞</span>
+                   </div>
+               </div>
+               
+               <!-- エンタープライズソリューション事業 -->
+               <div class="business-card scroll-animate" onclick="window.location.href='enterprise-solution.html'" style="cursor: pointer;">
+                   <div class="business-icon"><i class="fas fa-building"></i></div>
+                   <h3 data-lang-key="business-enterprise-title">エンタープライズソリューション事業</h3>
+                   <p data-lang-key="business-enterprise-text">企業のデジタル変革を支援する総合ソリューション</p>
+                   <div class="business-services">
+                       <span>Microsoft Dynamics 365</span>
+                       <span>ローコードプラットフォーム</span>
+                       <span>勤怠管理システム</span>
+                       <span>データ分析・BI</span>
+                   </div>
+                   <div class="achievement-tags">
+                       <span class="tag">エンタープライズ対応</span>
+                       <span class="tag">Microsoft Partner</span>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <!-- Business Section -->
-    <section id="business" class="business-section">
-        <div class="container">
-            <h2 class="section-title scroll-animate" data-lang-key="business-title">事業内容</h2>
-            <p class="section-subtitle scroll-animate" data-lang-key="business-subtitle">Our Business Solutions</p>
-            <!-- Business Section - Updated business cards with links -->
-<div class="business-cards">
-    <div class="business-card scroll-animate">
-        <div class="business-icon"><i class="fas fa-robot"></i></div>
-        <h3 data-lang-key="business-ai-title">AI ソリューション事業</h3>
-        <p data-lang-key="business-ai-text">顔認証、AI文献要約、サービスロボット、配送ロボットなど、最先端AI技術を活用したソリューションを提供します。</p>
-        <div class="business-services">
-            <span>顔認証</span>
-            <span>AI文献要約</span>
-            <span>サービスロボット</span>
-            <span>配送ロボット</span>
-        </div>
-        <a href="ai-solutions-page.html" class="business-link">詳細を見る</a>
-    </div>
-    
-    <div class="business-card scroll-animate">
-        <div class="business-icon"><i class="fas fa-microchip"></i></div>
-        <h3 data-lang-key="business-iot-title">IoT・スマートシステム事業</h3>
-        <p data-lang-key="business-iot-text">電子棚札、スマート検針システム、電子スタンプカードなど、IoT技術を活用したスマートシステムを開発・提供します。</p>
-        <div class="business-services">
-            <span>電子棚札</span>
-            <span>スマート検針システム</span>
-            <span>電子スタンプカード</span>
-        </div>
-        <a href="iot-systems-page.html" class="business-link">詳細を見る</a>
-    </div>
-    
-    <div class="business-card scroll-animate">
-        <div class="business-icon"><i class="fas fa-link"></i></div>
-        <h3 data-lang-key="business-blockchain-title">Blockchain & Web3事業</h3>
-        <p data-lang-key="business-blockchain-text">DeFiソリューション、NFTプラットフォーム、スマートコントラクト開発など、次世代Web3技術のソリューションを提供します。</p>
-        <div class="business-services">
-            <span>DeFiソリューション</span>
-            <span>NFTプラットフォーム</span>
-            <span>スマートコントラクト</span>
-            <span>暗号資産ウォレット</span>
-        </div>
-        <a href="blockchain-web3-page.html" class="business-link">詳細を見る</a>
-    </div>
-    
-    <div class="business-card scroll-animate">
-        <div class="business-icon"><i class="fas fa-building"></i></div>
-        <h3 data-lang-key="business-enterprise-title">エンタープライズソリューション事業</h3>
-        <p data-lang-key="business-enterprise-text">ローコードプラットフォーム、勤怠管理システム、データ分析コンサルティングなど、企業の業務効率化を支援します。</p>
-        <div class="business-services">
-            <span>ローコードプラットフォーム</span>
-            <span>勤怠管理システム</span>
-            <span>データ分析・コンサルティング</span>
-        </div>
-        <a href="enterprise-solutions-page.html" class="business-link">詳細を見る</a>
-    </div>
-    
-    <div class="business-card scroll-animate">
-        <div class="business-icon"><i class="fas fa-code"></i></div>
-        <h3 data-lang-key="business-engineering-title">エンジニアリング事業</h3>
-        <p data-lang-key="business-engineering-text">受託開発、業務支援（SES）、システム開発・運用など、お客様のIT開発ニーズに幅広く対応いたします。</p>
-        <div class="business-services">
-            <span>受託開発</span>
-            <span>業務支援（SES）</span>
-            <span>システム開発・運用</span>
-        </div>
-        <a href="engineering-services-page.html" class="business-link">詳細を見る</a>
-    </div>
-    
-    <div class="business-card scroll-animate">
-        <div class="business-icon"><i class="fas fa-users"></i></div>
-        <h3 data-lang-key="business-hr-title">人材事業</h3>
-        <p data-lang-key="business-hr-text">人材紹介、IT人材研修、人材プラットフォーム運営、人材派遣など、総合的な人材ソリューションを提供します。</p>
-        <div class="business-services">
-            <span>人材紹介</span>
-            <span>IT人材研修</span>
-            <span>人材プラットフォーム運営</span>
-            <span>人材派遣</span>
-        </div>
-        <a href="human-resources-page.html" class="business-link">詳細を見る</a>
-    </div>
-</div>
-        </div>
-    </section>
+   <!-- Cases Section - 導入実績 -->
+   <section id="cases" class="news-section">
+       <div class="container">
+           <h2 class="section-title scroll-animate" data-lang-key="cases-title">導入実績</h2>
+           <p class="section-subtitle scroll-animate" data-lang-key="cases-subtitle">Our Track Record</p>
+           
+           <div class="news-grid">
+               <div class="news-card scroll-animate">
+                   <div class="news-image" style="background-image: url('images/aws-infra.jpg'); background-size: cover; background-position: center;">
+                       <i class="fas fa-university" style="display: none;"></i>
+                   </div>
+                   <div class="news-content">
+                       <div class="news-title" data-lang-key="case-megabank-title">某メガバンク - AWS共通基盤構築</div>
+                       <p class="news-text" data-lang-key="case-megabank-text">次期基盤構築・運用保守プロジェクト。延べ100+人月、継続中。24/7運用体制を構築し、高可用性とセキュリティを実現。</p>
+                   </div>
+               </div>
+               
+               <div class="news-card scroll-animate">
+                   <div class="news-image" style="background-image: url('images/listed-bigdata.jpg'); background-size: cover; background-position: center;">
+                       <i class="fas fa-hospital" style="display: none;"></i>
+                   </div>
+                   <div class="news-content">
+                       <div class="news-title" data-lang-key="case-medical-title">上場医療データ専門会社 - ビッグデータ基盤</div>
+                       <p class="news-text" data-lang-key="case-medical-text">ビッグデータ分析を含め、データ基盤構築・運用保守。延べ100+人月、継続中。AI/MLを活用した高度な分析環境を提供。</p>
+                   </div>
+               </div>
+               
+               <div class="news-card scroll-animate">
+                   <div class="news-image" style="background-image: url('images/pensioner-robot.jpg'); background-size: cover; background-position: center;">
+                       <i class="fas fa-robot" style="display: none;"></i>
+                   </div>
+                   <div class="news-content">
+                       <div class="news-title" data-lang-key="case-nursing-title">介護施設 - 日本初サービスロボット導入</div>
+                       <p class="news-text" data-lang-key="case-nursing-text">配膳・清掃ロボットの日本初導入を実現。85%の利用者が負担軽減を実感。作業時間を25%～70%削減に成功。</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <!-- Recruit Section -->
-    <section id="recruit" class="recruit-section">
-        <div class="container">
-            <h2 class="section-title scroll-animate" data-lang-key="recruit-title">採用情報</h2>
-            <p class="section-subtitle scroll-animate" data-lang-key="recruit-subtitle">Join Our Team</p>
-            
-            <div class="recruit-requirements scroll-animate">
-                <h3 class="recruit-subtitle" data-lang-key="recruit-requirements-title">募集要項（新卒・中途）</h3>
-                
-                <div class="requirements-grid">
-                    <div class="requirement-item">
-                        <div class="requirement-label" data-lang-key="recruit-position-label">募集職種</div>
-                        <div class="requirement-value" data-lang-key="recruit-position-value">①ITエンジニア　②総合職</div>
-                    </div>
-                    
-                    <div class="requirement-item">
-                        <div class="requirement-label" data-lang-key="recruit-hours-label">勤務時間</div>
-                        <div class="requirement-value">
-                            <span data-lang-key="recruit-hours-value">9:00～18:00（休憩1時間）　土日祝日休み　年次有給休暇の計画的付与あり</span><br>
-                            <span class="requirement-note" data-lang-key="recruit-hours-note">※勤務時間・休みは職種や部署によって異なる場合があります。相談可。</span>
-                        </div>
-                    </div>
-                    
-                    <div class="requirement-item">
-                        <div class="requirement-label" data-lang-key="recruit-allowance-label">諸手当</div>
-                        <div class="requirement-value" data-lang-key="recruit-allowance-value">通勤手当、家族手当、勤続手当、役職手当等あり</div>
-                    </div>
-                    
-                    <div class="requirement-item full-width">
-                        <div class="requirement-label" data-lang-key="recruit-salary-label">給与</div>
-                        
-                        <div class="salary-section">
-                            <div class="salary-category">
-                                <div class="salary-category-title" data-lang-key="recruit-salary-new">新卒</div>
-                                <div class="salary-table">
-                                    <div class="salary-row">
-                                        <span>大学院卒</span>
-                                        <span class="salary-amount">206,400円～</span>
-                                    </div>
-                                    <div class="salary-row">
-                                        <span>大学卒</span>
-                                        <span class="salary-amount">197,200円～</span>
-                                    </div>
-                                    <div class="salary-row">
-                                        <span>短大卒</span>
-                                        <span class="salary-amount">178,900円～</span>
-                                    </div>
-                                    <div class="salary-row">
-                                        <span>専門卒（4年制）</span>
-                                        <span class="salary-amount">197,200円～</span>
-                                    </div>
-                                    <div class="salary-row">
-                                        <span>専門卒</span>
-                                        <span class="salary-amount">188,100円～</span>
-                                    </div>
-                                    <div class="salary-row">
-                                        <span>高卒</span>
-                                        <span class="salary-amount">169,700円～</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="salary-category">
-                                <div class="salary-category-title" data-lang-key="recruit-salary-mid">中途採用</div>
-                                <div class="mid-career-salary" data-lang-key="recruit-salary-mid-range">年収400～1,000万円</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="other-requirements">
-                        <div class="other-requirement-item">
-                            <div class="requirement-label" data-lang-key="recruit-raise-label">昇給・昇格</div>
-                            <div class="requirement-value" data-lang-key="recruit-raise-value">半期毎評定あり</div>
-                        </div>
-                        <div class="other-requirement-item">
-                            <div class="requirement-label" data-lang-key="recruit-trial-label">試用・研修期間について</div>
-                            <div class="requirement-value" data-lang-key="recruit-trial-value">３ヶ月</div>
-                        </div>
-                        <div class="other-requirement-item">
-                            <div class="requirement-label" data-lang-key="recruit-vacation-label">休暇</div>
-                            <div class="requirement-value" data-lang-key="recruit-vacation-value">週休2日制　リフレッシュ休暇</div>
-                        </div>
-                        <div class="other-requirement-item">
-                            <div class="requirement-label" data-lang-key="recruit-training-label">研修制度</div>
-                            <div class="requirement-value" data-lang-key="recruit-training-value">能力開発体系に基づく研修<br>テクニカルスキル研修<br>eラーニング研修　OJT</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 中途採用職種 -->
-            <div class="mid-career-positions scroll-animate">
-                <h3 class="recruit-subtitle" data-lang-key="recruit-positions-title">中途採用職種</h3>
-                <div class="positions-grid">
-                    <div class="position-card">
-                        <h4 class="position-title">AIエンジニア</h4>
-                        <div class="position-description">
-                            <p>機械学習モデルの開発・改善、データパイプライン構築、AIプロダクトの実装に従事していただきます。最新の技術トレンドを追いながら、革新的なソリューション開発に携わることができます。</p>
-                            <p class="position-description-en">Develop and improve machine learning models, build data pipelines, and implement AI products. Stay current with the latest technology trends while contributing to innovative solution development.</p>
-                        </div>
-                        <div class="required-skills">
-                            <strong>必要スキル:</strong> Python, TensorFlow/PyTorch, 機械学習の基礎知識
-                        </div>
-                        <button class="apply-btn">応募する</button>
-                    </div>
+   <!-- Recruit Section -->
+   <section id="recruit" class="recruit-section">
+       <div class="container">
+           <h2 class="section-title scroll-animate" data-lang-key="recruit-title">採用情報</h2>
+           <p class="section-subtitle scroll-animate" data-lang-key="recruit-subtitle">Join Our Team</p>
+           
+           <div class="recruit-requirements scroll-animate">
+               <h3 class="recruit-subtitle" data-lang-key="recruit-requirements-title">募集要項（新卒・中途）</h3>
+               
+               <div class="requirements-grid">
+                   <div class="requirement-item">
+                       <div class="requirement-label" data-lang-key="recruit-position-label">募集職種</div>
+                       <div class="requirement-value" data-lang-key="recruit-position-value">①ITエンジニア　②総合職</div>
+                   </div>
+                   
+                   <div class="requirement-item">
+                       <div class="requirement-label" data-lang-key="recruit-hours-label">勤務時間</div>
+                       <div class="requirement-value">
+                           <span data-lang-key="recruit-hours-value">9:00～18:00（休憩1時間）　土日祝日休み　年次有給休暇の計画的付与あり</span><br>
+                           <span class="requirement-note" data-lang-key="recruit-hours-note">※勤務時間・休みは職種や部署によって異なる場合があります。相談可。</span>
+                       </div>
+                   </div>
+                   
+                   <div class="requirement-item">
+                       <div class="requirement-label" data-lang-key="recruit-allowance-label">諸手当</div>
+                       <div class="requirement-value" data-lang-key="recruit-allowance-value">通勤手当、家族手当、勤続手当、役職手当等あり</div>
+                   </div>
+                   
+                   <div class="requirement-item full-width">
+                       <div class="requirement-label" data-lang-key="recruit-salary-label">給与</div>
+                       
+                       <div class="salary-section">
+                           <div class="salary-category">
+                               <div class="salary-category-title" data-lang-key="recruit-salary-new">新卒</div>
+                               <div class="salary-table">
+                                   <div class="salary-row">
+                                       <span>大学院卒</span>
+                                       <span class="salary-amount">206,400円～</span>
+                                   </div>
+                                   <div class="salary-row">
+                                       <span>大学卒</span>
+                                       <span class="salary-amount">197,200円～</span>
+                                   </div>
+                                   <div class="salary-row">
+                                       <span>短大卒</span>
+                                       <span class="salary-amount">178,900円～</span>
+                                   </div>
+                                   <div class="salary-row">
+                                       <span>専門卒（4年制）</span>
+                                       <span class="salary-amount">197,200円～</span>
+                                   </div>
+                                   <div class="salary-row">
+                                       <span>専門卒</span>
+                                       <span class="salary-amount">188,100円～</span>
+                                   </div>
+                                   <div class="salary-row">
+                                       <span>高卒</span>
+                                       <span class="salary-amount">169,700円～</span>
+                                   </div>
+                               </div>
+                           </div>
+                           
+                           <div class="salary-category">
+                               <div class="salary-category-title" data-lang-key="recruit-salary-mid">中途採用</div>
+                               <div class="mid-career-salary" data-lang-key="recruit-salary-mid-range">年収400～1,000万円</div>
+                           </div>
+                       </div>
+                   </div>
+                   
+                   <div class="other-requirements">
+                       <div class="other-requirement-item">
+                           <div class="requirement-label" data-lang-key="recruit-raise-label">昇給・昇格</div>
+                           <div class="requirement-value" data-lang-key="recruit-raise-value">半期毎評定あり</div>
+                       </div>
+                       <div class="other-requirement-item">
+                           <div class="requirement-label" data-lang-key="recruit-trial-label">試用・研修期間について</div>
+                           <div class="requirement-value" data-lang-key="recruit-trial-value">３ヶ月</div>
+                       </div>
+                       <div class="other-requirement-item">
+                           <div class="requirement-label" data-lang-key="recruit-vacation-label">休暇</div>
+                           <div class="requirement-value" data-lang-key="recruit-vacation-value">週休2日制　リフレッシュ休暇</div>
+                       </div>
+                       <div class="other-requirement-item">
+                           <div class="requirement-label" data-lang-key="recruit-training-label">研修制度</div>
+                           <div class="requirement-value" data-lang-key="recruit-training-value">能力開発体系に基づく研修<br>テクニカルスキル研修<br>eラーニング研修　OJT</div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
+           <!-- 中途採用職種 -->
+           <div class="mid-career-positions scroll-animate">
+               <h3 class="recruit-subtitle" data-lang-key="recruit-positions-title">中途採用職種</h3>
+               <div class="positions-grid">
+                   <div class="position-card">
+                       <h4 class="position-title" data-lang-key="position-ai-title">AIエンジニア</h4>
+                       <div class="position-description">
+                           <p data-lang-key="position-ai-description">機械学習モデルの開発・改善、データパイプライン構築、AIプロダクトの実装に従事していただきます。最新の技術トレンドを追いながら、革新的なソリューション開発に携わることができます。</p>
+                       </div>
+                       <div class="required-skills">
+                           <strong data-lang-key="position-skills-label">必要スキル:</strong> <span data-lang-key="position-ai-skills">Python, TensorFlow/PyTorch, 機械学習の基礎知識</span>
+                       </div>
+                       <button class="apply-btn" data-lang-key="position-apply-btn">応募する</button>
+                   </div>
 
-                    <div class="position-card">
-                        <h4 class="position-title">データサイエンティスト</h4>
-                        <div class="position-description">
-                            <p>大規模データの分析、統計モデリング、ビジネス課題解決のための洞察抽出を行います。データから価値を創出し、意思決定を支援する重要な役割です。</p>
-                            <p class="position-description-en">Analyze large-scale data, perform statistical modeling, and extract insights to solve business challenges. Play a crucial role in creating value from data and supporting decision-making.</p>
-                        </div>
-                        <div class="required-skills">
-                            <strong>必要スキル:</strong> R/Python, SQL, 統計学の知識, ビジネス理解力
-                        </div>
-                        <button class="apply-btn">応募する</button>
-                    </div>
+                   <div class="position-card">
+                       <h4 class="position-title" data-lang-key="position-fullstack-title">フルスタックエンジニア</h4>
+                       <div class="position-description">
+                           <p data-lang-key="position-fullstack-description">フロントエンドからバックエンドまで、システム全体の設計・開発に携わります。モダンな技術スタックを使用した開発環境で、技術力を存分に発揮できます。</p>
+                       </div>
+                       <div class="required-skills">
+                           <strong data-lang-key="position-skills-label">必要スキル:</strong> <span data-lang-key="position-fullstack-skills">JavaScript, React, Node.js, クラウドサービス</span>
+                       </div>
+                       <button class="apply-btn" data-lang-key="position-apply-btn">応募する</button>
+                   </div>
 
-                    <div class="position-card">
-                        <h4 class="position-title">フルスタックエンジニア</h4>
-                        <div class="position-description">
-                            <p>フロントエンドからバックエンドまで、システム全体の設計・開発に携わります。モダンな技術スタックを使用した開発環境で、技術力を存分に発揮できます。</p>
-                            <p class="position-description-en">Engage in full-system design and development from frontend to backend. Demonstrate your technical skills to the fullest in a development environment using modern technology stacks.</p>
-                        </div>
-                        <div class="required-skills">
-                            <strong>必要スキル:</strong> JavaScript, React, Node.js, クラウドサービス
-                        </div>
-                        <button class="apply-btn">応募する</button>
-                    </div>
+                   <div class="position-card">
+                       <h4 class="position-title" data-lang-key="position-cloud-title">クラウドアーキテクト</h4>
+                       <div class="position-description">
+                           <p data-lang-key="position-cloud-description">企業のクラウド移行戦略立案、アーキテクチャ設計、インフラ構築を担当します。スケーラブルで安全なクラウドソリューションの提供を通じて、お客様のDXを推進します。</p>
+                       </div>
+                       <div class="required-skills">
+                           <strong data-lang-key="position-skills-label">必要スキル:</strong> <span data-lang-key="position-cloud-skills">AWS/Azure/GCP, Kubernetes, Infrastructure as Code</span>
+                       </div>
+                       <button class="apply-btn" data-lang-key="position-apply-btn">応募する</button>
+                   </div>
 
-                    <div class="position-card">
-                        <h4 class="position-title">クラウドアーキテクト</h4>
-                        <div class="position-description">
-                            <p>企業のクラウド移行戦略立案、アーキテクチャ設計、インフラ構築を担当します。スケーラブルで安全なクラウドソリューションの提供を通じて、お客様のDXを推進します。</p>
-                            <p class="position-description-en">Responsible for enterprise cloud migration strategy planning, architecture design, and infrastructure construction. Promote customer DX through the provision of scalable and secure cloud solutions.</p>
-                        </div>
-                        <div class="required-skills">
-                            <strong>必要スキル:</strong> AWS/Azure/GCP, Kubernetes, Infrastructure as Code, セキュリティ知識
-                        </div>
-                        <button class="apply-btn">応募する</button>
-                    </div>
+                   <div class="position-card">
+                       <h4 class="position-title" data-lang-key="position-pm-title">プロダクトマネージャー</h4>
+                       <div class="position-description">
+                           <p data-lang-key="position-pm-description">AIプロダクトの企画・開発・運用を統括し、市場ニーズを技術要件に落とし込みます。エンジニアリングチームと密接に連携し、革新的なプロダクトの創出をリードします。</p>
+                       </div>
+                       <div class="required-skills">
+                           <strong data-lang-key="position-skills-label">必要スキル:</strong> <span data-lang-key="position-pm-skills">プロダクト企画経験, 技術理解力, プロジェクト管理</span>
+                       </div>
+                       <button class="apply-btn" data-lang-key="position-apply-btn">応募する</button>
+                   </div>
 
-                    <div class="position-card">
-                        <h4 class="position-title">プロダクトマネージャー</h4>
-                        <div class="position-description">
-                            <p>AIプロダクトの企画・開発・運用を統括し、市場ニーズを技術要件に落とし込みます。エンジニアリングチームと密接に連携し、革新的なプロダクトの創出をリードします。</p>
-                            <p class="position-description-en">Oversee the planning, development, and operation of AI products, translating market needs into technical requirements. Work closely with engineering teams to lead the creation of innovative products.</p>
-                        </div>
-                        <div class="required-skills">
-                            <strong>必要スキル:</strong> プロダクト企画経験, 技術理解力, プロジェクト管理, 英語コミュニケーション
-                        </div>
-                        <button class="apply-btn">応募する</button>
-                    </div>
+                   <div class="position-card">
+                       <h4 class="position-title" data-lang-key="position-devops-title">DevOpsエンジニア</h4>
+                       <div class="position-description">
+                           <p data-lang-key="position-devops-description">CI/CDパイプラインの構築、インフラの自動化、監視システムの導入を通じて、開発プロセスの効率化と品質向上を実現します。</p>
+                       </div>
+                       <div class="required-skills">
+                           <strong data-lang-key="position-skills-label">必要スキル:</strong> <span data-lang-key="position-devops-skills">Docker, Kubernetes, CI/CD, 監視ツール</span>
+                       </div>
+                       <button class="apply-btn" data-lang-key="position-apply-btn">応募する</button>
+                   </div>
 
-                    <div class="position-card">
-                        <h4 class="position-title">DevOpsエンジニア</h4>
-                        <div class="position-description">
-                            <p>CI/CDパイプラインの構築、インフラの自動化、監視システムの導入を通じて、開発プロセスの効率化と品質向上を実現します。開発チームとインフラチームの橋渡し役を担います。</p>
-                            <p class="position-description-en">Achieve development process efficiency and quality improvement through CI/CD pipeline construction, infrastructure automation, and monitoring system implementation. Serve as a bridge between development and infrastructure teams.</p>
-                        </div>
-                        <div class="required-skills">
-                            <strong>必要スキル:</strong> Docker, Kubernetes, CI/CD, 監視ツール, Linux
-                        </div>
-                        <button class="apply-btn">応募する</button>
-                    </div>
-                </div>
-            </div>
+                   <div class="position-card">
+                       <h4 class="position-title" data-lang-key="position-ds-title">データサイエンティスト</h4>
+                       <div class="position-description">
+                           <p data-lang-key="position-ds-description">大規模データの分析、統計モデリング、ビジネス課題解決のための洞察抽出を行います。データから価値を創出し、意思決定を支援する重要な役割です。</p>
+                       </div>
+                       <div class="required-skills">
+                           <strong data-lang-key="position-skills-label">必要スキル:</strong> <span data-lang-key="position-ds-skills">R/Python, SQL, 統計学の知識</span>
+                       </div>
+                       <button class="apply-btn" data-lang-key="position-apply-btn">応募する</button>
+                   </div>
+               </div>
+           </div>
 
-            <div class="entry-form scroll-animate">
-                <h3 class="form-title">エントリーフォーム</h3>
-                
-                <form id="entryForm">
-                    <div class="form-group">
-                        <label class="form-label">氏名 <span class="required">*</span></label>
-                        <input type="text" class="form-input" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">ふりがな <span class="required">*</span></label>
-                        <input type="text" class="form-input" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">メールアドレス <span class="required">*</span></label>
-                        <input type="email" class="form-input" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">電話番号 <span class="required">*</span></label>
-                        <input type="tel" class="form-input" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">自由記入欄</label>
-                        <textarea class="form-input form-textarea" placeholder="志望動機、経験、スキル等をご記入ください"></textarea>
-                    </div>
-                    
-                    <div class="privacy-policy">
-                        <h4>個人情報の取扱いについて</h4>
-                        <p>応募時に記載いただく個人情報は、弊社の個人情報保護マネジメントシステムに基づき取り扱いさせていただきます。</p>
-                        <p>１．個人情報は、採用目的のためです。</p>
-                        <p>２．個人情報管理責任者は、代表取締役です。</p>
-                        <p>３．第三者への提供は行いません。</p>
-                        <p>４．個人情報の処理のための外部委託は、機密保持契約を締結している会社とします。</p>
-                        <p>５．弊社に個人情報を提供されることは任意ですが、記載内容に不備があった場合に、連絡が取れない場合があります。</p>
-                        <p>６．弊社に提供した個人情報に関して、開示等（利用目的の通知、開示、内容の訂正、追加又は削除、利用の停止、消去、第三者提供記録の開示及び第三者への提供の停止）の請求は、下記までご連絡下さい。</p>
-                        <p class="consent-instruction">同意される場合、下記にチェック願います。</p>
-                        <p class="consent-warning">※下記にチェックされない場合、確認画面に進めません。</p>
-                    </div>
-                    
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="privacyConsent" class="checkbox-input" required>
-                        <label for="privacyConsent" class="checkbox-label">
-                            <strong class="consent-text">私は上記「個人情報の取り扱いについて」に同意する</strong>
-                        </label>
-                    </div>
-                    
-                    <button type="submit" class="submit-button" id="submitBtn" disabled>確認画面へ</button>
-                </form>
-                
-                <div class="form-footer">
-                    <strong class="company-name">テラボックス株式会社</strong><br>
-                    〒104-0045 東京都中央区築地6丁目17-4 リードシー築地ビル 4F<br>
-                    TEL 03-5542-7798
-                </div>
-            </div>
-        </div>
-    </section>
+           <div class="entry-form scroll-animate">
+               <h3 class="form-title">エントリーフォーム</h3>
+               
+               <form id="entryForm">
+                   <div class="form-group">
+                       <label class="form-label">氏名 <span class="required">*</span></label>
+                       <input type="text" class="form-input" required>
+                   </div>
+                   
+                   <div class="form-group">
+                       <label class="form-label">ふりがな <span class="required">*</span></label>
+                       <input type="text" class="form-input" required>
+                   </div>
+                   
+                   <div class="form-group">
+                       <label class="form-label">メールアドレス <span class="required">*</span></label>
+                       <input type="email" class="form-input" required>
+                   </div>
+                   
+                   <div class="form-group">
+                       <label class="form-label">電話番号 <span class="required">*</span></label>
+                       <input type="tel" class="form-input" required>
+                   </div>
+                   
+                   <div class="form-group">
+                       <label class="form-label">自由記入欄</label>
+                       <textarea class="form-input form-textarea" placeholder="志望動機、経験、スキル等をご記入ください"></textarea>
+                   </div>
+                   
+                   <div class="privacy-policy">
+                       <h4>個人情報の取扱いについて</h4>
+                       <p>応募時に記載いただく個人情報は、弊社の個人情報保護マネジメントシステムに基づき取り扱いさせていただきます。</p>
+                       <p>１．個人情報は、採用目的のためです。</p>
+                       <p>２．個人情報管理責任者は、代表取締役です。</p>
+                       <p>３．第三者への提供は行いません。</p>
+                       <p>４．個人情報の処理のための外部委託は、機密保持契約を締結している会社とします。</p>
+                       <p>５．弊社に個人情報を提供されることは任意ですが、記載内容に不備があった場合に、連絡が取れない場合があります。</p>
+                       <p>６．弊社に提供した個人情報に関して、開示等の請求は、下記まで御連絡下さい。</p>
+                       <p class="consent-instruction">同意される場合、下記にチェック願います。</p>
+                       <p class="consent-warning">※下記にチェックされない場合、確認画面に進めません。</p>
+                   </div>
+                   
+                   <div class="checkbox-container">
+                       <input type="checkbox" id="privacyConsent" class="checkbox-input" required>
+                       <label for="privacyConsent" class="checkbox-label">
+                           <strong class="consent-text">私は上記「個人情報の取り扱いについて」に同意する</strong>
+                       </label>
+                   </div>
+                   
+                   <button type="submit" class="submit-button" id="submitBtn" disabled>確認画面へ</button>
+               </form>
+               
+               <div class="form-footer">
+                   <strong class="company-name">テラボックス株式会社</strong><br>
+                   〒104-0045 東京都中央区築地6丁目17-4 リードシー築地ビル 4F<br>
+                   TEL 03-5542-7798
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <!-- Access Section -->
-    <section id="access" class="access-section">
-        <div class="container">
-            <h2 class="section-title scroll-animate" data-lang-key="access-title">アクセス</h2>
-            <p class="section-subtitle scroll-animate" data-lang-key="access-subtitle">How to reach us</p>
-            <div class="access-content">
-                <div class="access-info scroll-animate">
-                    <div class="access-item">
-                        <div class="access-label" data-lang-key="access-company-label">会社名</div>
-                        <div class="access-value" data-lang-key="access-company-value">株式会社Terabox</div>
-                    </div>
-                    <div class="access-item">
-                        <div class="access-label" data-lang-key="access-address-label">住所</div>
-                        <div class="access-value" data-lang-key="access-address-value">
-                            〒100-0001<br>
-                            東京都千代田区千代田1-1-1<br>
-                            Teraboxビル 10F
-                        </div>
-                    </div>
-                    <div class="access-item">
-                        <div class="access-label" data-lang-key="access-station-label">最寄り駅</div>
-                        <div class="access-value" data-lang-key="access-station-value">
-                            JR東京駅 徒歩5分<br>
-                            地下鉄大手町駅 徒歩3分
-                        </div>
-                    </div>
-                    <div class="access-item">
-                        <div class="access-label" data-lang-key="access-phone-label">電話番号</div>
-                        <div class="access-value" data-lang-key="access-phone-value">03-1234-5678</div>
-                    </div>
-                    <div class="access-item">
-                        <div class="access-label" data-lang-key="access-fax-label">FAX番号</div>
-                        <div class="access-value" data-lang-key="access-fax-value">03-1234-5679</div>
-                    </div>
-                    <div class="access-item">
-                        <div class="access-label" data-lang-key="access-hours-label">営業時間</div>
-                        <div class="access-value" data-lang-key="access-hours-value">
-                            平日 9:00 - 18:00<br>
-                            (土日祝日は休業)
-                        </div>
-                    </div>
-                </div>
-                <div class="map-placeholder scroll-animate">
-                    <div class="map-text"><i class="fas fa-map-marker-alt"></i> <span data-lang-key="access-map-text">Google Maps</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <!-- Access Section -->
+   <section id="access" class="access-section">
+       <div class="container">
+           <h2 class="section-title scroll-animate" data-lang-key="access-title">アクセス</h2>
+           <p class="section-subtitle scroll-animate" data-lang-key="access-subtitle">How to reach us</p>
+           <div class="access-content">
+               <div class="access-info scroll-animate">
+                   <div class="access-item">
+                       <div class="access-label" data-lang-key="access-company-label">会社名</div>
+                       <div class="access-value" data-lang-key="access-company-value">テラボックス株式会社</div>
+                   </div>
+                   <div class="access-item">
+                       <div class="access-label" data-lang-key="access-address-label">住所</div>
+                       <div class="access-value" data-lang-key="access-address-value">
+                           〒104-0045<br>
+                           東京都中央区築地6丁目17-4<br>
+                           リードシー築地ビル 4F
+                       </div>
+                   </div>
+                   <div class="access-item">
+                       <div class="access-label" data-lang-key="access-station-label">最寄り駅</div>
+                       <div class="access-value" data-lang-key="access-station-value">
+                           東京メトロ日比谷線 築地駅 徒歩5分<br>
+                           都営浅草線 東銀座駅 徒歩7分
+                       </div>
+                   </div>
+                   <div class="access-item">
+                       <div class="access-label" data-lang-key="access-phone-label">電話番号</div>
+                       <div class="access-value" data-lang-key="access-phone-value">03-5542-7798</div>
+                   </div>
+                   <div class="access-item">
+                       <div class="access-label" data-lang-key="access-hours-label">営業時間</div>
+                       <div class="access-value" data-lang-key="access-hours-value">
+                           平日 9:00 - 18:00<br>
+                           (土日祝日は休業)
+                       </div>
+                   </div>
+               </div>
+               <div class="map-container scroll-animate">
+                   <div id="google-map" class="google-map">
+                       <div class="map-loading">
+                           <i class="fas fa-map-marker-alt"></i>
+                           <span data-lang-key="access-map-text">Google Maps</span>
+                           <div class="loading-text">Loading map...</div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="contact-content">
-                <h2 class="section-title scroll-animate" data-lang-key="contact-title">お問い合わせ</h2>
-                <p class="section-subtitle scroll-animate" data-lang-key="contact-subtitle">Contact Us</p>
-                <p class="contact-description scroll-animate" data-lang-key="contact-description">
-                    想無ぜぱてり韓地ごあぐぼ件表治クたン庫供ひほド社89関よゅょ南路ミセオテ年望ツ速講21幻ちんぴげ。
-                </p>
-                <a href="#" class="cta-button scroll-animate" data-lang-key="contact-cta">詳細を見る</a>
-            </div>
-        </div>
-    </section>
+   <!-- Contact Section -->
+   <section id="contact" class="contact-section">
+       <div class="container">
+           <div class="contact-content">
+               <h2 class="section-title scroll-animate" data-lang-key="contact-title">お問い合わせ</h2>
+               <p class="section-subtitle scroll-animate" data-lang-key="contact-subtitle">Contact Us</p>
+               <p class="contact-description scroll-animate" data-lang-key="contact-description">
+                   システム開発、AI/DXソリューション、人材サービスなど、<br>
+                   お気軽にご相談ください。
+               </p>
+               <a href="mailto:info@terabox.jp" class="cta-button scroll-animate" data-lang-key="contact-cta">お問い合わせする</a>
+           </div>
+       </div>
+   </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <nav class="footer-nav">
-                <a href="#news" data-lang-key="nav-news">お知らせ</a>
-                <a href="#company" data-lang-key="nav-company">会社概要</a>
-                <a href="#message" data-lang-key="nav-message">代表挨拶</a>
-                <a href="#business" data-lang-key="nav-business">事業内容</a>
-                <a href="#recruit" data-lang-key="nav-recruit">採用情報</a>
-                <a href="#access" data-lang-key="nav-access">アクセス</a>
-                <a href="#contact" data-lang-key="nav-contact">お問い合わせ</a>
-            </nav>
-            <div class="copyright" data-lang-key="footer-copyright">
-                TERABOX Copyright.
-            </div>
-        </div>
-    </footer>
+   <!-- Footer -->
+   <footer class="footer">
+       <div class="container">
+           <nav class="footer-nav">
+               <a href="#strength" data-lang-key="nav-strength">当社の強み</a>
+               <a href="#business-news" data-lang-key="nav-business-news">業務新聞</a>
+               <a href="#company" data-lang-key="nav-company">会社概要</a>
+               <a href="#message" data-lang-key="nav-message">代表挨拶</a>
+               <a href="#business" data-lang-key="nav-business">事業内容</a>
+               <a href="#cases" data-lang-key="nav-cases">導入実績</a>
+               <a href="#recruit" data-lang-key="nav-recruit">採用情報</a>
+               <a href="#contact" data-lang-key="nav-contact">お問い合わせ</a>
+           </nav>
+           <div class="copyright" data-lang-key="footer-copyright">
+               TERABOX Copyright © 2024. All Rights Reserved.
+           </div>
+       </div>
+   </footer>
 
-    <!-- JavaScript Files -->
-	<!-- 先加载语言切换功能 -->
-	<script src="js/language-switcher.js"></script>
-	<!-- 然后加载主要的脚本文件（需要移除语言切换相关代码） -->
-	<script src="js/script.js"></script>
+   <!-- JavaScript Files -->
+   <script src="js/language-switcher.js"></script>
+   <script src="js/script.js"></script>
+   
+   <!-- Google Maps API -->
+   <script>
+   // Google Maps initialization
+   function initMap() {
+       // TERABOX company coordinates (Tsukiji, Tokyo)
+       const teraboxLocation = { lat: 35.6695, lng: 139.7714 };
+       
+       const map = new google.maps.Map(document.getElementById("google-map"), {
+           zoom: 16,
+           center: teraboxLocation,
+           styles: [
+               {
+                   featureType: "all",
+                   elementType: "geometry.fill",
+                   stylers: [{ color: "#1a1a1a" }]
+               },
+               {
+                   featureType: "all",
+                   elementType: "labels.text.fill",
+                   stylers: [{ color: "#ffffff" }]
+               },
+               {
+                   featureType: "all",
+                   elementType: "labels.text.stroke",
+                   stylers: [{ color: "#000000" }, { lightness: 13 }]
+               },
+               {
+                   featureType: "road",
+                   elementType: "geometry.fill",
+                   stylers: [{ color: "#2a2a2a" }]
+               },
+               {
+                   featureType: "water",
+                   elementType: "geometry",
+                   stylers: [{ color: "#0d47a1" }]
+               }
+           ]
+       });
+
+       // Custom marker icon with TERABOX branding
+       const markerIcon = {
+           path: google.maps.SymbolPath.CIRCLE,
+           scale: 12,
+           fillColor: '#9FD500',
+           fillOpacity: 1,
+           strokeColor: '#7FB800',
+           strokeWeight: 2
+       };
+
+       // Create marker
+       const marker = new google.maps.Marker({
+           position: teraboxLocation,
+           map: map,
+           icon: markerIcon,
+           title: 'TERABOX株式会社',
+           animation: google.maps.Animation.DROP
+       });
+
+       // Info window content
+       const infoWindow = new google.maps.InfoWindow({
+           content: `
+               <div style="padding: 10px; color: #333; font-family: 'Noto Sans JP', sans-serif;">
+                   <h3 style="margin: 0 0 8px 0; color: #333; font-size: 16px;">テラボックス株式会社</h3>
+                   <p style="margin: 5px 0; font-size: 13px;">〒104-0045</p>
+                   <p style="margin: 5px 0; font-size: 13px;">東京都中央区築地6丁目17-4</p>
+                   <p style="margin: 5px 0; font-size: 13px;">リードシー築地ビル 4F</p>
+                   <p style="margin: 5px 0; font-size: 13px; color: #9FD500; font-weight: bold;">TEL: 03-5542-7798</p>
+               </div>
+           `
+       });
+
+       // Show info window on marker click
+       marker.addListener('click', () => {
+           infoWindow.open(map, marker);
+       });
+
+       // Auto-open info window after 1 second
+       setTimeout(() => {
+           infoWindow.open(map, marker);
+       }, 1000);
+
+       // Hide loading indicator
+       document.querySelector('.map-loading').style.display = 'none';
+   }
+
+   // Error handling for map loading
+   function mapError() {
+       console.error('Google Maps failed to load');
+       document.querySelector('.map-loading .loading-text').textContent = 'Map failed to load. Please check your connection.';
+   }
+   </script>
+   
+   <!-- Load Google Maps API - Replace YOUR_API_KEY with actual API key -->
+   <script async defer
+       src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places&language=ja"
+       onerror="mapError()">
+   </script>
 </body>
 </html>

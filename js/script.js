@@ -1,11 +1,62 @@
-// Complete trilingual translations for TERABOX website
+// Complete JavaScript for updated TERABOX website
 
+// ==================== 数字动画效果 ====================
+function animateNumbers() {
+    const numbers = document.querySelectorAll('.stat-number');
+    
+    numbers.forEach(number => {
+        const text = number.textContent;
+        const target = parseInt(text);
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+        
+        const updateNumber = () => {
+            current += increment;
+            if (current < target) {
+                number.textContent = Math.floor(current) + '+';
+                requestAnimationFrame(updateNumber);
+            } else {
+                number.textContent = target + '+';
+            }
+        };
+        
+        // 使用Intersection Observer触发动画
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateNumber();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(number);
+    });
+}
 
+// ==================== 成就标签动画 ====================
+function initAchievementTags() {
+    const tags = document.querySelectorAll('.achievement-tags .tag');
+    
+    tags.forEach(tag => {
+        tag.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.05)';
+            this.style.boxShadow = '0 4px 8px rgba(159, 213, 0, 0.3)';
+        });
+        
+        tag.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = 'none';
+        });
+    });
+}
 
-
-// Enhanced particle creation
+// ==================== 粒子效果创建 ====================
 function createParticles() {
     const particlesContainer = document.getElementById('particles');
+    if (!particlesContainer) return;
+    
     const particleCount = 50;
 
     for (let i = 0; i < particleCount; i++) {
@@ -24,7 +75,7 @@ function createParticles() {
     }
 }
 
-// Enhanced smooth scrolling
+// ==================== 平滑滚动 - 更新包含新锚点 ====================
 function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -42,7 +93,7 @@ function initSmoothScrolling() {
     });
 }
 
-// Enhanced scroll animations
+// ==================== 滚动动画 ====================
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -53,6 +104,11 @@ function initScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                
+                // 对于特定元素添加特殊动画
+                if (entry.target.classList.contains('hero-stats')) {
+                    animateNumbers();
+                }
             }
         });
     }, observerOptions);
@@ -62,22 +118,40 @@ function initScrollAnimations() {
     });
 }
 
-// Enhanced header scroll effect
+// ==================== 头部滚动效果 - 优化版 ====================
 function initHeaderScrollEffect() {
     const header = document.querySelector('.header');
+    if (!header) return;
     
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
+    let lastScrollY = 0;
+    let ticking = false;
+    
+    function updateHeader() {
+        const scrollY = window.scrollY;
+        
+        if (scrollY > 100) {
+            header.classList.add('scrolled');
             header.style.background = 'rgba(0, 0, 0, 0.95)';
             header.style.boxShadow = '0 10px 30px -10px rgba(0, 0, 0, 0.3)';
         } else {
+            header.classList.remove('scrolled');
             header.style.background = 'rgba(0, 0, 0, 0.9)';
             header.style.boxShadow = 'none';
+        }
+        
+        lastScrollY = scrollY;
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(updateHeader);
+            ticking = true;
         }
     });
 }
 
-// Enhanced form handling with position application
+// ==================== 表单处理 - 保持原有功能 ====================
 function initFormHandling() {
     const form = document.getElementById('entryForm');
     const privacyConsent = document.getElementById('privacyConsent');
@@ -169,10 +243,12 @@ function initFormHandling() {
     });
 }
 
-// Mobile menu functionality
+// ==================== 移动端菜单 - 优化以适应更多导航项 ====================
 function initMobileMenu() {
     const nav = document.querySelector('.nav');
     const navLinks = document.querySelector('.nav-links');
+    
+    if (!nav || !navLinks) return;
     
     const mobileMenuBtn = document.createElement('button');
     mobileMenuBtn.className = 'mobile-menu-btn';
@@ -196,8 +272,13 @@ function initMobileMenu() {
         const icon = this.querySelector('i');
         if (navLinks.classList.contains('mobile-active')) {
             icon.className = 'fas fa-times';
+            // 对于较多的导航项，添加滚动支持
+            navLinks.style.maxHeight = '70vh';
+            navLinks.style.overflowY = 'auto';
         } else {
             icon.className = 'fas fa-bars';
+            navLinks.style.maxHeight = '';
+            navLinks.style.overflowY = '';
         }
     });
     
@@ -229,6 +310,7 @@ function initMobileMenu() {
                 gap: 15px;
                 border-top: 1px solid #333;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                z-index: 999;
             }
             
             .nav-links.mobile-active {
@@ -249,14 +331,7 @@ function initMobileMenu() {
     document.head.appendChild(style);
 }
 
-// Enhanced performance optimization
-let ticking = false;
-function updateScrollEffects() {
-    initHeaderScrollEffect();
-    ticking = false;
-}
-
-// Add loading animation
+// ==================== 加载动画 ====================
 function initLoadingAnimation() {
     const loader = document.createElement('div');
     loader.className = 'loader';
@@ -318,9 +393,9 @@ function initLoadingAnimation() {
     });
 }
 
-// Add hover effects for cards
+// ==================== 卡片悬停效果 ====================
 function initCardHoverEffects() {
-    const cards = document.querySelectorAll('.news-card, .business-card, .mv-card');
+    const cards = document.querySelectorAll('.news-card, .business-card, .mv-card, .case-card');
     
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
@@ -333,18 +408,21 @@ function initCardHoverEffects() {
     });
 }
 
-// Add parallax effect to hero section
+// ==================== 视差效果 ====================
 function initParallaxEffect() {
     const hero = document.querySelector('.hero');
-    const cube = document.querySelector('.cube-container');
+    const videoContainer = document.querySelector('.video-container');
+    let ticking = false;
     
     window.addEventListener('scroll', function() {
         if (!ticking) {
             const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
             
-            if (cube && scrolled < window.innerHeight) {
-                cube.style.transform = `translateY(${rate}px)`;
+            if (scrolled < window.innerHeight) {
+                const rate = scrolled * -0.5;
+                if (videoContainer) {
+                    videoContainer.style.transform = `translateY(${rate}px)`;
+                }
             }
             
             ticking = true;
@@ -355,7 +433,7 @@ function initParallaxEffect() {
     });
 }
 
-// 视频循环播放功能 - 添加到script.js文件中
+// ==================== 视频循环播放 ====================
 function initVideoLoop() {
     const video = document.querySelector('.hero-video');
     
@@ -366,33 +444,20 @@ function initVideoLoop() {
         video.autoplay = true;
         video.playsInline = true;
         
-        console.log('Video element found, initializing loop functionality...');
-        
         // 监听ended事件，手动重新播放（防止loop属性失效）
         video.addEventListener('ended', function() {
-            console.log('Video ended, restarting...');
             video.currentTime = 0;
             video.play().catch(e => console.log('Manual restart failed:', e));
         });
         
         // 确保视频加载完成后开始播放
         video.addEventListener('loadeddata', function() {
-            console.log('Video loaded, starting playback...');
             video.play().catch(e => console.log('Initial play failed:', e));
-        });
-        
-        // 监听canplaythrough事件
-        video.addEventListener('canplaythrough', function() {
-            console.log('Video can play through, ensuring playback...');
-            if (video.paused) {
-                video.play().catch(e => console.log('Canplaythrough play failed:', e));
-            }
         });
         
         // 处理页面可见性变化（标签页切换时）
         document.addEventListener('visibilitychange', function() {
             if (!document.hidden && video.paused) {
-                console.log('Page visible again, resuming video...');
                 video.play().catch(e => console.log('Visibility resume failed:', e));
             }
         });
@@ -400,7 +465,6 @@ function initVideoLoop() {
         // 定期检查视频状态，确保持续播放
         setInterval(function() {
             if (video.paused && !video.ended && video.readyState >= 3) {
-                console.log('Video paused unexpectedly, resuming...');
                 video.play().catch(e => console.log('Resume play failed:', e));
             }
         }, 3000);
@@ -415,67 +479,56 @@ function initVideoLoop() {
                 video.style.display = 'none';
             }
         });
-        
-        // 在用户首次交互后确保视频播放（解决自动播放限制）
-        function ensureVideoPlaying() {
-            if (video.paused && video.readyState >= 3) {
-                console.log('User interaction detected, ensuring video plays...');
-                video.play().catch(e => console.log('User interaction play failed:', e));
-            }
-        }
-        
-        // 监听用户交互事件
-        ['click', 'scroll', 'keydown', 'touchstart'].forEach(event => {
-            document.addEventListener(event, ensureVideoPlaying, { once: true });
-        });
-        
-        // 当视频即将结束时，预准备重新播放
-        video.addEventListener('timeupdate', function() {
-            if (video.duration > 0) {
-                const timeRemaining = video.duration - video.currentTime;
-                // 在视频结束前1秒准备重新播放
-                if (timeRemaining < 1 && timeRemaining > 0.5) {
-                    console.log('Video almost ended, preparing to loop...');
-                }
-            }
-        });
-        
-        // 强制循环：当视频接近结束时无缝重新开始
-        video.addEventListener('timeupdate', function() {
-            if (video.duration > 0) {
-                const timeRemaining = video.duration - video.currentTime;
-                // 在最后0.1秒时重新开始
-                if (timeRemaining < 0.1) {
-                    video.currentTime = 0;
-                }
-            }
-        });
-        
-        // 处理网络状态变化
-        window.addEventListener('online', function() {
-            if (video.paused) {
-                console.log('Network back online, resuming video...');
-                video.play().catch(e => console.log('Network resume failed:', e));
-            }
-        });
-        
-        // 处理窗口焦点变化
-        window.addEventListener('focus', function() {
-            if (video.paused) {
-                console.log('Window focused, resuming video...');
-                video.play().catch(e => console.log('Focus resume failed:', e));
-            }
-        });
-        
-    } else {
-        console.warn('Hero video element not found!');
     }
 }
 
-// Initialize all functionality
+// ==================== 新增：强项图标动画 ====================
+function initStrengthIcons() {
+    const icons = document.querySelectorAll('#strength .news-image i');
+    
+    icons.forEach((icon, index) => {
+        icon.style.animationDelay = `${index * 0.2}s`;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(icon);
+    });
+}
+
+// ==================== 新增：案例卡片特效 ====================
+function initCaseCards() {
+    const caseCards = document.querySelectorAll('#cases .news-card');
+    
+    caseCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.borderColor = '#9FD500';
+            const icon = this.querySelector('.news-image i');
+            if (icon) {
+                icon.style.transform = 'rotate(360deg) scale(1.2)';
+                icon.style.transition = 'transform 0.5s ease';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.borderColor = 'rgba(159, 213, 0, 0.1)';
+            const icon = this.querySelector('.news-image i');
+            if (icon) {
+                icon.style.transform = 'rotate(0) scale(1)';
+            }
+        });
+    });
+}
+
+// ==================== 初始化所有功能 ====================
 document.addEventListener('DOMContentLoaded', function() {
     initLoadingAnimation();
-	initVideoLoop(); // 添加这一行
+    initVideoLoop();
     initSmoothScrolling();
     initScrollAnimations();
     initHeaderScrollEffect();
@@ -483,22 +536,41 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initCardHoverEffects();
     initParallaxEffect();
+    
+    // 新增的初始化
+    animateNumbers();
+    initAchievementTags();
+    initStrengthIcons();
+    initCaseCards();
+	initCompanyTabs(); // 添加这行
+	initCertBadges(); // 添加这行
 });
 
-// Initialize particles when page loads
+// ==================== 页面加载完成后 ====================
 window.addEventListener('load', function() {
     createParticles();
+    
+    // 触发所有动画
+    document.querySelectorAll('.animate').forEach((el, index) => {
+        setTimeout(() => {
+            el.classList.add('visible');
+        }, index * 100);
+    });
 });
 
-// Optimized scroll event handler
+// ==================== 优化的滚动事件处理 ====================
+let scrollTimeout;
 window.addEventListener('scroll', function() {
-    if (!ticking) {
-        requestAnimationFrame(updateScrollEffects);
-        ticking = true;
+    if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
     }
+    
+    scrollTimeout = window.requestAnimationFrame(function() {
+        // 滚动相关的更新
+    });
 });
 
-// Add keyboard navigation support
+// ==================== 键盘导航支持 ====================
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         const mobileMenu = document.querySelector('.nav-links.mobile-active');
@@ -510,7 +582,7 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Add touch support for mobile devices
+// ==================== 触摸支持 ====================
 let touchStartY = 0;
 document.addEventListener('touchstart', function(e) {
     touchStartY = e.touches[0].clientY;
@@ -528,8 +600,8 @@ document.addEventListener('touchmove', function(e) {
     }
 });
 
-// Enhanced accessibility
-document.querySelectorAll('.cta-button, .submit-button').forEach(button => {
+// ==================== 增强的无障碍性 ====================
+document.querySelectorAll('.cta-button, .submit-button, .apply-btn').forEach(button => {
     button.addEventListener('focus', function() {
         this.style.outline = '2px solid #9FD500';
         this.style.outlineOffset = '2px';
@@ -540,7 +612,83 @@ document.querySelectorAll('.cta-button, .submit-button').forEach(button => {
     });
 });
 
-// Add error handling
+// ==================== 错误处理 ====================
 window.addEventListener('error', function(e) {
     console.warn('页面加载时出现错误:', e.error);
 });
+
+// ==================== 性能监控 ====================
+if (window.performance && window.performance.timing) {
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const timing = window.performance.timing;
+            const loadTime = timing.loadEventEnd - timing.navigationStart;
+            console.log('Page load time:', loadTime + 'ms');
+        }, 0);
+    });
+}
+
+// ==================== 公司信息标签切换 ====================
+function initCompanyTabs() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const headquartersInfo = document.getElementById('headquarters-info');
+    const subsidiaryInfo = document.getElementById('subsidiary-info');
+    
+    if (!tabButtons.length || !headquartersInfo || !subsidiaryInfo) return;
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // 移除所有active类
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // 添加active类到当前按钮
+            this.classList.add('active');
+            
+            // 切换显示内容
+            if (this.dataset.tab === 'headquarters') {
+                headquartersInfo.style.display = 'block';
+                subsidiaryInfo.style.display = 'none';
+                
+                // 触发动画
+                headquartersInfo.style.animation = 'fadeIn 0.5s ease';
+            } else {
+                headquartersInfo.style.display = 'none';
+                subsidiaryInfo.style.display = 'block';
+                
+                // 触发动画
+                subsidiaryInfo.style.animation = 'fadeIn 0.5s ease';
+            }
+        });
+    });
+    
+    // 添加键盘支持
+    tabButtons.forEach((button, index) => {
+        button.setAttribute('tabindex', '0');
+        button.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+    });
+}
+
+// ==================== 认证徽章动画 ====================
+function initCertBadges() {
+    const badges = document.querySelectorAll('.cert-badge');
+    
+    badges.forEach((badge, index) => {
+        badge.style.animationDelay = `${index * 0.1}s`;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(badge);
+    });
+}
