@@ -593,7 +593,7 @@
                    </div>
                    <div class="company-item">
                        <div class="company-label" data-lang-key="company-capital-label">資本金</div>
-                       <div class="company-value" data-lang-key="company-capital-value">2,000万円</div>
+                       <div class="company-value" data-lang-key="company-capital-value">4,500万円</div>
                    </div>
                    <div class="company-item">
                        <div class="company-label" data-lang-key="company-ceo-label">代表者</div>
@@ -641,7 +641,7 @@
                    </div>
                    <div class="company-item">
                        <div class="company-label">資本金</div>
-                       <div class="company-value">50万人民元</div>
+                       <div class="company-value">100万人民元</div>
                    </div>
                    <div class="company-item">
                        <div class="company-label">代表者</div>
@@ -1113,13 +1113,15 @@
                    </div>
                </div>
                <div class="map-container scroll-animate">
-                   <div id="google-map" class="google-map">
-                       <div class="map-loading">
-                           <i class="fas fa-map-marker-alt"></i>
-                           <span data-lang-key="access-map-text">Google Maps</span>
-                           <div class="loading-text">Loading map...</div>
-                       </div>
-                   </div>
+                   <iframe 
+                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.907!2d139.7714!3d35.6695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188be761c3d5eb%3A0x7c1b4c8f1e2a3b4c!2z44CSMTAwLTAwNDUg5p2x5Lqs6YO95Lit5aSu5Yy656uL5Zyw77yW5LiB55uu77yR77yX4oiS77yUIApMZWFkIFNlYSBUc3VraWppIEJ1aWxkaW5nIDRG!5e0!3m2!1sja!2sjp!4v1645123456789!5m2!1sja!2sjp"
+                       width="100%" 
+                       height="600" 
+                       style="border:0; border-radius: 12px;" 
+                       allowfullscreen="" 
+                       loading="lazy" 
+                       referrerpolicy="no-referrer-when-downgrade">
+                   </iframe>
                </div>
            </div>
        </div>
@@ -1163,102 +1165,5 @@
    <script src="js/language-switcher.js"></script>
    <script src="js/script.js"></script>
    
-   <!-- Google Maps API -->
-   <script>
-   // Google Maps initialization
-   function initMap() {
-       // TERABOX company coordinates (Tsukiji, Tokyo)
-       const teraboxLocation = { lat: 35.6695, lng: 139.7714 };
-       
-       const map = new google.maps.Map(document.getElementById("google-map"), {
-           zoom: 16,
-           center: teraboxLocation,
-           styles: [
-               {
-                   featureType: "all",
-                   elementType: "geometry.fill",
-                   stylers: [{ color: "#1a1a1a" }]
-               },
-               {
-                   featureType: "all",
-                   elementType: "labels.text.fill",
-                   stylers: [{ color: "#ffffff" }]
-               },
-               {
-                   featureType: "all",
-                   elementType: "labels.text.stroke",
-                   stylers: [{ color: "#000000" }, { lightness: 13 }]
-               },
-               {
-                   featureType: "road",
-                   elementType: "geometry.fill",
-                   stylers: [{ color: "#2a2a2a" }]
-               },
-               {
-                   featureType: "water",
-                   elementType: "geometry",
-                   stylers: [{ color: "#0d47a1" }]
-               }
-           ]
-       });
-
-       // Custom marker icon with TERABOX branding
-       const markerIcon = {
-           path: google.maps.SymbolPath.CIRCLE,
-           scale: 12,
-           fillColor: '#9FD500',
-           fillOpacity: 1,
-           strokeColor: '#7FB800',
-           strokeWeight: 2
-       };
-
-       // Create marker
-       const marker = new google.maps.Marker({
-           position: teraboxLocation,
-           map: map,
-           icon: markerIcon,
-           title: 'TERABOX株式会社',
-           animation: google.maps.Animation.DROP
-       });
-
-       // Info window content
-       const infoWindow = new google.maps.InfoWindow({
-           content: `
-               <div style="padding: 10px; color: #333; font-family: 'Noto Sans JP', sans-serif;">
-                   <h3 style="margin: 0 0 8px 0; color: #333; font-size: 16px;">テラボックス株式会社</h3>
-                   <p style="margin: 5px 0; font-size: 13px;">〒104-0045</p>
-                   <p style="margin: 5px 0; font-size: 13px;">東京都中央区築地6丁目17-4</p>
-                   <p style="margin: 5px 0; font-size: 13px;">リードシー築地ビル 4F</p>
-                   <p style="margin: 5px 0; font-size: 13px; color: #9FD500; font-weight: bold;">TEL: 03-5542-7798</p>
-               </div>
-           `
-       });
-
-       // Show info window on marker click
-       marker.addListener('click', () => {
-           infoWindow.open(map, marker);
-       });
-
-       // Auto-open info window after 1 second
-       setTimeout(() => {
-           infoWindow.open(map, marker);
-       }, 1000);
-
-       // Hide loading indicator
-       document.querySelector('.map-loading').style.display = 'none';
-   }
-
-   // Error handling for map loading
-   function mapError() {
-       console.error('Google Maps failed to load');
-       document.querySelector('.map-loading .loading-text').textContent = 'Map failed to load. Please check your connection.';
-   }
-   </script>
-   
-   <!-- Load Google Maps API - Replace YOUR_API_KEY with actual API key -->
-   <script async defer
-       src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places&language=ja"
-       onerror="mapError()">
-   </script>
 </body>
 </html>
